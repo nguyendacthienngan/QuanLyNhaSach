@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" media="screen" runat="server">
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"
+            type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"
+            type="text/javascript"></script>
+
+
+
+
+</head>
+<body>
+    <!--Menu (Sidebar)-->
+    
+    <!--Header (Navbar)-->
+    <div>
+        <header>
+        <nav  class="navbar navbar-default navbar-fixed-top ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active">
+                            <a href="#">
+                                HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                BOOKS
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                SELL
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>SELL</li>
+                                <li>Invoice</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                COSTUMER
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                EMPLOYEE
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                REPORT
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>Inventory Report</li>
+                                <li>Debt Report</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                SETTINGS
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>Rules</li>
+                                <li>Price</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                CONTACT US
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+        </header>
+    </div>
+    <div>
+        <!--Body-->
+        <div>
+            @RenderBody()
+        </div>
+        
+    </div>
+</body>
+</html>
