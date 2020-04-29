@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ProducedDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookImage)
+        </th>
         <th></th>
     </tr>
 
@@ -40,6 +43,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProducedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookImage)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BookID }) |

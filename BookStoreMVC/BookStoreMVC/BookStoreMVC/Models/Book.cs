@@ -17,7 +17,7 @@ namespace BookStoreMVC.Models
         public decimal Price { get; set; }
         [DataType(DataType.Date)]
         public DateTime ProducedDate { get; set; }
-
+        public byte[] BookImage { get; set; }
         public List<Book> Books { get; set; }
     }
 }

@@ -47,7 +47,7 @@ namespace BookStoreMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookID,BookName,Author,Price,ProducedDate")] Book book)
+        public ActionResult Create([Bind(Include = "BookID,BookName,Author,Price,ProducedDate,BookImage")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BookStoreMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookID,BookName,Author,Price,ProducedDate")] Book book)
+        public ActionResult Edit([Bind(Include = "BookID,BookName,Author,Price,ProducedDate,BookImage")] Book book)
         {
             if (ModelState.IsValid)
             {

@@ -9,17 +9,38 @@ namespace BookStoreMVC.Data
     {
         protected override void Seed(BookContext context)
         {
-            var books = new List<Book>()
+            IList<Book> books = new List<Book>();
+            books.Add(new Book()
             {
-                new Book { BookName = "The Little Prince", Author = "Antoine de Saint-Exupéry", ProducedDate = new DateTime(1943,4,1) , Price = 45000},
-                new Book { BookName = "To Kill a Mockingbird", Author = "Harper Lee", ProducedDate = new DateTime(1960,7,11) , Price = 72000},
-                new Book { BookName = "How to stop worrying and start living", Author = "Dale Carnegie", ProducedDate = new DateTime(1948,0,0), Price = 45600},
-                new Book { BookName = "Men Are from Mars, Women Are from Venus", Author = "John Gray", ProducedDate = new DateTime(1992,1,1), Price = 112800},
-                new Book { BookName = "Coffee with Tony", Author = "Tony Morning", ProducedDate = new DateTime(2014,0,0) , Price = 53499},
-
-            };
-            books.ForEach(b => context.Books.Add(b));
-            context.SaveChanges();
+                BookName = "The Little Prince",
+                Author = "Antoine de Saint-Exupéry",
+                ProducedDate = new DateTime(2015, 4, 1),
+                Price = 45000
+            });
+            books.Add(new Book()
+            {
+                BookName = "How to stop worrying and start living",
+                Author = "Dale Carnegie",
+                ProducedDate = new DateTime(2003, 11, 1),
+                Price = 45600
+            });
+            books.Add(new Book()
+            {
+                BookName = "Men Are from Mars, Women Are from Venus",
+                Author = "John Gray",
+                ProducedDate = new DateTime(2002, 1, 1),
+                Price = 112800
+            });
+            books.Add(new Book()
+            {
+                BookName = "Coffee with Tony",
+                Author = "Tony Morning",
+                ProducedDate = new DateTime(2014, 3, 1),
+                Price = 53499
+            });
+            foreach (Book book in books)
+            context.Books.Add(book);
+            base.Seed(context);
         }
     }
 }
