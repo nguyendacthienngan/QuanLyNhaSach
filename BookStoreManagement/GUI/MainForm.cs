@@ -26,9 +26,9 @@ namespace GUI
         }
 
         private void AddControlsToPanel(Control c)
-        {
-            c.Dock = DockStyle.Fill;
+        {            
             panelControls.Controls.Clear();
+            c.Dock = DockStyle.Fill;
             panelControls.Controls.Add(c);
         }
 
