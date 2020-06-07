@@ -259,3 +259,24 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+BookStoreManagement/Bunifu/Bunifu.Core.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForm.BunifuShadowPanel.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForm.BunifuShadowPanel.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuButton.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuButton.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuColorTransition.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuColorTransition.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuDropdown.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuDropdown.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuImageButton.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuImageButton.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuLabel.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuLabel.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuPictureBox.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuPictureBox.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuScrollBar.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuScrollBar.xml
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuTransition.dll
+BookStoreManagement/Bunifu/Bunifu.UI.WinForms.BunifuTransition.xml
+BookStoreManagement/Bunifu/Bunifu_UI_v1.5.3.dll
+BookStoreManagement/Bunifu/Bunifu_UI_v1.5.3.xml
