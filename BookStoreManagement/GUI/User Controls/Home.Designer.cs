@@ -133,11 +133,11 @@
             this.bunifuVScrollBar2.ScrollBarBorderColor = System.Drawing.Color.Silver;
             this.bunifuVScrollBar2.ScrollBarColor = System.Drawing.Color.Transparent;
             this.bunifuVScrollBar2.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar2.Size = new System.Drawing.Size(17, 404);
+            this.bunifuVScrollBar2.Size = new System.Drawing.Size(17, 383);
             this.bunifuVScrollBar2.SmallChange = 1;
             this.bunifuVScrollBar2.TabIndex = 9;
             this.bunifuVScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.bunifuVScrollBar2.ThumbLength = 39;
+            this.bunifuVScrollBar2.ThumbLength = 37;
             this.bunifuVScrollBar2.ThumbMargin = 1;
             this.bunifuVScrollBar2.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar2.Value = 0;

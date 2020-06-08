@@ -63,6 +63,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\Lap trinh truc quan\Cassidy_BookStore\CassidyBookStore\CassidyBookStore\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
@@ -88,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DropShadow.cs" />
+    <Compile Include="Forms\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="GradientBackground.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -105,6 +114,15 @@
     <Compile Include="User Controls\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\SlideUp_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\SlideUp_Login.Designer.cs">
+      <DependentUpon>SlideUp_Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="User Controls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\SlideUp_Login.resx">
+      <DependentUpon>SlideUp_Login.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
