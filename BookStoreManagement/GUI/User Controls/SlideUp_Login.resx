@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATQAAAAsCAYAAADrc0TdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP/SURBVHhe7d2/TxtnHMdxjxkzMmZkzJgxf0HEUqljR9Qp
@@ -141,7 +141,7 @@
         3dHUAm5Lx9/SaDTadZqKJA1tWaY8tzbtYuaKKpX3iNfHQ2MLx2IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="textBox2.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA3RJREFUaEPt
         mU1IFHEYxq2s7IOigj4OBUVElyIoysAOXaKgYx9gdInwEhVRUIegQ4QQFFJI1qEPKBQvRQdLVt3dcV2E
@@ -161,7 +161,7 @@
         6duJU4855hmf1NfXz1KZ2cGem+i+HOeruSYDW0UtR4dvoqDgF2xE+E1dddbnAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="textBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtUsername.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATQAAAArCAYAAAD2dnRlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVHhe7d2/TxtnHMdxjxkzMmZkzJgxf0HEUqljR9Qp
@@ -184,7 +184,7 @@
         3Ia2v6XRaLSrNBVJGtqyTHlqbdLFzCVVKp8AeH39Qi0/j3QAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="textBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABwpJREFUaEPt
         mgmIVVUcxq2sJNqzHVJKaLWksrJFlCyQFNIisQ1NXFpNKyoLUiMzoiLJUgpUkFKLQo1Rm8VZbawxtJqy
