@@ -11,7 +11,7 @@ module.exports = {
       lastName: 'Nguyễn',
       username: 'admin',
       password: 'admin',
-      dateOfBirth: '05/15/2000',
+      dateOfBirth: new Date(2000,4,15),
       isFemale: true,
       phoneNumber: 1234567,
       idCard: 123321,

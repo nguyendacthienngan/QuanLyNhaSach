@@ -12,7 +12,7 @@
     "password": "Tnmysql@1505!",
     "database": "BookStoreDB_test",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   },
   "production": {
@@ -20,7 +20,7 @@
     "password": "Tnmysql@1505!",
     "database": "BookStoreDB3_production",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   }
 }

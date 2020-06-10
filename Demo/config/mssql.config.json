@@ -3,24 +3,42 @@
       "username": "sa",
       "password": "Tnsql@1505!",
       "database": "BookStoreDB",
-      "host": "localdb",
-      "dialect": "tedious",
+      "host": "localhost",
+      "port":1434,
+      "dialect": "mssql",
+      "dialectOptions": {
+        "options": {
+          "useUTC": false,
+          "dateFirst": 1
+        }},
       "operatorsAliases": false
     },
     "test": {
       "username": "sa",
       "password": "Tnsql@1505!",
       "database": "BookStoreDB_test",
-      "host": "localdb",
-      "dialect": "tedious",
+      "host": "localhost",
+      "port":1434,
+      "dialect": "mssql",
+      "dialectOptions": {
+        "options": {
+          "useUTC": false,
+          "dateFirst": 1
+        }},
       "operatorsAliases": false
     },
     "production": {
       "username": "sa",
       "password": "Tnsql@1505!",
       "database": "BookStoreDB3_production",
-      "host": "localdb",
-      "dialect": "tedious",
+      "host": "localhost",
+      "port":1433,
+      "dialect": "mssql",
+      "dialectOptions": {
+        "options": {
+          "useUTC": false,
+          "dateFirst": 1
+        }},
       "operatorsAliases": false
     }
   }
