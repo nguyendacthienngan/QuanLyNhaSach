@@ -1,0 +1,27 @@
+{
+    "development": {
+      "username": "sa",
+      "password": "Tnmysql@1505!",
+      "database": "BookStoreDB",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    },
+    "test": {
+      "username": "rosaot",
+      "password": "Tnmysql@1505!",
+      "database": "BookStoreDB_test",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    },
+    "production": {
+      "username": "sa",
+      "password": "Tnmysql@1505!",
+      "database": "BookStoreDB3_production",
+      "host": "localhost",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    }
+  }
+  
