@@ -7,20 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace GUI.User_Controls
 {
     public partial class SlideUp_Login : UserControl
     {
         public delegate void OnFinish();
         public event OnFinish onFinish;
-
+        public EmployeeBLL employeeBLL;
         int waiter = 0, waiter2 = 0;
         int panel1_y = 519;
         public SlideUp_Login()
         {
             InitializeComponent();
             DoubleBuffered = true;
+            employeeBLL = new EmployeeBLL();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,7 +31,25 @@ namespace GUI.User_Controls
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password)) 
+            {
+                if (String.IsNullOrEmpty(username))
+                    MessageBox.Show("You need to insert username");
+                else
+                    MessageBox.Show("You need to insert password");
+            }
+            else
+            {
+                // Đăng nhập đúng
+                if(employeeBLL.CheckLoginAsync(username,password)==true)
+                    timer1.Enabled = true;
+                // Đăng nhập sai
+                else
+                    MessageBox.Show("Wrong password/username. Please try again");
+            }
+           
         }
 
         

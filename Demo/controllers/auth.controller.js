@@ -18,7 +18,6 @@ module.exports.postLogin = function(req, res)
               console.log(user);
               if(user.password === password)
               {
-                console.log("Success1");
                 res.status(200).send({
                     message: "Success1",
                     
