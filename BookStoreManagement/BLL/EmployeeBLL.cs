@@ -18,7 +18,7 @@ namespace BLL
             Console.WriteLine("Hello from BLL");
             try
             {
-                bool checkLogin = employeeDAL.CheckLoginAsync(username, password).Result;
+                bool checkLogin = employeeDAL.CheckLoginAsync(username, password);
                 if (checkLogin == true)
                     return true;
                 return false;

@@ -18,6 +18,18 @@ module.exports = {
       email: 'nguyendacthienngan@gmail.com',
       createdAt: new Date(),
       updatedAt: new Date()
+    }, {
+      firstName: 'Hiếu',
+      lastName: 'Trương',
+      username: 'finn',
+      password: '123',
+      dateOfBirth: new Date(2000,5,15),
+      isFemale: true,
+      phoneNumber: 1234567,
+      idCard: 123321,
+      email: 'finn@gmail.com',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 
