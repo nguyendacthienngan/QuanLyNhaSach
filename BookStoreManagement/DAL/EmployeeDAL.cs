@@ -14,6 +14,7 @@ namespace DAL
 {
     public class EmployeeDAL
     {
+
         private const string URL = "http://localhost:8080/auth/login";
         private string DATA ;
         
@@ -46,15 +47,13 @@ namespace DAL
                 using (StreamReader responseReader = new StreamReader(webStream))
                 {
                     string response = responseReader.ReadToEnd();
-                    Console.WriteLine(response);
-                    if (!String.IsNullOrEmpty(response))
-                        return true;
-                    else
-                        return false;
+                    //200 Ok : "message: success"
+                    return true;
                 }
             }
             catch (Exception e)
             {
+                //400 Bad request
                 Console.WriteLine("-----------------");
                 Console.WriteLine(e.Message);
                 return false;
