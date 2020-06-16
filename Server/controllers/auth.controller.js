@@ -4,7 +4,7 @@ const db = require("../models");
 const sequelize = require('sequelize')
 
 const Op = sequelize.Op;
-const User = require('../models').User
+const User = db.User
 //Đăng nhập - kiểm tra thông tin tài khoản
 module.exports.postLogin = function(req, res)
 {
@@ -15,7 +15,6 @@ module.exports.postLogin = function(req, res)
             username: username_input
           }})
           .then(function(user){
-              console.log(user);
               if(user.password === password)
               {
                 res.status(200).send({
