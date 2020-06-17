@@ -4,13 +4,15 @@ const db = require("../models");
 const sequelize = require('sequelize')
 
 const Op = sequelize.Op;
-const User = db.User
+const Account = db.Account
 //Đăng nhập - kiểm tra thông tin tài khoản
 module.exports.postLogin = function(req, res)
 {
     var username_input = req.body.username;
     var password = req.body.password;
-    User.findOne({
+    Account.findOne({
+        attributes: ['username', 'password', 'role', 'userID'],
+        order:    ['username'],
         where: {
             username: username_input
           }})
