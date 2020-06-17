@@ -8,33 +8,45 @@ namespace Model
 {
     class User
     {
-        private int _userId;
+        private int userId;
         
-        private string _firstName;
+        private string firstName;
         
-        private string _lastName;
+        private string lastName;
         
-        private string _phone;
+        private string phone;
         
-        private string _email;
+        private string email;
 
-        private string _address;
+        private string address;
 
-        public User(int id, string firstName, string lastName, string phone, string email, string address)
+        private DateTime dateOfBirth;
+
+        private bool isFemale;
+
+        private bool isCard;
+
+        public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, bool isCard)
         {
-            this.UserId = id;
+            this.UserId = userId;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Phone = phone;
             this.Email = email;
             this.Address = address;
+            this.DateOfBirth = dateOfBirth;
+            this.IsFemale = isFemale;
+            this.IsCard = isCard;
         }
 
-        public int UserId { get => _userId; set => _userId = value; }
-        public string FirstName { get => _firstName; set => _firstName = value; }
-        public string LastName { get => _lastName; set => _lastName = value; }
-        public string Phone { get => _phone; set => _phone = value; }
-        public string Email { get => _email; set => _email = value; }
-        public string Address { get => _address; set => _address = value; }
+        public int UserId { get => userId; set => userId = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Phone { get => phone; set => phone = value; }
+        public string Email { get => email; set => email = value; }
+        public string Address { get => address; set => address = value; }
+        public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+        public bool IsFemale { get => isFemale; set => isFemale = value; }
+        public bool IsCard { get => isCard; set => value = value; }
     }
 }

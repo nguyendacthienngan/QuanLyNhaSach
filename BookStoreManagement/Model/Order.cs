@@ -8,37 +8,37 @@ namespace Model
 {
     class Order
     {
-        private int _orderId;
+        private int orderId;
 
-        private int _userId;
+        private int userId;
 
-        private DateTime _date;
+        private DateTime orderDate;
 
-        private int _customerId;
+        private int customerId;
 
-        private float _discount;
+        private float discount;
 
-        private int _total;
+        private int totalOrder;
 
-        private bool _status;
+        private bool status;
 
         public Order(int orderId, int userId, DateTime date, int customerId, float discount, int total, bool status)
         {
             this.OrderId = orderId;
             this.UserId = userId;
-            this.Date = date;
+            this.OrderDate = date;
             this.CustomerId = customerId;
             this.Discount = discount;
-            this.Total = total;
+            this.TotalOrder = total;
             this.Status = status;
         }
 
-        public int OrderId { get => _orderId; set => _orderId = value; }
-        public int CustomerId { get => _customerId; set => _customerId = value; }
-        public DateTime Date { get => _date; set => _date = value; }
-        public int UserId { get => _userId; set => _userId = value; }
-        public float Discount { get => _discount; set => _discount = value; }
-        public int Total { get => _total; set => _total = value; }
-        public bool Status { get => _status; set => _status = value; }
+        public int OrderId { get => orderId; set => orderId = value; }
+        public int CustomerId { get => customerId; set => customerId = value; }
+        public DateTime OrderDate { get => orderDate; set => orderDate = value; }
+        public int UserId { get => userId; set => userId = value; }
+        public float Discount { get => discount; set => discount = value; }
+        public int TotalOrder { get => totalOrder; set => totalOrder = value; }
+        public bool Status { get => status; set => status = value; }
     }
 }

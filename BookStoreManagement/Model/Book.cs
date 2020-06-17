@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,21 +9,23 @@ namespace Model
 {
     class Book
     {
-        private int _id;
+        private int id;
 
-        private string _bookTitle;
+        private string bookTitle;
 
-        private string _author;
+        private string author;
 
-        private int _stock;
+        private int stock;
 
-        private float _cost;
+        private float cost;
 
-        private float _price;
+        private float price;
 
-        private string _type;
+        private string type;
 
-        public Book(int id, string bookTitle, string author, int stock, float cost, float price, string type)
+        private string description;
+
+        public Book(int id, string bookTitle, string author, int stock, float cost, float price, string type, string description)
         {
             this.Id = id;
             this.BookTitle = bookTitle;
@@ -31,15 +34,17 @@ namespace Model
             this.Cost = cost;
             this.Price = price;
             this.Type = type;
+            this.Description = description;
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public string BookTitle { get => _bookTitle; set => _bookTitle = value; }
-        public string Author { get => _author; set => _author = value; }
-        public int Stock { get => _stock; set => _stock = value; }
-        public float Cost { get => _cost; set => _cost = value; }
-        public float Price { get => _price; set => _price = value; }
-        public string Type { get => _type; set => _type = value; }
+        public int Id { get => id; set => id = value; }
+        public string BookTitle { get => bookTitle; set => bookTitle = value; }
+        public string Author { get => author; set => author = value; }
+        public int Stock { get => stock; set => stock = value; }
+        public float Cost { get => cost; set => cost = value; }
+        public float Price { get => price; set => price = value; }
+        public string Type { get => type; set => type = value; }
+        public string Description { get => description; set => description = value; }
 
     }
 }

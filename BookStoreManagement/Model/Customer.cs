@@ -8,18 +8,20 @@ namespace Model
 {
     class Customer
     {
-        private int _id;
+        private int id;
 
-        private string _firstName;
+        private string firstName;
 
-        private string _lastName;
+        private string lastName;
         
-        private string _phone;
+        private string phone;
         
-        private string _email;
+        private string email;
         
-        private string _address;
-        public Customer(int id, string firstName, string lastName, string phone, string email, string address)
+        private string address;
+
+        private bool isFemale;
+        public Customer(int id, string firstName, string lastName, string phone, string email, string address, bool isFemale)
         {
             this.Id = id;
             this.FirstName = firstName;
@@ -27,14 +29,16 @@ namespace Model
             this.Phone = phone;
             this.Email = email;
             this.Address = address;
+            this.IsFemal = isFemale;
         }
 
 
-        public int Id { get => _id; set => _id = value; }
-        public string FirstName { get => _firstName; set => _firstName = value; }
-        public string LastName { get => _lastName; set => _lastName = value; }
-        public string Phone { get => _phone; set => _phone = value; }
-        public string Email { get => _email; set => _email = value; }
-        public string Address { get => _address; set => _address = value; }
+        public int Id { get => id; set => id = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Phone { get => phone; set => phone = value; }
+        public string Email { get => email; set => email = value; }
+        public string Address { get => address; set => address = value; }
+        public bool IsFemal { get => isFemale; set => isFemale = value; }
     }
 }
