@@ -371,6 +371,7 @@
             this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEmployee.TextMarginLeft = 0;
             this.btnEmployee.UseDefaultRadiusAndThickness = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnSell
             // 
