@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class User
+    class Customer
     {
-        private int _userId;
-        
+        private int _id;
+
         private string _firstName;
-        
+
         private string _lastName;
         
         private string _phone;
         
         private string _email;
-
+        
         private string _address;
-
-        public User(int id, string firstName, string lastName, string phone, string email, string address)
+        public Customer(int id, string firstName, string lastName, string phone, string email, string address)
         {
-            this.UserId = id;
+            this.Id = id;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Phone = phone;
@@ -30,7 +29,8 @@ namespace Model
             this.Address = address;
         }
 
-        public int UserId { get => _userId; set => _userId = value; }
+
+        public int Id { get => _id; set => _id = value; }
         public string FirstName { get => _firstName; set => _firstName = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
         public string Phone { get => _phone; set => _phone = value; }
