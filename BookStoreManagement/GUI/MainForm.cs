@@ -63,5 +63,10 @@ namespace GUI
                 isSellCollapsed = true;
             }
         }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new Employee());
+        }
     }
 }
