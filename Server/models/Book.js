@@ -10,16 +10,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    price: {
+    author: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    stock: {
+      // Số lượng hàng còn trong kho
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+    cost: {
+      // Giá mua
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+    price: {
+      // Giá bán
+      type: DataTypes.DOUBLE,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
     type: {
@@ -27,5 +38,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     }
   }, options);
+  Book.associate = function (models) {
+      Book.belongsToMany(models.Order, {
+        through: 'OrderDetail',
+        foreignKey: 'bookID',
+        as: 'Orders'
+      })
+  }
   return Book;
 };
