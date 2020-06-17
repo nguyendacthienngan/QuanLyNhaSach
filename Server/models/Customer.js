@@ -16,16 +16,8 @@ const {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      idCard: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
-      },
-      dateOfBirth: {
-        type: DataTypes.DATE,
         allowNull: false,
       },
       address: {
@@ -33,14 +25,15 @@ const {
         allowNull: false,
       },
       isFemale: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
       }
     };
     const options = {
-      tableName: "User",
+      tableName: "Customer",
       comment: "",
       indexes: []
     };
-    const User = sequelize.define("User", attributes, options);
-    return User;
+    const Customer = sequelize.define("Customer", attributes, options);
+    return Customer;
   };
