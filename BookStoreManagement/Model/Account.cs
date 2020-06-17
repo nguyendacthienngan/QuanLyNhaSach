@@ -8,21 +8,25 @@ namespace Model
 {
     class Account
     {
-        private int _userId;
+        private int userId;
 
-        private string _userName;
+        private string userName;
 
-        private string _password;
+        private string password;
 
-        public Account(int id, string userName, string password)
+        private string role;
+
+        public Account(int id, string userName, string password, string role)
         {
             this.UserId = id;
             this.UserName = userName;
             this.Password = password;
+            this.Role = role;
         }
 
-        public int UserId { get => _userId; set => _userId = value; }
-        public string UserName { get => _userName; set => _userName = value; }
-        public string Password { get => _password; set => _password = value; }
+        public int UserId { get => userId; set => userId = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
+        public string Role { get => role; set => role = value; }
     }
 }

@@ -8,30 +8,30 @@ namespace Model
 {
     class OrderDetail
     {
-        private int _orderId;
+        private int orderId;
 
-        private int _bookId;
+        private int bookId;
 
-        private int _quantity;
+        private int quantity;
 
-        private int _price;
+        private int price;
 
-        private int _total;
+        private int totalOrderDetail;
 
-        public OrderDetail(int orderId, int bookId, int quantity, int price, int total)
+        public OrderDetail(int orderId, int bookId, int quantity, int price, int totalOrderDetail)
         {
             this.OrderId = orderId;
             this.BookId = bookId;
             this.Quantity = quantity;
             this.Price = price;
-            this.Total = total;
+            this.TotalOrderDetail = totalOrderDetail;
         }
 
 
-        public int OrderId { get => _orderId; set => _orderId = value; }
-        public int BookId { get => _bookId; set => _bookId = value; }
-        public int Quantity { get => _quantity; set => _quantity = value; }
-        public int Price { get => _price; set => _price = value; }
-        public int Total { get => _total; set => _total = value; }
+        public int OrderId { get => orderId; set => orderId = value; }
+        public int BookId { get => bookId; set => bookId = value; }
+        public int Quantity { get => quantity; set => quantity = value; }
+        public int Price { get => price; set => price = value; }
+        public int TotalOrderDetail { get => totalOrderDetail; set => totalOrderDetail = value; }
     }
 }
