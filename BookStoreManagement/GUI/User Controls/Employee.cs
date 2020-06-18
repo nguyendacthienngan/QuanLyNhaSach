@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.User_Controls;
 
 namespace GUI.User_Controls
 {
@@ -15,6 +16,11 @@ namespace GUI.User_Controls
         public Employee()
         {
             InitializeComponent();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+                
         }
     }
 }
