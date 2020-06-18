@@ -161,6 +161,12 @@
     <Compile Include="User Controls\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\Employee_Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\Employee_Profile.Designer.cs">
+      <DependentUpon>Employee_Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,9 +193,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="User Controls\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Employee_Profile.resx">
+      <DependentUpon>Employee_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -217,6 +227,8 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
