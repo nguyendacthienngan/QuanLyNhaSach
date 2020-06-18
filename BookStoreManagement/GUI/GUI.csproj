@@ -161,12 +161,6 @@
     <Compile Include="User Controls\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Employee_Profile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\Employee_Profile.Designer.cs">
-      <DependentUpon>Employee_Profile.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,9 +191,6 @@
     </Compile>
     <EmbeddedResource Include="User Controls\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Employee_Profile.resx">
-      <DependentUpon>Employee_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
