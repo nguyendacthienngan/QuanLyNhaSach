@@ -4,10 +4,14 @@ const router = express.Router();
 
 
 router.get('/', BookController.getAllBooks);
-// router.post('/', BookController.addBook);
- //router.get('/:id', BookController.getABook);
- router.get('/:book', BookController.getABook);
-// router.put('/:id', BookController.updatedBook);
-// router.delete('/:id', BookController.deleteBook);
+router.post('/search/', BookController.searchBook); 
+
+router.get('/get/count', BookController.getBookCount);
+router.get('/get/bestSeller', BookController.getBestSeller);
+
+router.post('/add', BookController.addBook);
+router.post('/update/:id', BookController.updateBook);
+router.post('/delete/:id', BookController.deleteBook);
+
 
 module.exports = router;
