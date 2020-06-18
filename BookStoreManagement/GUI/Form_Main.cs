@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class MainForm : Form
+    public partial class Form_Main : Form
     {
         bool isSellCollapsed = true;
 
-        public MainForm()
+        public Form_Main()
         {
             InitializeComponent();
             (new GUI.DropShadow()).ApplyShadows(this);
-            AddControlsToPanel(new Home());
+            AddControlsToPanel(new UC_Home());
             sellDropdown.BackColor = Color.FromArgb(150, 0, 0, 0);
 
         }
@@ -39,7 +39,7 @@ namespace GUI
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            AddControlsToPanel(new Home());
+            AddControlsToPanel(new UC_Home());
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
@@ -49,7 +49,23 @@ namespace GUI
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-            if(isSellCollapsed)
+            CollapsePanel();
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new Employee());
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new UC_Sell_Details());
+            CollapsePanel();
+        }
+
+        void CollapsePanel()
+        {
+            if (isSellCollapsed)
             {
                 sellDropdown.Visible = false;
                 sellDropdown.Height = 100;
@@ -62,11 +78,6 @@ namespace GUI
                 sellDropdown.Height = 1;
                 isSellCollapsed = true;
             }
-        }
-
-        private void btnEmployee_Click(object sender, EventArgs e)
-        {
-            AddControlsToPanel(new Employee());
         }
     }
 }
