@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Setting
+    public class Setting
     {
         private string key;
 
