@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class User
+    public class User
     {
         private int userId;
         
@@ -24,9 +24,9 @@ namespace Model
 
         private bool isFemale;
 
-        private bool isCard;
-
-        public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, bool isCard)
+        private string idCard;
+        
+        public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, string idCard)
         {
             this.UserId = userId;
             this.FirstName = firstName;
@@ -36,7 +36,7 @@ namespace Model
             this.Address = address;
             this.DateOfBirth = dateOfBirth;
             this.IsFemale = isFemale;
-            this.IsCard = isCard;
+            this.IdCard = idCard;
         }
 
         public int UserId { get => userId; set => userId = value; }
@@ -47,6 +47,6 @@ namespace Model
         public string Address { get => address; set => address = value; }
         public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
         public bool IsFemale { get => isFemale; set => isFemale = value; }
-        public bool IsCard { get => isCard; set => value = value; }
-    }
+        public string IdCard { get => idCard; set => idCard = value; }
+}
 }

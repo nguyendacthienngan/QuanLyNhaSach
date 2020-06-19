@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Expense
+    public class Expense
     {
         private int id;
 

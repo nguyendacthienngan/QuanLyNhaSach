@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Book
+    public class Book
     {
         private int id;
 
