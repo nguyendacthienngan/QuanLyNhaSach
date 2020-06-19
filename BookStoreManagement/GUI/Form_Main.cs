@@ -84,5 +84,11 @@ namespace GUI
         {
             AddControlsToPanel(new UC_Books());
         }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new Customer_Default());
+            //AddControlsToPanel(new Customer_Detail());
+        }
     }
 }
