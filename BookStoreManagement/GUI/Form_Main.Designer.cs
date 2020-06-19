@@ -66,7 +66,6 @@
             this.btnHome = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.backgroundTimer = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.background = new System.Windows.Forms.Panel();
             this.sellDropdown = new System.Windows.Forms.Panel();
@@ -505,6 +504,7 @@
             this.btnBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBooks.TextMarginLeft = 0;
             this.btnBooks.UseDefaultRadiusAndThickness = true;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // btnHome
             // 
@@ -594,11 +594,6 @@
             this.label1.Size = new System.Drawing.Size(213, 64);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lorem Ispum";
-            // 
-            // backgroundTimer
-            // 
-            this.backgroundTimer.Enabled = true;
-            this.backgroundTimer.Interval = 60;
             // 
             // bunifuDragControl1
             // 
@@ -767,9 +762,7 @@
             // 
             // panelControls
             // 
-            this.panelControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControls.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControls.BackColor = System.Drawing.Color.Transparent;
             this.DropdownAnimation.SetDecoration(this.panelControls, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.panelControls.Location = new System.Drawing.Point(211, 41);
@@ -779,9 +772,7 @@
             // 
             // Shadow
             // 
-            this.Shadow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Shadow.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Shadow.BackColor = System.Drawing.Color.Transparent;
             this.DropdownAnimation.SetDecoration(this.Shadow, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.Shadow.Enabled = false;
@@ -795,7 +786,7 @@
             // 
             // bunifuElipse1
             // 
-            this.bunifuElipse1.ElipseRadius = 75;
+            this.bunifuElipse1.ElipseRadius = 65;
             this.bunifuElipse1.TargetControl = this.panelControls;
             // 
             // DropdownAnimation
@@ -846,7 +837,6 @@
         private Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel navigationBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Timer backgroundTimer;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel background;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;

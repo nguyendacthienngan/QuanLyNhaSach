@@ -26,9 +26,9 @@ namespace GUI
         }
 
         private void AddControlsToPanel(Control c)
-        {            
-            panelControls.Controls.Clear();
+        {
             c.Dock = DockStyle.Fill;
+            panelControls.Controls.Clear();
             panelControls.Controls.Add(c);
         }
 
@@ -78,6 +78,11 @@ namespace GUI
                 sellDropdown.Height = 1;
                 isSellCollapsed = true;
             }
+        }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new UC_Books());
         }
     }
 }
