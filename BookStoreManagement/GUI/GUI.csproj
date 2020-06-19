@@ -144,12 +144,6 @@
     <Compile Include="Forms\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="GradientBackground.cs">
       <SubType>Component</SubType>
     </Compile>
