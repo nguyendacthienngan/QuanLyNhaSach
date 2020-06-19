@@ -62,12 +62,19 @@ module.exports.searchBook = function(req, res){
 
 
 module.exports.getBookCount = function(req, res){
-  var bookID = req.params.id;
-  //********** */
+  // count => trả về number => k cho phép trả về nên bad request nên phải chuyển từ number sang string
+  Book.count()
+  .then((count)  => res.status(200).send(result.toString()))
+  .catch((error)  => res.sendStatus(400).send(error.message))
 }
 
 module.exports.getBestSeller = function(req, res){
-   //********** */
+  //  sequelize.query("SELECT TOP 1 B.title, SUM(C.quantity)" +
+  //  " FROM(OrderDetail C JOIN Book B ON C.id = B.id) JOIN Order O ON C.id = O.id" +
+  //  " WHERE MONTH(O.date) = MONTH(GETDATE()) AND YEAR(DATE) = YEAR(GETDATE())" +
+  //  " GROUP BY B.id, title ORDER BY SUM(C.quantity) DESC")
+  //     .then((book) => res.status(200).send(book))
+  //     .catch((err) => res.status(400).send(err.message))
 }
 
 
@@ -98,7 +105,7 @@ module.exports.addBook = function(req, res){
 }
 
 module.exports.updateBook = function(req, res){
-  let bookID = req.body.id;
+  let bookID = req.body.id; //params hay body
   let inputTitle = req.body.title;
   let inputAuthor = req.body.author;
   let inputStock = req.body.stock;
