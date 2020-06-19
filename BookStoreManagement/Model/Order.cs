@@ -22,6 +22,8 @@ namespace Model
 
         private bool status;
 
+        private OrderDetail orderDetail;
+
         public Order(int orderId, int userId, DateTime date, int customerId, float discount, int total, bool status)
         {
             this.OrderId = orderId;
@@ -40,5 +42,6 @@ namespace Model
         public float Discount { get => discount; set => discount = value; }
         public int TotalOrder { get => totalOrder; set => totalOrder = value; }
         public bool Status { get => status; set => status = value; }
+        public OrderDetail OrderDetail { get => orderDetail; set => orderDetail = value; }
     }
 }

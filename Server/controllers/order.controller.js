@@ -68,7 +68,16 @@ module.exports.filterByDate = function(req, res){
 
 
 module.exports.addOrder = function(req, res){
-    
+    var inputOrder = req.body;
+    var inputOrderDetails = req.body.orderDetails;
+    //console.log(order.orderDetail);
+    Order.create(
+        { 
+            quantity: inputOrder.orderDetail.quantity,
+
+        })
+        .then(order =>res.status(200).send(order))
+        .catch(err =>res.status(400).send(err.message))
 }
 
 module.exports.updateOrder = function(req, res){
