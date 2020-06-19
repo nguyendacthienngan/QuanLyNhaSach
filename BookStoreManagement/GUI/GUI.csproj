@@ -138,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DropShadow.cs" />
+    <Compile Include="Forms\Form_AddNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_AddNewBook.Designer.cs">
+      <DependentUpon>Form_AddNewBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,18 @@
     <Compile Include="User Controls\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UC_BookDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_BookDisplay.Designer.cs">
+      <DependentUpon>UC_BookDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Books.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Books.Designer.cs">
+      <DependentUpon>UC_Books.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +197,9 @@
     <Compile Include="User Controls\UC_Sell_Details.Designer.cs">
       <DependentUpon>UC_Sell_Details.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Form_AddNewBook.resx">
+      <DependentUpon>Form_AddNewBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +217,12 @@
     </Compile>
     <EmbeddedResource Include="User Controls\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_BookDisplay.resx">
+      <DependentUpon>UC_BookDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Books.resx">
+      <DependentUpon>UC_Books.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>

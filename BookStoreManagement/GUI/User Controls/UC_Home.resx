@@ -124,20 +124,6 @@
     <value>40</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="scrollbar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABEAAAHuCAYAAAB53ueCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHqSURBVHhe7dAhUAJRFEZhItFIJBqNRqORaDQajUab0Wgk
-        Go3EpRmNRqORaMT/rZdROTKyo/F8M9dlH3sPyGhb13WTzNVyubzPvGTWdX3I+XXmsB79WR44z8PPmZu8
-        PstM63yamWWu2/vt2i9sa5+UmeeBgzraqWKLXMd11B9e5PCubveSnfYv32xuprlpX/GzuqfsPWbvuP9q
-        bep8kOy133De/xa5mdX5INk7yv5Ti6xy8+uPuUv21x9//sAIGSEjZISMkBEyQkbICBkhI2SEjJARMkJG
-        yAgZISNkhIyQETJCRsgIGSEjZISMkBEyQkbICBkhI2SEjJARMkJGyAgZISNkhIyQETJCRsgIGSEjZISM
-        kBEyQkbICBkhI2SEjJARMkJGyAgZISNkhIyQETJCRsgIGSEjZISMkBEyQkbICBkhI2SEjJARMkJGyAgZ
-        ISNkhIyQETJCRsgIGSEjZISMkBEyQkbICBkhI2SEjJARMkJGyAgZISNkhPp9I9/4m5AR+tfIW9d14zob
-        bBNJozups0GyN83+S4vc5uayzgfJ3iz7D+3FSfs2dT5I9ubZP+fNnvDhORjn4HnfUAWecp3U0YccHLRv
-        lFnk9en2A+39TFu+y+TlVuCrvHnaQpnXzPrLrDJt+aIeLaPRO74kFPPbT920AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAUYAAAGkCAYAAABNW4x5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

@@ -15,33 +15,10 @@ namespace GUI.User_Controls
         public UC_Home()
         {
             InitializeComponent();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contentPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void illustration_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuVScrollBar2_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
-        {
-            contentPanel.VerticalScroll.Value = scrollbar.Value;
-        }
-
-        private void UC_Home_Load(object sender, EventArgs e)
-        {
             DoubleBuffered = true;
-            contentPanel.VerticalScroll.Visible = false;
+            contentPanel.AutoScroll = true;
+
         }
+
     }
 }
