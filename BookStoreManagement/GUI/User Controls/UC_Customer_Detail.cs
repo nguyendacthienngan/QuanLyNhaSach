@@ -15,10 +15,10 @@ namespace GUI.User_Controls
     public partial class UC_Customer_Detail : UserControl
     {
         public CustomerBLL customerBLL;
-        DataGridView datagrid;
-        public UC_Customer_Detail(DataGridView data)
+        //DataGridView datagrid;
+        public UC_Customer_Detail()
         {
-            datagrid = data;
+            //datagrid = data;
             customerBLL = new CustomerBLL();
             InitializeComponent();
             LoadCustomer();
@@ -94,7 +94,12 @@ namespace GUI.User_Controls
                     }
                     Name = Name.Trim();*/
             Customer customer = new Customer(1,fName,lName,phone,email,address,gender);
-        
+            bool addCustomer = customerBLL.AddCustomer(customer);
+            if(addCustomer)
+            {
+                MessageBox.Show("Add customer success");
+            }
+            LoadCustomer();
         }
     }
 }
