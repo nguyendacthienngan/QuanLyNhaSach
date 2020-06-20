@@ -34,19 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceList));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton3 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.bunifuImageButton4 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnAddInvoice = new Bunifu.UI.WinForms.BunifuImageButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,34 +60,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this.bunifuCustomDataGrid1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dream Meadow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
-            this.label1.Location = new System.Drawing.Point(74, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 80);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Invoice List";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 20;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 75;
-            this.bunifuElipse3.TargetControl = this;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 20;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 20;
             // 
             // bunifuCustomDataGrid1
             // 
@@ -138,6 +110,38 @@
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(940, 424);
             this.bunifuCustomDataGrid1.TabIndex = 8;
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Dream Meadow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
+            this.label1.Location = new System.Drawing.Point(74, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(248, 80);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Invoice List";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 20;
+            this.bunifuElipse2.TargetControl = this;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 75;
+            this.bunifuElipse3.TargetControl = this;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 20;
+            this.bunifuElipse4.TargetControl = this;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 20;
+            this.bunifuElipse5.TargetControl = this;
             // 
             // bunifuImageButton1
             // 
@@ -287,38 +291,39 @@
             this.comboBox2.TabIndex = 14;
             this.comboBox2.Text = "Tang Khanh Chuong";
             // 
-            // bunifuImageButton4
+            // btnAddInvoice
             // 
-            this.bunifuImageButton4.ActiveImage = null;
-            this.bunifuImageButton4.AllowAnimations = true;
-            this.bunifuImageButton4.AllowBuffering = false;
-            this.bunifuImageButton4.AllowZooming = true;
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.ErrorImage")));
-            this.bunifuImageButton4.FadeWhenInactive = false;
-            this.bunifuImageButton4.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.ImageLocation = null;
-            this.bunifuImageButton4.ImageMargin = 10;
-            this.bunifuImageButton4.ImageSize = new System.Drawing.Size(40, 40);
-            this.bunifuImageButton4.ImageZoomSize = new System.Drawing.Size(50, 50);
-            this.bunifuImageButton4.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.InitialImage")));
-            this.bunifuImageButton4.Location = new System.Drawing.Point(946, 91);
-            this.bunifuImageButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Rotation = 0;
-            this.bunifuImageButton4.ShowActiveImage = true;
-            this.bunifuImageButton4.ShowCursorChanges = true;
-            this.bunifuImageButton4.ShowImageBorders = true;
-            this.bunifuImageButton4.ShowSizeMarkers = false;
-            this.bunifuImageButton4.Size = new System.Drawing.Size(50, 50);
-            this.bunifuImageButton4.TabIndex = 15;
-            this.bunifuImageButton4.ToolTipText = "";
-            this.bunifuImageButton4.WaitOnLoad = false;
-            this.bunifuImageButton4.Zoom = 10;
-            this.bunifuImageButton4.ZoomSpeed = 10;
+            this.btnAddInvoice.ActiveImage = null;
+            this.btnAddInvoice.AllowAnimations = true;
+            this.btnAddInvoice.AllowBuffering = false;
+            this.btnAddInvoice.AllowZooming = true;
+            this.btnAddInvoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddInvoice.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnAddInvoice.ErrorImage")));
+            this.btnAddInvoice.FadeWhenInactive = false;
+            this.btnAddInvoice.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnAddInvoice.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAddInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInvoice.Image")));
+            this.btnAddInvoice.ImageActive = null;
+            this.btnAddInvoice.ImageLocation = null;
+            this.btnAddInvoice.ImageMargin = 10;
+            this.btnAddInvoice.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAddInvoice.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.btnAddInvoice.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnAddInvoice.InitialImage")));
+            this.btnAddInvoice.Location = new System.Drawing.Point(946, 91);
+            this.btnAddInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddInvoice.Name = "btnAddInvoice";
+            this.btnAddInvoice.Rotation = 0;
+            this.btnAddInvoice.ShowActiveImage = true;
+            this.btnAddInvoice.ShowCursorChanges = true;
+            this.btnAddInvoice.ShowImageBorders = true;
+            this.btnAddInvoice.ShowSizeMarkers = false;
+            this.btnAddInvoice.Size = new System.Drawing.Size(50, 50);
+            this.btnAddInvoice.TabIndex = 15;
+            this.btnAddInvoice.ToolTipText = "";
+            this.btnAddInvoice.WaitOnLoad = false;
+            this.btnAddInvoice.Zoom = 10;
+            this.btnAddInvoice.ZoomSpeed = 10;
+            this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // Column1
             // 
@@ -336,7 +341,7 @@
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Bill to ";
+            this.Column3.HeaderText = "Customer";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -367,7 +372,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.bunifuImageButton4);
+            this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -399,7 +404,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton4;
+        private Bunifu.UI.WinForms.BunifuImageButton btnAddInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -12,15 +12,14 @@ namespace GUI.User_Controls
 {
     public partial class Invoice : UserControl
     {
-        public Invoice()
+        public Invoice(string name)
         {
             InitializeComponent();
-            bunifuCustomDataGrid1.RowTemplate.Height = 30;
-
-            addData();
+            lbName.Text = name;
+            AddData();
         }
 
-        private void addData()
+        private void AddData()
         {
             for (int i = 0; i < 7; i++)
             {
@@ -31,10 +30,21 @@ namespace GUI.User_Controls
                 });
             }
         }
+        private void AddControlsToPanel(Control c)
+        {
+            this.Controls.Clear();
+            c.Dock = DockStyle.Fill;
+            this.Controls.Add(c);
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new InvoiceList());
         }
     }
 }

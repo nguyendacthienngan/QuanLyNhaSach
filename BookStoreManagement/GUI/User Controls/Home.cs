@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace GUI.User_Controls
 {
-    public partial class NewInvoice : Form
+    public partial class Home : UserControl
     {
-        public NewInvoice()
+        public Home()
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

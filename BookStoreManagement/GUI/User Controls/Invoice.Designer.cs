@@ -48,7 +48,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnBack = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -289,15 +289,15 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             // 
-            // label3
+            // lbName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(173, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tăng Khánh Chương";
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(173, 52);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(233, 29);
+            this.lbName.TabIndex = 6;
+            this.lbName.Text = "Tăng Khánh Chương";
             // 
             // label2
             // 
@@ -319,7 +319,7 @@
             this.bunifuCards1.Controls.Add(this.label7);
             this.bunifuCards1.Controls.Add(this.label6);
             this.bunifuCards1.Controls.Add(this.bunifuCustomDataGrid1);
-            this.bunifuCards1.Controls.Add(this.label3);
+            this.bunifuCards1.Controls.Add(this.lbName);
             this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(87, 97);
@@ -428,37 +428,38 @@
             this.bunifuImageButton2.Zoom = 10;
             this.bunifuImageButton2.ZoomSpeed = 10;
             // 
-            // bunifuImageButton3
+            // btnBack
             // 
-            this.bunifuImageButton3.ActiveImage = null;
-            this.bunifuImageButton3.AllowAnimations = true;
-            this.bunifuImageButton3.AllowBuffering = false;
-            this.bunifuImageButton3.AllowZooming = true;
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.ErrorImage")));
-            this.bunifuImageButton3.FadeWhenInactive = false;
-            this.bunifuImageButton3.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.ImageLocation = null;
-            this.bunifuImageButton3.ImageMargin = 10;
-            this.bunifuImageButton3.ImageSize = new System.Drawing.Size(45, 45);
-            this.bunifuImageButton3.ImageZoomSize = new System.Drawing.Size(55, 55);
-            this.bunifuImageButton3.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.InitialImage")));
-            this.bunifuImageButton3.Location = new System.Drawing.Point(69, 23);
-            this.bunifuImageButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Rotation = 0;
-            this.bunifuImageButton3.ShowActiveImage = true;
-            this.bunifuImageButton3.ShowCursorChanges = true;
-            this.bunifuImageButton3.ShowImageBorders = true;
-            this.bunifuImageButton3.ShowSizeMarkers = false;
-            this.bunifuImageButton3.Size = new System.Drawing.Size(55, 55);
-            this.bunifuImageButton3.TabIndex = 10;
-            this.bunifuImageButton3.ToolTipText = "";
-            this.bunifuImageButton3.WaitOnLoad = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.ZoomSpeed = 10;
+            this.btnBack.ActiveImage = null;
+            this.btnBack.AllowAnimations = true;
+            this.btnBack.AllowBuffering = false;
+            this.btnBack.AllowZooming = true;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnBack.ErrorImage")));
+            this.btnBack.FadeWhenInactive = false;
+            this.btnBack.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageActive = null;
+            this.btnBack.ImageLocation = null;
+            this.btnBack.ImageMargin = 10;
+            this.btnBack.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnBack.ImageZoomSize = new System.Drawing.Size(55, 55);
+            this.btnBack.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnBack.InitialImage")));
+            this.btnBack.Location = new System.Drawing.Point(69, 23);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Rotation = 0;
+            this.btnBack.ShowActiveImage = true;
+            this.btnBack.ShowCursorChanges = true;
+            this.btnBack.ShowImageBorders = true;
+            this.btnBack.ShowSizeMarkers = false;
+            this.btnBack.Size = new System.Drawing.Size(55, 55);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.ToolTipText = "";
+            this.btnBack.WaitOnLoad = false;
+            this.btnBack.Zoom = 10;
+            this.btnBack.ZoomSpeed = 10;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // bunifuCards2
             // 
@@ -502,7 +503,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.bunifuCards2);
-            this.Controls.Add(this.bunifuImageButton3);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.btnAdd);
@@ -534,7 +535,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnAdd;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -543,7 +544,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton3;
+        private Bunifu.UI.WinForms.BunifuImageButton btnBack;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton2;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
