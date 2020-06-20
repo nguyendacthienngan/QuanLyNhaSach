@@ -83,7 +83,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.46743F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.532567F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel2.Controls.Add(this.bunifuGradientPanel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dgvCustomerDetail, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,7 +125,7 @@
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(507, 437);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(506, 437);
             this.bunifuGradientPanel1.TabIndex = 21;
             // 
             // ddGender
@@ -150,9 +150,9 @@
             this.ddGender.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
             this.ddGender.ItemBackColor = System.Drawing.Color.White;
             this.ddGender.ItemBorderColor = System.Drawing.Color.White;
-            this.ddGender.ItemForeColor = System.Drawing.Color.Purple;
+            this.ddGender.ItemForeColor = System.Drawing.Color.Black;
             this.ddGender.ItemHeight = 26;
-            this.ddGender.ItemHighLightColor = System.Drawing.Color.Thistle;
+            this.ddGender.ItemHighLightColor = System.Drawing.Color.Gray;
             this.ddGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
@@ -217,9 +217,9 @@
             // 
             this.btnDelete.ActiveBorderThickness = 1;
             this.btnDelete.ActiveCornerRadius = 20;
-            this.btnDelete.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
-            this.btnDelete.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
+            this.btnDelete.ActiveFillColor = System.Drawing.Color.Red;
+            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDelete.ActiveLineColor = System.Drawing.Color.Red;
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.ButtonText = "Delete";
@@ -268,7 +268,7 @@
             this.btnSave.ActiveBorderThickness = 1;
             this.btnSave.ActiveCornerRadius = 20;
             this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
-            this.btnSave.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
             this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
@@ -414,20 +414,20 @@
             this.dgvCustomerDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomerDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomerDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCustomerDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerDetail.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvCustomerDetail.DoubleBuffered = true;
             this.dgvCustomerDetail.EnableHeadersVisualStyles = false;
-            this.dgvCustomerDetail.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgvCustomerDetail.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dgvCustomerDetail.Location = new System.Drawing.Point(521, 3);
+            this.dgvCustomerDetail.HeaderBgColor = System.Drawing.Color.Black;
+            this.dgvCustomerDetail.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvCustomerDetail.Location = new System.Drawing.Point(520, 3);
             this.dgvCustomerDetail.Name = "dgvCustomerDetail";
             this.dgvCustomerDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCustomerDetail.Size = new System.Drawing.Size(432, 341);
