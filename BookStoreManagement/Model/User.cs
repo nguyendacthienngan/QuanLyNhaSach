@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class User
+    public class User
     {
         private int _userId;
-        
+
         private string _firstName;
-        
+
         private string _lastName;
-        
+
         private string _phone;
-        
+
         private string _email;
 
         private string _address;
@@ -24,35 +24,8 @@ namespace Model
 
         private bool _isFemale;
 
-<<<<<<< Updated upstream
-        private bool isCard;
-
-        public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, bool isCard)
-        {
-            this.UserId = userId;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Phone = phone;
-            this.Email = email;
-            this.Address = address;
-            this.DateOfBirth = dateOfBirth;
-            this.IsFemale = isFemale;
-            this.IsCard = isCard;
-        }
-
-        public int UserId { get => userId; set => userId = value; }
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value; }
-        public string Phone { get => phone; set => phone = value; }
-        public string Email { get => email; set => email = value; }
-        public string Address { get => address; set => address = value; }
-        public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
-        public bool IsFemale { get => isFemale; set => isFemale = value; }
-        public bool IsCard { get => isCard; set => value = value; }
-    }
-=======
         private string _idCard;
-        
+
         public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, string idCard)
         {
             this.userId = userId;
@@ -75,6 +48,5 @@ namespace Model
         public DateTime dateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
         public bool isFemale { get => _isFemale; set => _isFemale = value; }
         public string idCard { get => _idCard; set => _idCard = value; }
-}
->>>>>>> Stashed changes
+    }
 }

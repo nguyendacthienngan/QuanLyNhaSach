@@ -15,7 +15,7 @@ namespace GUI.User_Controls
 {
     public partial class UC_Employee : UserControl
     {
-        public int ID=5;
+        public int ID = 5;
         public EmployeeBLL employeeBLL;
         public UC_Employee()
         {
@@ -86,10 +86,10 @@ namespace GUI.User_Controls
         {
             bunifuPages1.SetPage("EmployeeEdit");
         }
-        
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtAddressEE.Text!="" || txtLastnameEE.Text!="" || txtFirstnameEE.Text != "" || txtCmndEE.Text != "" || txtPhoneEE.Text != "" )
+            if (txtAddressEE.Text != "" || txtLastnameEE.Text != "" || txtFirstnameEE.Text != "" || txtCmndEE.Text != "" || txtPhoneEE.Text != "")
             {
                 if (MessageBox.Show("This action will cancel add new profile. Are you sure ?", "Warning", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     bunifuPages1.SetPage("Employee");
@@ -106,14 +106,14 @@ namespace GUI.User_Controls
         private void btnSave_Click(object sender, EventArgs e)
         {
             ID++;
-            bool IsFemale=false;
+            bool IsFemale = false;
             if (ddGenderEE.Text == "Female")
                 IsFemale = true;
-            User user1 = new User( ID, txtFirstnameEE.Text, txtLastnameEE.Text, txtPhoneEE.Text, txtEmailEE.Text,txtAddressEE.Text,dpDobEE.Value,IsFemale,txtCmndEE.Text) ;
+            User user1 = new User(ID, txtFirstnameEE.Text, txtLastnameEE.Text, txtPhoneEE.Text, txtEmailEE.Text, txtAddressEE.Text, dpDobEE.Value, IsFemale, txtCmndEE.Text);
             bool result = employeeBLL.AddUser(user1);
             if (result == true)
-            { 
-                MessageBox.Show(user1.LastName + " " + user1.FirstName + " has been added");
+            {
+                MessageBox.Show(user1.lastName + " " + user1.firstName + " has been added");
                 ClearData();
                 LoadEmployeeEE();
                 LoadEmployee();
@@ -122,5 +122,19 @@ namespace GUI.User_Controls
                 MessageBox.Show("Failed to add");
         }
         #endregion
+
+        private void txtCmndEE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

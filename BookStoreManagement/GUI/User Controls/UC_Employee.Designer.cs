@@ -1621,6 +1621,7 @@
             this.txtCmndEE.TextPlaceholder = "CMND";
             this.txtCmndEE.UseSystemPasswordChar = false;
             this.txtCmndEE.WordWrap = true;
+            this.txtCmndEE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCmndEE_KeyPress);
             // 
             // txtLastnameEE
             // 
