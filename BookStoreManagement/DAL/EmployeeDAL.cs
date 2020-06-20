@@ -63,8 +63,8 @@ namespace DAL
             CallAPI cal = new CallAPI();
             string json = JsonConvert.SerializeObject(user1);
             string jsonResult = "";
-            bool a =cal.callAPI(url, json, "POST", ref jsonResult);
-            return a;
+            return cal.callAPI(url, json, "POST", ref jsonResult);
+
         }
     }
 }
