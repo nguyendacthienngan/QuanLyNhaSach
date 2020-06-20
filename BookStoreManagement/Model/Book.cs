@@ -9,42 +9,42 @@ namespace Model
 {
     class Book
     {
-        private int id;
+        private int _id;
 
-        private string bookTitle;
+        private string _bookTitle;
 
-        private string author;
+        private string _author;
 
-        private int stock;
+        private int _stock;
 
-        private float cost;
+        private float _cost;
 
-        private float price;
+        private float _price;
 
-        private string type;
+        private string _type;
 
-        private string description;
+        private string _description;
 
         public Book(int id, string bookTitle, string author, int stock, float cost, float price, string type, string description)
         {
-            this.Id = id;
-            this.BookTitle = bookTitle;
-            this.Author = author;
-            this.Stock = stock;
-            this.Cost = cost;
-            this.Price = price;
-            this.Type = type;
-            this.Description = description;
+            this.id = id;
+            this.bookTitle = bookTitle;
+            this.author = author;
+            this.stock = stock;
+            this.cost = cost;
+            this.price = price;
+            this.type = type;
+            this.description = description;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string BookTitle { get => bookTitle; set => bookTitle = value; }
-        public string Author { get => author; set => author = value; }
-        public int Stock { get => stock; set => stock = value; }
-        public float Cost { get => cost; set => cost = value; }
-        public float Price { get => price; set => price = value; }
-        public string Type { get => type; set => type = value; }
-        public string Description { get => description; set => description = value; }
+        public int id { get => _id; set => _id = value; }
+        public string bookTitle { get => _bookTitle; set => _bookTitle = value; }
+        public string author { get => _author; set => _author = value; }
+        public int stock { get => _stock; set => _stock = value; }
+        public float cost { get => _cost; set => _cost = value; }
+        public float price { get => _price; set => _price = value; }
+        public string type { get => _type; set => _type = value; }
+        public string description { get => _description; set => _description = value; }
 
     }
 }
