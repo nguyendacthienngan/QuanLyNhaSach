@@ -304,6 +304,7 @@
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCustomers.TextMarginLeft = 0;
             this.btnCustomers.UseDefaultRadiusAndThickness = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnEmployee
             // 
