@@ -28,7 +28,7 @@ namespace Model
 
         public User(int userId, string firstName, string lastName, string phone, string email, string address, DateTime dateOfBirth, bool isFemale, string idCard)
         {
-            this.userId = userId;
+            this.id = userId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.phone = phone;
@@ -39,7 +39,7 @@ namespace Model
             this.idCard = idCard;
         }
 
-        public int userId { get => _userId; set => _userId = value; }
+        public int id { get => _userId; set => _userId = value; }
         public string firstName { get => _firstName; set => _firstName = value; }
         public string lastName { get => _lastName; set => _lastName = value; }
         public string phone { get => _phone; set => _phone = value; }
