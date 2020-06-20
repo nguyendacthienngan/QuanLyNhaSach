@@ -54,7 +54,7 @@ namespace GUI
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            AddControlsToPanel(new Employee());
+            AddControlsToPanel(new UC_Employee());
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
