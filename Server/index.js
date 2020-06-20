@@ -7,6 +7,7 @@ const bookRoutes = require('./routes/book.route');
 const authRoute = require('./routes/auth.route');
 const userRoute = require('./routes/user.route');
 const orderRoute = require('./routes/order.route');
+const customerRoute = require('./routes/customer.route');
 
 // Để có req.body
 app.use(bodyParser.json()); // for parsing application/json 
@@ -16,6 +17,7 @@ app.use('/books', bookRoutes);
 app.use('/auth', authRoute);
 app.use('/user', userRoute);
 app.use('/order', orderRoute);
+app.use('/customer', customerRoute);
 //Test
 app.get('/', function (req, res) {
     res.send('Welcome to this API.')
