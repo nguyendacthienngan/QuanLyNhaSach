@@ -176,17 +176,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Controls\Customer_Default.cs">
+    <Compile Include="User Controls\UC_Customer_Default.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\Customer_Default.Designer.cs">
-      <DependentUpon>Customer_Default.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Customer_Default.Designer.cs">
+      <DependentUpon>UC_Customer_Default.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Customer_Detail.cs">
+    <Compile Include="User Controls\UC_Customer_Detail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\Customer_Detail.Designer.cs">
-      <DependentUpon>Customer_Detail.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Customer_Detail.Designer.cs">
+      <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UC_Employee.cs">
       <SubType>UserControl</SubType>
@@ -243,11 +243,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User Controls\Customer_Default.resx">
-      <DependentUpon>Customer_Default.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Customer_Default.resx">
+      <DependentUpon>UC_Customer_Default.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Customer_Detail.resx">
-      <DependentUpon>Customer_Detail.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Customer_Detail.resx">
+      <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Employee.resx">
       <DependentUpon>UC_Employee.cs</DependentUpon>
