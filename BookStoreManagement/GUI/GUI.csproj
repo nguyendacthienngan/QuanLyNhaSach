@@ -188,11 +188,11 @@
     <Compile Include="User Controls\Customer_Detail.Designer.cs">
       <DependentUpon>Customer_Detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Employee.cs">
+    <Compile Include="User Controls\UC_Employee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Employee.Designer.cs">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UC_BookDisplay.cs">
       <SubType>UserControl</SubType>
@@ -249,8 +249,8 @@
     <EmbeddedResource Include="User Controls\Customer_Detail.resx">
       <DependentUpon>Customer_Detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Employee.resx">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_BookDisplay.resx">
       <DependentUpon>UC_BookDisplay.cs</DependentUpon>

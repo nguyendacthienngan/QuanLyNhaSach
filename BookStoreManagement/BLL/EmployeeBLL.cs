@@ -43,5 +43,11 @@ namespace BLL
                 return null;
             }
         }
+        public bool AddUser(User user1)
+        {
+            
+            bool result = employeeDAL.AddEmployee(user1);
+            return result;
+        }
     }
 }

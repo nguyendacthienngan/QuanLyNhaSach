@@ -54,8 +54,17 @@ namespace DAL
             catch (Exception e)
             {
                 return null;
-            }
-            
+            }      
+        }
+
+        public bool AddEmployee(User user1)
+        {
+            string url = root + "user/add";
+            CallAPI cal = new CallAPI();
+            string json = JsonConvert.SerializeObject(user1);
+            string jsonResult = "";
+            bool a =cal.callAPI(url, json, "POST", ref jsonResult);
+            return a;
         }
     }
 }
