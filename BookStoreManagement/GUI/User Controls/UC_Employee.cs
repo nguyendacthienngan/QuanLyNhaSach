@@ -23,6 +23,8 @@ namespace GUI.User_Controls
             InitializeComponent();
             LoadEmployee();
             LoadEmployeeEE();
+            label1.Visible = label4.Visible = false;
+            ddRoleEE.Visible = ddStatusEE.Visible = false;
         }
         #region Functions
         private void ClearData()
@@ -33,7 +35,7 @@ namespace GUI.User_Controls
             txtPhoneEE.Clear();
             txtAddressEE.Clear();
         }
-        private void Disable()
+        private void DisableEE()
         {
             txtLastnameEE.Enabled = false;
             txtFirstnameEE.Enabled = false;
@@ -44,14 +46,54 @@ namespace GUI.User_Controls
             ddGenderEE.Enabled = false;
             ddRoleEE.Enabled = false;
             ddStatusEE.Enabled = false;
+            txtEmailEE.Enabled = false;
         }
+        private void EnableEE()
+        {
+            txtLastnameEE.Enabled = true;
+            txtFirstnameEE.Enabled = true;
+            txtCmndEE.Enabled = true;
+            txtPhoneEE.Enabled = true;
+            txtAddressEE.Enabled = true;
+            dpDobEE.Enabled = true;
+            ddGenderEE.Enabled = true;
+            ddRoleEE.Enabled = true;
+            ddStatusEE.Enabled = true;
+            txtEmailEE.Enabled = true;
+        }
+
         private void LoadEmployee()
         {
-            //List<User> listUsers = employeeBLL.GetAllEmployee();
-            //dgvEmployee.DataSource = listUsers;
             try
             {
                 List<User> listUsers = employeeBLL.GetAllEmployee();
+               
+                dgvEmployee.AutoGenerateColumns = false;
+
+                dgvEmployee.ColumnCount = 8;
+                dgvEmployee.Columns[0].HeaderText = "First Name";
+                dgvEmployee.Columns[0].DataPropertyName = "firstName";
+
+                dgvEmployee.Columns[1].HeaderText = "Last Name";
+                dgvEmployee.Columns[1].DataPropertyName = "lastName";
+
+                dgvEmployee.Columns[2].HeaderText = "Phone Number";
+                dgvEmployee.Columns[2].DataPropertyName = "phone";
+
+                dgvEmployee.Columns[3].HeaderText = "Date Of Birth";
+                dgvEmployee.Columns[3].DataPropertyName = "dateOfBirth";
+
+                dgvEmployee.Columns[4].HeaderText = "Email";
+                dgvEmployee.Columns[4].DataPropertyName = "email";
+
+                dgvEmployee.Columns[5].HeaderText = "Address";
+                dgvEmployee.Columns[5].DataPropertyName = "address";
+
+                dgvEmployee.Columns[6].HeaderText = "Female";
+                dgvEmployee.Columns[6].DataPropertyName = "isFemale";
+
+                dgvEmployee.Columns[7].HeaderText = "CMND";
+                dgvEmployee.Columns[7].DataPropertyName = "idCard";
                 dgvEmployee.DataSource = listUsers;
             }
             catch
@@ -66,6 +108,28 @@ namespace GUI.User_Controls
             try
             {
                 List<User> listUsers = employeeBLL.GetAllEmployee();
+                dgvEmployeeEE.AutoGenerateColumns = false;
+
+                dgvEmployeeEE.ColumnCount = 5;
+                dgvEmployeeEE.Columns[0].Name = "id";
+              //  dgvEmployeeEE.Columns[0].HeaderText = "id";
+                dgvEmployeeEE.Columns[0].DataPropertyName = "id";
+                //dgvEmployeeEE.Columns[0].Visible = false ;
+
+                dgvEmployeeEE.Columns[1].HeaderText = "First Name";
+                dgvEmployeeEE.Columns[1].DataPropertyName = "firstName";
+
+                dgvEmployeeEE.Columns[2].HeaderText = "Last Name";
+                dgvEmployeeEE.Columns[2].DataPropertyName = "lastName";
+
+                dgvEmployeeEE.Columns[3].HeaderText = "Phone Number";
+                dgvEmployeeEE.Columns[3].DataPropertyName = "phone";
+
+                dgvEmployeeEE.Columns[4].HeaderText = "CMND";
+                dgvEmployeeEE.Columns[4].DataPropertyName = "idCard";
+
+                
+
                 dgvEmployeeEE.DataSource = listUsers;
             }
             catch
@@ -121,7 +185,6 @@ namespace GUI.User_Controls
             else
                 MessageBox.Show("Failed to add");
         }
-        #endregion
 
         private void txtCmndEE_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -129,12 +192,35 @@ namespace GUI.User_Controls
             {
                 e.Handled = true;
             }
-
             // If you want, you can allow decimal (float) numbers
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
+        }
+        private void dgvEmployeeEE_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var temp = dgvEmployeeEE.Rows[e.RowIndex];
+            int id = (int)temp.Cells["ID"].Value;
+            User user1 = employeeBLL.FindEmployee(id);
+            txtLastnameEE.Text = user1.lastName;
+            txtFirstnameEE.Text = user1.firstName;
+            txtAddressEE.Text = user1.address;
+            txtPhoneEE.Text = user1.phone;
+            txtCmndEE.Text = user1.idCard;
+            txtEmailEE.Text = user1.email;
+            ddGenderEE.Text = "Male";
+            if (user1.isFemale==true)
+                ddGenderEE.Text = "Female";
+            dpDobEE.Value = user1.dateOfBirth;
+        }
+
+        #endregion
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
