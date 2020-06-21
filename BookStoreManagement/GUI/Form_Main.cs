@@ -84,5 +84,6 @@ namespace GUI
         {
             AddControlsToPanel(new UC_Books());
         }
+
     }
 }
