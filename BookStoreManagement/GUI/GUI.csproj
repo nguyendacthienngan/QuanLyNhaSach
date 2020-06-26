@@ -206,12 +206,6 @@
     <Compile Include="User Controls\UC_Books.Designer.cs">
       <DependentUpon>UC_Books.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UC_DebtReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\UC_DebtReport.Designer.cs">
-      <DependentUpon>UC_DebtReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -223,12 +217,6 @@
     </Compile>
     <Compile Include="User Controls\SlideUp_Login.Designer.cs">
       <DependentUpon>SlideUp_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\UC_InventoryReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\UC_InventoryReport.Designer.cs">
-      <DependentUpon>UC_InventoryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UC_Sell_Details.cs">
       <SubType>UserControl</SubType>
@@ -270,17 +258,11 @@
     <EmbeddedResource Include="User Controls\UC_Books.resx">
       <DependentUpon>UC_Books.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UC_DebtReport.resx">
-      <DependentUpon>UC_DebtReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\SlideUp_Login.resx">
       <DependentUpon>SlideUp_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UC_InventoryReport.resx">
-      <DependentUpon>UC_InventoryReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Sell_Details.resx">
       <DependentUpon>UC_Sell_Details.cs</DependentUpon>
