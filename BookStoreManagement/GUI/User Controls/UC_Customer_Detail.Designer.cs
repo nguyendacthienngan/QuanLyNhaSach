@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pnInput = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.ddGender = new Bunifu.UI.WinForms.BunifuDropdown();
             this.txtFirstName = new Bunifu.Framework.BunifuCustomTextbox();
             this.txtPhone = new Bunifu.Framework.BunifuCustomTextbox();
@@ -54,9 +54,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lbCustomer = new System.Windows.Forms.Label();
+            this.txtId = new Bunifu.Framework.BunifuCustomTextbox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.bunifuGradientPanel1.SuspendLayout();
+            this.pnInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerDetail)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -83,50 +84,53 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.46743F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.532567F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel2.Controls.Add(this.bunifuGradientPanel1, 0, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel2.Controls.Add(this.pnInput, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dgvCustomerDetail, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 107);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1008, 477);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // bunifuGradientPanel1
+            // pnInput
             // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.ddGender);
-            this.bunifuGradientPanel1.Controls.Add(this.txtFirstName);
-            this.bunifuGradientPanel1.Controls.Add(this.txtPhone);
-            this.bunifuGradientPanel1.Controls.Add(this.txtLastName);
-            this.bunifuGradientPanel1.Controls.Add(this.txtAddress);
-            this.bunifuGradientPanel1.Controls.Add(this.txtEmail);
-            this.bunifuGradientPanel1.Controls.Add(this.btnDelete);
-            this.bunifuGradientPanel1.Controls.Add(this.btnCancel);
-            this.bunifuGradientPanel1.Controls.Add(this.btnSave);
-            this.bunifuGradientPanel1.Controls.Add(this.btnAdd);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel6);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel5);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel4);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel3);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel2);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuLabel1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(2, 2);
-            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(506, 437);
-            this.bunifuGradientPanel1.TabIndex = 21;
+            this.pnInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnInput.BackgroundImage")));
+            this.pnInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnInput.Controls.Add(this.txtId);
+            this.pnInput.Controls.Add(this.ddGender);
+            this.pnInput.Controls.Add(this.txtFirstName);
+            this.pnInput.Controls.Add(this.txtPhone);
+            this.pnInput.Controls.Add(this.txtLastName);
+            this.pnInput.Controls.Add(this.txtAddress);
+            this.pnInput.Controls.Add(this.txtEmail);
+            this.pnInput.Controls.Add(this.btnDelete);
+            this.pnInput.Controls.Add(this.btnCancel);
+            this.pnInput.Controls.Add(this.btnSave);
+            this.pnInput.Controls.Add(this.btnAdd);
+            this.pnInput.Controls.Add(this.bunifuLabel6);
+            this.pnInput.Controls.Add(this.bunifuLabel5);
+            this.pnInput.Controls.Add(this.bunifuLabel4);
+            this.pnInput.Controls.Add(this.bunifuLabel3);
+            this.pnInput.Controls.Add(this.bunifuLabel2);
+            this.pnInput.Controls.Add(this.bunifuLabel1);
+            this.pnInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnInput.GradientBottomLeft = System.Drawing.Color.White;
+            this.pnInput.GradientBottomRight = System.Drawing.Color.White;
+            this.pnInput.GradientTopLeft = System.Drawing.Color.White;
+            this.pnInput.GradientTopRight = System.Drawing.Color.White;
+            this.pnInput.Location = new System.Drawing.Point(2, 2);
+            this.pnInput.Margin = new System.Windows.Forms.Padding(2);
+            this.pnInput.Name = "pnInput";
+            this.pnInput.Quality = 10;
+            this.pnInput.Size = new System.Drawing.Size(502, 464);
+            this.pnInput.TabIndex = 21;
+            this.pnInput.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // ddGender
             // 
@@ -156,62 +160,71 @@
             this.ddGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.ddGender.Location = new System.Drawing.Point(35, 157);
+            this.ddGender.Location = new System.Drawing.Point(40, 179);
             this.ddGender.Name = "ddGender";
             this.ddGender.Size = new System.Drawing.Size(200, 32);
             this.ddGender.TabIndex = 51;
             this.ddGender.Text = "-select-";
+            this.ddGender.SelectedIndexChanged += new System.EventHandler(this.ddGender_SelectedIndexChanged);
             // 
             // txtFirstName
             // 
             this.txtFirstName.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFirstName.Location = new System.Drawing.Point(35, 90);
+            this.txtFirstName.Location = new System.Drawing.Point(40, 89);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(200, 31);
             this.txtFirstName.TabIndex = 50;
+            this.txtFirstName.Leave += new System.EventHandler(this.txtFirstName_Leave);
             // 
             // txtPhone
             // 
             this.txtPhone.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtPhone.Location = new System.Drawing.Point(255, 158);
+            this.txtPhone.Location = new System.Drawing.Point(260, 180);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(200, 31);
             this.txtPhone.TabIndex = 49;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtLastName
             // 
             this.txtLastName.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtLastName.Location = new System.Drawing.Point(256, 90);
+            this.txtLastName.Location = new System.Drawing.Point(261, 89);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(200, 31);
             this.txtLastName.TabIndex = 47;
+            this.txtLastName.Leave += new System.EventHandler(this.txtLastName_Leave);
             // 
             // txtAddress
             // 
             this.txtAddress.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtAddress.Location = new System.Drawing.Point(35, 311);
+            this.txtAddress.Location = new System.Drawing.Point(39, 355);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(422, 31);
             this.txtAddress.TabIndex = 46;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
             // txtEmail
             // 
             this.txtEmail.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtEmail.Location = new System.Drawing.Point(35, 235);
+            this.txtEmail.Location = new System.Drawing.Point(39, 272);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(422, 31);
             this.txtEmail.TabIndex = 45;
             this.txtEmail.TextChanged += new System.EventHandler(this.bunifuCustomTextbox1_TextChanged);
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // btnDelete
             // 
@@ -231,7 +244,7 @@
             this.btnDelete.IdleFillColor = System.Drawing.Color.Red;
             this.btnDelete.IdleForecolor = System.Drawing.Color.White;
             this.btnDelete.IdleLineColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(375, 379);
+            this.btnDelete.Location = new System.Drawing.Point(381, 417);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 42);
@@ -256,12 +269,13 @@
             this.btnCancel.IdleFillColor = System.Drawing.Color.White;
             this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
             this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
-            this.btnCancel.Location = new System.Drawing.Point(199, 379);
+            this.btnCancel.Location = new System.Drawing.Point(117, 417);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 42);
             this.btnCancel.TabIndex = 43;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -281,7 +295,7 @@
             this.btnSave.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
             this.btnSave.IdleForecolor = System.Drawing.Color.White;
             this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
-            this.btnSave.Location = new System.Drawing.Point(287, 379);
+            this.btnSave.Location = new System.Drawing.Point(293, 417);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 42);
@@ -307,7 +321,7 @@
             this.btnAdd.IdleFillColor = System.Drawing.Color.White;
             this.btnAdd.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
             this.btnAdd.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
-            this.btnAdd.Location = new System.Drawing.Point(376, 15);
+            this.btnAdd.Location = new System.Drawing.Point(205, 417);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 42);
@@ -320,7 +334,7 @@
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.CursorType = null;
             this.bunifuLabel6.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(35, 285);
+            this.bunifuLabel6.Location = new System.Drawing.Point(39, 329);
             this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -329,13 +343,14 @@
             this.bunifuLabel6.Text = "Address";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel6.Click += new System.EventHandler(this.bunifuLabel6_Click);
             // 
             // bunifuLabel5
             // 
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(35, 209);
+            this.bunifuLabel5.Location = new System.Drawing.Point(39, 246);
             this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -350,7 +365,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(256, 136);
+            this.bunifuLabel4.Location = new System.Drawing.Point(261, 158);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -365,7 +380,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(35, 136);
+            this.bunifuLabel3.Location = new System.Drawing.Point(40, 158);
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -374,13 +389,14 @@
             this.bunifuLabel3.Text = "Gender";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel3.Click += new System.EventHandler(this.bunifuLabel3_Click);
             // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(255, 64);
+            this.bunifuLabel2.Location = new System.Drawing.Point(260, 63);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -396,7 +412,7 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(34, 64);
+            this.bunifuLabel1.Location = new System.Drawing.Point(39, 63);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -427,11 +443,12 @@
             this.dgvCustomerDetail.EnableHeadersVisualStyles = false;
             this.dgvCustomerDetail.HeaderBgColor = System.Drawing.Color.Black;
             this.dgvCustomerDetail.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvCustomerDetail.Location = new System.Drawing.Point(520, 3);
+            this.dgvCustomerDetail.Location = new System.Drawing.Point(516, 3);
             this.dgvCustomerDetail.Name = "dgvCustomerDetail";
             this.dgvCustomerDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCustomerDetail.Size = new System.Drawing.Size(432, 341);
             this.dgvCustomerDetail.TabIndex = 22;
+            this.dgvCustomerDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerDetail_CellClick);
             // 
             // tableLayoutPanel3
             // 
@@ -476,6 +493,16 @@
             this.lbCustomer.Text = "Customer";
             this.lbCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtId
+            // 
+            this.txtId.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtId.Location = new System.Drawing.Point(147, 18);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId.Multiline = true;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(200, 31);
+            this.txtId.TabIndex = 52;
+            // 
             // UC_Customer_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,8 +515,8 @@
             this.Size = new System.Drawing.Size(1014, 608);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.PerformLayout();
+            this.pnInput.ResumeLayout(false);
+            this.pnInput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerDetail)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -501,7 +528,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private Bunifu.Framework.UI.BunifuGradientPanel pnInput;
         private Bunifu.Framework.BunifuCustomTextbox txtFirstName;
         private Bunifu.Framework.BunifuCustomTextbox txtPhone;
         private Bunifu.Framework.BunifuCustomTextbox txtLastName;
@@ -522,5 +549,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvCustomerDetail;
         private Bunifu.UI.WinForms.BunifuDropdown ddGender;
+        private Bunifu.Framework.BunifuCustomTextbox txtId;
     }
 }
