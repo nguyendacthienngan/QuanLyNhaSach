@@ -15,6 +15,7 @@ namespace GUI
     public partial class Form_Main : Form
     {
         bool isSellCollapsed = true;
+        bool isReportCollapsed = true;
 
         public Form_Main()
         {
@@ -22,6 +23,7 @@ namespace GUI
             (new GUI.DropShadow()).ApplyShadows(this);
             AddControlsToPanel(new UC_Home());
             sellDropdown.BackColor = Color.FromArgb(150, 0, 0, 0);
+            reportDropdown.BackColor = Color.FromArgb(150, 0, 0, 0);
 
         }
 
@@ -31,7 +33,22 @@ namespace GUI
             panelControls.Controls.Clear();
             panelControls.Controls.Add(c);
         }
-
+        void CollapsePanel(Panel control, ref bool isCollapsed)
+        {
+            if (isCollapsed)
+            {
+                control.Visible = false;
+                control.Height = 100;
+                DropdownAnimation.ShowSync(control);
+                isCollapsed = false;
+            }
+            else
+            {
+                control.Visible = false;
+                control.Height = 1;
+                isCollapsed = true;
+            }
+        }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
 
@@ -49,7 +66,7 @@ namespace GUI
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-            CollapsePanel();
+            CollapsePanel(sellDropdown, ref isSellCollapsed);
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
@@ -60,35 +77,47 @@ namespace GUI
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Sell_Details());
-            CollapsePanel();
+            CollapsePanel(sellDropdown, ref isSellCollapsed);
         }
-
-        void CollapsePanel()
-        {
-            if (isSellCollapsed)
-            {
-                sellDropdown.Visible = false;
-                sellDropdown.Height = 100;
-                DropdownAnimation.ShowSync(sellDropdown);
-                isSellCollapsed = false;
-            }
-            else
-            {
-                sellDropdown.Visible = false;
-                sellDropdown.Height = 1;
-                isSellCollapsed = true;
-            }
-        }
-
         private void btnBooks_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Books());
         }
 
+        private void navigationBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+            CollapsePanel(reportDropdown, ref isReportCollapsed);
+        }
+
+        private void btnTabInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReport_MouseEnter(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDebt_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new UC_DebtReport());
+            CollapsePanel(reportDropdown, ref isReportCollapsed);
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new UC_InventoryReport());
+            CollapsePanel(reportDropdown, ref isReportCollapsed);
+        }
+
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            //AddControlsToPanel(new UC_Customer_Default());
-
             AddControlsToPanel(new UC_Customer_Detail());
         }
     }
