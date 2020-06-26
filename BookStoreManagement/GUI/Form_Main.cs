@@ -33,7 +33,22 @@ namespace GUI
             panelControls.Controls.Clear();
             panelControls.Controls.Add(c);
         }
-
+        void CollapsePanel(Panel control, ref bool isCollapsed)
+        {
+            if (isCollapsed)
+            {
+                control.Visible = false;
+                control.Height = 100;
+                DropdownAnimation.ShowSync(control);
+                isCollapsed = false;
+            }
+            else
+            {
+                control.Visible = false;
+                control.Height = 1;
+                isCollapsed = true;
+            }
+        }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
 
