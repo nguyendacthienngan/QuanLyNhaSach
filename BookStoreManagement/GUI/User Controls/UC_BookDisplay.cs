@@ -30,33 +30,81 @@ namespace GUI.User_Controls
         public UC_BookDisplay()
         {
             InitializeComponent();
-            panel.Visible = false;
+            panelTitle.Visible = false;
             panelButton.Visible = false;
             btnDelete.Enabled = true;
         }
-           
+
+        #region Appear/Disappear
         private void picCover_MouseEnter(object sender, EventArgs e)
         {
-            panel.Visible = true;
+            panelTitle.Visible = true;
             panelButton.Visible = true;
         }
 
         private void picCover_MouseLeave(object sender, EventArgs e)
         {
-            panel.Visible = false;
-            panelButton.Visible = false;
-
+           if(this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+           {
+                return;
+           }
+           else
+           {
+                panelTitle.Visible = false;
+                panelButton.Visible = false;
+           }
         }
-
-        private void panelButton_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
         private void panelButton_MouseLeave(object sender, EventArgs e)
         {
-            
+            if(picCover.ClientRectangle.Contains(picCover.PointToClient(Control.MousePosition)))
+            {
+                return;
+            }
+            else
+            {
+                panelTitle.Visible = false;
+                panelButton.Visible = false;
+            }
         }
+
+        private void panelTitle_MouseLeave(object sender, EventArgs e)
+        {
+            if (picCover.ClientRectangle.Contains(picCover.PointToClient(Control.MousePosition)))
+            {
+                return;
+            }
+            else
+            {
+                panelTitle.Visible = false;
+                panelButton.Visible = false;
+            }
+        }
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            if (picCover.ClientRectangle.Contains(picCover.PointToClient(Control.MousePosition)))
+            {
+                return;
+            }
+            else
+            {
+                panelTitle.Visible = false;
+                panelButton.Visible = false;
+            }
+        }
+
+        private void btnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            if (picCover.ClientRectangle.Contains(picCover.PointToClient(Control.MousePosition)))
+            {
+                return;
+            }
+            else
+            {
+                panelTitle.Visible = false;
+                panelButton.Visible = false;
+            }
+        }
+        #endregion
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
