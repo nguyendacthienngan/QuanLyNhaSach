@@ -1,43 +1,48 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Account', {
-      username: {
+    return queryInterface.createTable("Account", {
+      id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+      },
+      username: {
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       password: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       role: {
         allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      userID : {
         type: Sequelize.INTEGER,
-        references:{
-          model: 'User',
-          key: 'id',
+      },
+      userID: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "User",
+          key: "id",
           allowNull: false,
-          as: 'userID'
+          as: "userID",
         },
-        onDelete: 'SET NULL'
+        onDelete: "SET NULL",
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Account');
-  }
+    return queryInterface.dropTable("Account");
+  },
 };
