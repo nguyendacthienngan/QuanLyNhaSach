@@ -32,6 +32,11 @@ namespace BLL
         {
             return customerDAL.AddCustomer(e);
         }
+
+        public bool EditCustomer(Customer e)
+        {
+            return customerDAL.EditCustomer(e);
+        }
     }
 }
 
