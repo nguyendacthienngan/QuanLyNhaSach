@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.User_Controls
 {
-    public partial class Employee : UserControl
+    public partial class NewInvoice : UserControl
     {
-        public Employee()
+        public NewInvoice()
         {
             InitializeComponent();
         }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Setting
+    public class Setting
     {
-        private string key;
+        private string _key;
 
-        private string value;
+        private string _value;
 
-        private int id;
+        private int _id;
         public Setting(int id, string key, string value)
         {
-            this.Id = id;
-            this.Key = key;
-            this.Value = value;
+            this.id = id;
+            this.key = key;
+            this.value = value;
         }
 
 
-        public int Id { get => id; set => id = value; }
-        public string Key { get => key; set => key = value; }
-        public string Value { get => value; set => this.value = value; }
+        public int id { get => _id; set => _id = value; }
+        public string key { get => _key; set => _key = value; }
+        public string value { get => _value; set => _value = value; }
     }
 }

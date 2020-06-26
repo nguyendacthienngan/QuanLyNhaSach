@@ -6,39 +6,39 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Customer
+    public class Customer
     {
-        private int id;
+        private int _id;
 
-        private string firstName;
+        private string _firstName;
 
-        private string lastName;
+        private string _lastName;
         
-        private string phone;
+        private string _phone;
         
-        private string email;
+        private string _email;
         
-        private string address;
+        private string _address;
 
-        private bool isFemale;
+        private bool _isFemale;
         public Customer(int id, string firstName, string lastName, string phone, string email, string address, bool isFemale)
         {
-            this.Id = id;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Phone = phone;
-            this.Email = email;
-            this.Address = address;
-            this.IsFemal = isFemale;
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.phone = phone;
+            this.email = email;
+            this.address = address;
+            this.isFemale = isFemale;
         }
 
 
-        public int Id { get => id; set => id = value; }
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value; }
-        public string Phone { get => phone; set => phone = value; }
-        public string Email { get => email; set => email = value; }
-        public string Address { get => address; set => address = value; }
-        public bool IsFemal { get => isFemale; set => isFemale = value; }
+        public int id { get => _id; set => _id = value; }
+        public string firstName { get => _firstName; set => _firstName = value; }
+        public string lastName { get => _lastName; set => _lastName = value; }
+        public string phone { get => _phone; set => _phone = value; }
+        public string email { get => _email; set => _email = value; }
+        public string address { get => _address; set => _address = value; }
+        public bool isFemale { get => _isFemale; set => _isFemale = value; }
     }
 }

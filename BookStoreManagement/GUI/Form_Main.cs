@@ -56,7 +56,7 @@ namespace GUI
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            AddControlsToPanel(new Employee());
+            AddControlsToPanel(new UC_Employee());
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
@@ -64,24 +64,6 @@ namespace GUI
             AddControlsToPanel(new UC_Sell_Details());
             CollapsePanel(sellDropdown, ref isSellCollapsed);
         }
-
-        void CollapsePanel(Panel control, ref bool isCollapsed)
-        {
-            if (isCollapsed)
-            {
-                control.Visible = false;
-                control.Height = 100;
-                DropdownAnimation.ShowSync(control);
-                isCollapsed = false;
-            }
-            else
-            {
-                control.Visible = false;
-                control.Height = 1;
-                isCollapsed = true;
-            }
-        }
-
         private void btnBooks_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Books());
@@ -119,16 +101,9 @@ namespace GUI
             CollapsePanel(reportDropdown, ref isReportCollapsed);
         }
 
-        private void CollapseAllPanel()
+        private void btnCustomers_Click(object sender, EventArgs e)
         {
-            if(sellDropdown.Visible)
-            {
-                CollapsePanel(sellDropdown, ref isSellCollapsed);
-            }
-            if (reportDropdown.Visible)
-            {
-                CollapsePanel(reportDropdown, ref isReportCollapsed);
-            }
+            AddControlsToPanel(new UC_Customer_Detail());
         }
     }
 }
