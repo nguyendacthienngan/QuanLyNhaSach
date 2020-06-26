@@ -8,29 +8,29 @@ namespace Model
 {
     public class Expense
     {
-        private int id;
+        private int _id;
 
-        private string title;
+        private string _title;
         
-        private float amount;
+        private float _amount;
         
-        private DateTime expenseDate;
+        private DateTime _expenseDate;
         
-        private string description;
+        private string _description;
         public Expense(int id, string title, float amount, DateTime expenseDate, string description)
         {
-            this.Id = id;
-            this.Title = title;
-            this.Amount = amount;
-            this.Date = expenseDate;
-            this.Description = description;
+            this.id = id;
+            this.title = title;
+            this.amount = amount;
+            this.date = expenseDate;
+            this.description = description;
         }
 
 
-        public int Id { get => id; set => id = value; }
-        public string Title { get => title; set => title = value; }
-        public float Amount { get => amount; set => amount = value; }
-        public DateTime Date { get => expenseDate; set => expenseDate = value; }
-        public string Description { get => description; set => description = value; }
+        public int id { get => _id; set => _id = value; }
+        public string title { get => _title; set => _title = value; }
+        public float amount { get => _amount; set => _amount = value; }
+        public DateTime date { get => _expenseDate; set => _expenseDate = value; }
+        public string description { get => _description; set => _description = value; }
     }
 }

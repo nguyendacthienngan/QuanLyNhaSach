@@ -8,7 +8,7 @@ namespace Model
 {
     public class User
     {
-        private int _userId;
+        private int _id;
 
         private string _firstName;
 
@@ -39,7 +39,7 @@ namespace Model
             this.idCard = idCard;
         }
 
-        public int id { get => _userId; set => _userId = value; }
+        public int id { get => _id; set => _id = value; }
         public string firstName { get => _firstName; set => _firstName = value; }
         public string lastName { get => _lastName; set => _lastName = value; }
         public string phone { get => _phone; set => _phone = value; }
