@@ -66,5 +66,14 @@ namespace DAL
             return cal.callAPI(url, json, "POST", ref jsonResult);
 
         }
+        public User FindEmployee(int id)
+        {
+            string url = root + "user/" + id;
+            CallAPI cal = new CallAPI();      
+            string jsonResult = "";
+            cal.callAPI(url, null, "GET", ref jsonResult);
+            User user1 = JsonConvert.DeserializeObject<User>(jsonResult);
+            return user1;
+        }
     }
 }

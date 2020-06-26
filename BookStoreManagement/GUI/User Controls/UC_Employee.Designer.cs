@@ -317,22 +317,23 @@
             this.dgvEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmployee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightPink;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.DoubleBuffered = true;
             this.dgvEmployee.EnableHeadersVisualStyles = false;
-            this.dgvEmployee.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgvEmployee.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvEmployee.HeaderBgColor = System.Drawing.Color.LightBlue;
+            this.dgvEmployee.HeaderForeColor = System.Drawing.Color.Black;
             this.dgvEmployee.Location = new System.Drawing.Point(122, 177);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1301,6 +1302,7 @@
             this.btnDelete.WaitOnLoad = false;
             this.btnDelete.Zoom = 40;
             this.btnDelete.ZoomSpeed = 10;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dpDobEE
             // 
@@ -1547,6 +1549,7 @@
             this.txtPhoneEE.TextPlaceholder = "Phone number";
             this.txtPhoneEE.UseSystemPasswordChar = false;
             this.txtPhoneEE.WordWrap = true;
+            this.txtPhoneEE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCmndEE_KeyPress);
             // 
             // txtCmndEE
             // 
@@ -1905,13 +1908,14 @@
             // 
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvEmployeeEE.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmployeeEE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployeeEE.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvEmployeeEE.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmployeeEE.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1920,13 +1924,14 @@
             this.dgvEmployeeEE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployeeEE.DoubleBuffered = true;
             this.dgvEmployeeEE.EnableHeadersVisualStyles = false;
-            this.dgvEmployeeEE.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgvEmployeeEE.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvEmployeeEE.HeaderBgColor = System.Drawing.Color.LightBlue;
+            this.dgvEmployeeEE.HeaderForeColor = System.Drawing.Color.Black;
             this.dgvEmployeeEE.Location = new System.Drawing.Point(0, 0);
             this.dgvEmployeeEE.Name = "dgvEmployeeEE";
             this.dgvEmployeeEE.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEmployeeEE.Size = new System.Drawing.Size(504, 789);
             this.dgvEmployeeEE.TabIndex = 1;
+            this.dgvEmployeeEE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeEE_CellContentClick);
             // 
             // UC_Employee
             // 
