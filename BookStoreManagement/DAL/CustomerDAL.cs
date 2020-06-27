@@ -52,6 +52,51 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool EditCustomer(Customer e)
+        {
+            try
+            {
+                if (e != null)
+                {
+                    string url = root + "customer/update";
+                    CallAPI cal = new CallAPI();
+                    string json = JsonConvert.SerializeObject(e);
+                    string jsonResult = "";
+                    return cal.callAPI(url, json, "POST", ref jsonResult);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+<<<<<<< Updated upstream
+
+        public bool DeleteCustomer(Customer e)
+        {
+            try
+            {
+                if (e != null)
+                {
+                    string url = root + "customer/update";
+                    CallAPI cal = new CallAPI();
+                    string json = JsonConvert.SerializeObject(e);
+                    string jsonResult = "";
+                    return cal.callAPI(url, json, "POST", ref jsonResult);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+=======
+>>>>>>> Stashed changes
     }
 }
 
