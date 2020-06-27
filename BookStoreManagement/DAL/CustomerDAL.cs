@@ -73,7 +73,6 @@ namespace DAL
                 return false;
             }
         }
-<<<<<<< Updated upstream
 
         public bool DeleteCustomer(Customer e)
         {
@@ -95,8 +94,6 @@ namespace DAL
                 return false;
             }
         }
-=======
->>>>>>> Stashed changes
     }
 }
 
