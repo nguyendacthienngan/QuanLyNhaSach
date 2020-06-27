@@ -159,6 +159,12 @@
     <Compile Include="Forms\Form_AddNewBook.Designer.cs">
       <DependentUpon>Form_AddNewBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Invoice.Designer.cs">
+      <DependentUpon>Form_Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,14 +236,23 @@
     <Compile Include="User Controls\UC_InventoryReport.Designer.cs">
       <DependentUpon>UC_InventoryReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UC_Sell_Details.cs">
+    <Compile Include="User Controls\UC_Invoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UC_Sell_Details.Designer.cs">
-      <DependentUpon>UC_Sell_Details.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Invoice.Designer.cs">
+      <DependentUpon>UC_Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Sell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Sell.Designer.cs">
+      <DependentUpon>UC_Sell.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Form_AddNewBook.resx">
       <DependentUpon>Form_AddNewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Invoice.resx">
+      <DependentUpon>Form_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -282,8 +297,11 @@
     <EmbeddedResource Include="User Controls\UC_InventoryReport.resx">
       <DependentUpon>UC_InventoryReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UC_Sell_Details.resx">
-      <DependentUpon>UC_Sell_Details.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Invoice.resx">
+      <DependentUpon>UC_Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Sell.resx">
+      <DependentUpon>UC_Sell.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

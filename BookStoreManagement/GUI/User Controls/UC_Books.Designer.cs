@@ -58,8 +58,8 @@
             this.bunifuCheckBox2 = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.lbBooks = new System.Windows.Forms.Label();
             this.btnAddNewBook = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.lbBooks = new System.Windows.Forms.Label();
             this.flowPanelDisplay.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.SuspendLayout();
@@ -534,17 +534,6 @@
             this.panelContent.Size = new System.Drawing.Size(331, 617);
             this.panelContent.TabIndex = 2;
             // 
-            // lbBooks
-            // 
-            this.lbBooks.AutoSize = true;
-            this.lbBooks.Font = new System.Drawing.Font("LIBRARY 3 AM", 38.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBooks.ForeColor = System.Drawing.Color.White;
-            this.lbBooks.Location = new System.Drawing.Point(67, 28);
-            this.lbBooks.Name = "lbBooks";
-            this.lbBooks.Size = new System.Drawing.Size(212, 62);
-            this.lbBooks.TabIndex = 18;
-            this.lbBooks.Text = "Books";
-            // 
             // btnAddNewBook
             // 
             this.btnAddNewBook.ActiveImage = ((System.Drawing.Image)(resources.GetObject("btnAddNewBook.ActiveImage")));
@@ -578,6 +567,17 @@
             this.btnAddNewBook.Zoom = 15;
             this.btnAddNewBook.ZoomSpeed = 10;
             this.btnAddNewBook.Click += new System.EventHandler(this.btnAddNewBook_Click);
+            // 
+            // lbBooks
+            // 
+            this.lbBooks.AutoSize = true;
+            this.lbBooks.Font = new System.Drawing.Font("LIBRARY 3 AM", 38.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBooks.ForeColor = System.Drawing.Color.White;
+            this.lbBooks.Location = new System.Drawing.Point(67, 28);
+            this.lbBooks.Name = "lbBooks";
+            this.lbBooks.Size = new System.Drawing.Size(212, 62);
+            this.lbBooks.TabIndex = 18;
+            this.lbBooks.Text = "Books";
             // 
             // UC_Books
             // 

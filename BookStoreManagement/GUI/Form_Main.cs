@@ -76,7 +76,7 @@ namespace GUI
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            AddControlsToPanel(new UC_Sell_Details());
+            AddControlsToPanel(new UC_Sell());
             CollapsePanel(sellDropdown, ref isSellCollapsed);
         }
         private void btnBooks_Click(object sender, EventArgs e)
@@ -97,7 +97,8 @@ namespace GUI
 
         private void btnTabInvoice_Click(object sender, EventArgs e)
         {
-
+            AddControlsToPanel(new UC_Invoice());
+            CollapsePanel(sellDropdown, ref isSellCollapsed);
         }
 
         private void btnReport_MouseEnter(object sender, EventArgs e)

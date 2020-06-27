@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.User_Controls
 {
-    public partial class UC_Sell_Details : UserControl
+    public partial class UC_Sell : UserControl
     {
-        public UC_Sell_Details()
+        public UC_Sell()
         {
             InitializeComponent();
         }
