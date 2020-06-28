@@ -24,7 +24,7 @@ namespace GUI.User_Controls
             LoadEmployee();
             LoadEmployeeEE();
             label1.Visible = label4.Visible = false;
-            ddRoleEE.Visible = ddStatusEE.Visible = false;
+            
         }
         #region Functions
         private void ClearData()
@@ -45,7 +45,7 @@ namespace GUI.User_Controls
             dpDobEE.Enabled = false;
             ddGenderEE.Enabled = false;
             ddRoleEE.Enabled = false;
-            ddStatusEE.Enabled = false;
+           
             txtEmailEE.Enabled = false;
         }
         private void EnableEE()
@@ -58,7 +58,7 @@ namespace GUI.User_Controls
             dpDobEE.Enabled = true;
             ddGenderEE.Enabled = true;
             ddRoleEE.Enabled = true;
-            ddStatusEE.Enabled = true;
+            
             txtEmailEE.Enabled = true;
         }
 
@@ -148,7 +148,10 @@ namespace GUI.User_Controls
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            btnEdit_EE.Visible = true;
+            btnBack.Visible = false;
             bunifuPages1.SetPage("EmployeeEdit");
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -163,6 +166,10 @@ namespace GUI.User_Controls
             {
                 bunifuPages1.SetPage("Employee");
             }
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.SetPage("Employee");
         }
         #endregion
 
@@ -214,13 +221,14 @@ namespace GUI.User_Controls
                 ddGenderEE.Text = "Female";
             dpDobEE.Value = user1.dateOfBirth;
         }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+
+        }
 
         #endregion
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            
-
-        }
+        
     }
 }

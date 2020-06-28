@@ -61,9 +61,6 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
