@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Books));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -60,6 +61,8 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.btnAddNewBook = new Bunifu.UI.WinForms.BunifuImageButton();
             this.lbBooks = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.flowPanelDisplay.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +74,9 @@
             this.filler.Name = "filler";
             this.filler.Size = new System.Drawing.Size(681, 10);
             this.filler.TabIndex = 4;
+            this.bunifuToolTip1.SetToolTip(this.filler, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.filler, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.filler, "");
             // 
             // panel2
             // 
@@ -79,6 +85,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(681, 13);
             this.panel2.TabIndex = 5;
+            this.bunifuToolTip1.SetToolTip(this.panel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel2, "");
             // 
             // panel3
             // 
@@ -87,6 +96,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(16, 594);
             this.panel3.TabIndex = 7;
+            this.bunifuToolTip1.SetToolTip(this.panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
             // 
             // flowPanelDisplay
             // 
@@ -97,6 +109,9 @@
             this.flowPanelDisplay.Name = "flowPanelDisplay";
             this.flowPanelDisplay.Size = new System.Drawing.Size(665, 594);
             this.flowPanelDisplay.TabIndex = 8;
+            this.bunifuToolTip1.SetToolTip(this.flowPanelDisplay, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.flowPanelDisplay, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.flowPanelDisplay, "");
             // 
             // uC_BookDisplay1
             // 
@@ -106,6 +121,9 @@
             this.uC_BookDisplay1.Name = "uC_BookDisplay1";
             this.uC_BookDisplay1.Size = new System.Drawing.Size(178, 268);
             this.uC_BookDisplay1.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.uC_BookDisplay1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.uC_BookDisplay1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.uC_BookDisplay1, "");
             // 
             // txtSearch
             // 
@@ -177,6 +195,9 @@
             this.txtSearch.TextMarginLeft = 10;
             this.txtSearch.TextMarginTop = 0;
             this.txtSearch.TextPlaceholder = "Search...";
+            this.bunifuToolTip1.SetToolTip(this.txtSearch, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtSearch, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtSearch, "");
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
             // 
@@ -190,6 +211,9 @@
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(18, 35);
             this.bunifuSeparator1.TabIndex = 8;
+            this.bunifuToolTip1.SetToolTip(this.bunifuSeparator1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuSeparator1, "");
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
@@ -204,6 +228,9 @@
             this.lbPrice.Size = new System.Drawing.Size(76, 25);
             this.lbPrice.TabIndex = 5;
             this.lbPrice.Text = "Price";
+            this.bunifuToolTip1.SetToolTip(this.lbPrice, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lbPrice, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lbPrice, "");
             // 
             // lbGenre
             // 
@@ -216,6 +243,9 @@
             this.lbGenre.Size = new System.Drawing.Size(85, 25);
             this.lbGenre.TabIndex = 9;
             this.lbGenre.Text = "Genre";
+            this.bunifuToolTip1.SetToolTip(this.lbGenre, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lbGenre, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lbGenre, "");
             this.lbGenre.Click += new System.EventHandler(this.label3_Click);
             // 
             // bunifuDropdown1
@@ -233,6 +263,9 @@
             this.bunifuDropdown1.selectedIndex = -1;
             this.bunifuDropdown1.Size = new System.Drawing.Size(262, 35);
             this.bunifuDropdown1.TabIndex = 10;
+            this.bunifuToolTip1.SetToolTip(this.bunifuDropdown1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuDropdown1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuDropdown1, "");
             this.bunifuDropdown1.onItemSelected += new System.EventHandler(this.bunifuDropdown1_onItemSelected);
             // 
             // bunifuTextBox1
@@ -305,6 +338,9 @@
             this.bunifuTextBox1.TextMarginLeft = 5;
             this.bunifuTextBox1.TextMarginTop = 0;
             this.bunifuTextBox1.TextPlaceholder = "";
+            this.bunifuToolTip1.SetToolTip(this.bunifuTextBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuTextBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuTextBox1, "");
             this.bunifuTextBox1.UseSystemPasswordChar = false;
             this.bunifuTextBox1.WordWrap = true;
             // 
@@ -378,6 +414,9 @@
             this.bunifuTextBox2.TextMarginLeft = 5;
             this.bunifuTextBox2.TextMarginTop = 0;
             this.bunifuTextBox2.TextPlaceholder = "";
+            this.bunifuToolTip1.SetToolTip(this.bunifuTextBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuTextBox2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuTextBox2, "");
             this.bunifuTextBox2.UseSystemPasswordChar = false;
             this.bunifuTextBox2.WordWrap = true;
             // 
@@ -432,7 +471,10 @@
             this.bunifuCheckBox1.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
             this.bunifuCheckBox1.TabIndex = 13;
             this.bunifuCheckBox1.ThreeState = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCheckBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCheckBox1, null);
             this.bunifuCheckBox1.ToolTipText = null;
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCheckBox1, "");
             // 
             // label4
             // 
@@ -445,6 +487,9 @@
             this.label4.Size = new System.Drawing.Size(136, 23);
             this.label4.TabIndex = 14;
             this.label4.Text = "Best Seller";
+            this.bunifuToolTip1.SetToolTip(this.label4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label4, "");
             // 
             // bunifuCheckBox2
             // 
@@ -497,7 +542,10 @@
             this.bunifuCheckBox2.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
             this.bunifuCheckBox2.TabIndex = 15;
             this.bunifuCheckBox2.ThreeState = false;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCheckBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCheckBox2, null);
             this.bunifuCheckBox2.ToolTipText = null;
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCheckBox2, "");
             // 
             // label5
             // 
@@ -510,10 +558,14 @@
             this.label5.Size = new System.Drawing.Size(94, 23);
             this.label5.TabIndex = 16;
             this.label5.Text = "newest";
+            this.bunifuToolTip1.SetToolTip(this.label5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label5, "");
             // 
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.Black;
+            this.panelContent.Controls.Add(this.bunifuImageButton1);
             this.panelContent.Controls.Add(this.btnAddNewBook);
             this.panelContent.Controls.Add(this.lbBooks);
             this.panelContent.Controls.Add(this.label5);
@@ -533,6 +585,9 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(331, 617);
             this.panelContent.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.panelContent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelContent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelContent, "");
             // 
             // btnAddNewBook
             // 
@@ -552,7 +607,7 @@
             this.btnAddNewBook.ImageSize = new System.Drawing.Size(40, 38);
             this.btnAddNewBook.ImageZoomSize = new System.Drawing.Size(55, 53);
             this.btnAddNewBook.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnAddNewBook.InitialImage")));
-            this.btnAddNewBook.Location = new System.Drawing.Point(140, 538);
+            this.btnAddNewBook.Location = new System.Drawing.Point(98, 533);
             this.btnAddNewBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddNewBook.Name = "btnAddNewBook";
             this.btnAddNewBook.Rotation = 0;
@@ -562,7 +617,10 @@
             this.btnAddNewBook.ShowSizeMarkers = false;
             this.btnAddNewBook.Size = new System.Drawing.Size(55, 53);
             this.btnAddNewBook.TabIndex = 35;
+            this.bunifuToolTip1.SetToolTip(this.btnAddNewBook, "Add new book");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnAddNewBook, null);
             this.btnAddNewBook.ToolTipText = "";
+            this.bunifuToolTip1.SetToolTipTitle(this.btnAddNewBook, "");
             this.btnAddNewBook.WaitOnLoad = false;
             this.btnAddNewBook.Zoom = 15;
             this.btnAddNewBook.ZoomSpeed = 10;
@@ -578,6 +636,81 @@
             this.lbBooks.Size = new System.Drawing.Size(212, 62);
             this.lbBooks.TabIndex = 18;
             this.lbBooks.Text = "Books";
+            this.bunifuToolTip1.SetToolTip(this.lbBooks, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lbBooks, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lbBooks, "");
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.ActiveImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ActiveImage")));
+            this.bunifuImageButton1.AllowAnimations = true;
+            this.bunifuImageButton1.AllowBuffering = false;
+            this.bunifuImageButton1.AllowZooming = true;
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
+            this.bunifuImageButton1.FadeWhenInactive = false;
+            this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ImageActive")));
+            this.bunifuImageButton1.ImageLocation = null;
+            this.bunifuImageButton1.ImageMargin = 15;
+            this.bunifuImageButton1.ImageSize = new System.Drawing.Size(40, 38);
+            this.bunifuImageButton1.ImageZoomSize = new System.Drawing.Size(55, 53);
+            this.bunifuImageButton1.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.InitialImage")));
+            this.bunifuImageButton1.Location = new System.Drawing.Point(189, 533);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Rotation = 0;
+            this.bunifuImageButton1.ShowActiveImage = true;
+            this.bunifuImageButton1.ShowCursorChanges = true;
+            this.bunifuImageButton1.ShowImageBorders = true;
+            this.bunifuImageButton1.ShowSizeMarkers = false;
+            this.bunifuImageButton1.Size = new System.Drawing.Size(55, 53);
+            this.bunifuImageButton1.TabIndex = 36;
+            this.bunifuToolTip1.SetToolTip(this.bunifuImageButton1, "Add received note");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuImageButton1, null);
+            this.bunifuImageButton1.ToolTipText = "";
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuImageButton1, "");
+            this.bunifuImageButton1.WaitOnLoad = false;
+            this.bunifuImageButton1.Zoom = 15;
+            this.bunifuImageButton1.ZoomSpeed = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = false;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // UC_Books
             // 
@@ -590,6 +723,9 @@
             this.Controls.Add(this.panelContent);
             this.Name = "UC_Books";
             this.Size = new System.Drawing.Size(1012, 617);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             this.flowPanelDisplay.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
@@ -617,5 +753,7 @@
         private System.Windows.Forms.Label lbBooks;
         private UC_BookDisplay uC_BookDisplay1;
         private Bunifu.UI.WinForms.BunifuImageButton btnAddNewBook;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
     }
 }
