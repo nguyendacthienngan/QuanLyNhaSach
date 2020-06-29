@@ -605,9 +605,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(71, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 64);
+            this.label1.Size = new System.Drawing.Size(226, 64);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Lorem Ispum";
+            this.label1.Text = "Santa Monica";
             // 
             // bunifuDragControl1
             // 
@@ -983,7 +983,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Foster";
+            this.Text = "Bookshop Santa Monica";
             this.navigationBar.ResumeLayout(false);
             this.navigationBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
