@@ -78,8 +78,8 @@ module.exports.addOrder = function (req, res) {
   //   .then((order) => res.status(200).send(order))
   //   .catch((err) => res.status(400).send(err.message));
   const savedOrder = Order.create({
-    userId: 2,
-    customerId: parseInt(req.body.customerId),
+    userID: 1,
+    customerID: 2,
     status: 0,
     totalOrder: 0,
     discount: 0.2,
@@ -94,8 +94,8 @@ module.exports.addOrder = function (req, res) {
             return res.status(400);
           }
           const orderDetail = OrderDetail.create({
-            orderId: order.id,
-            bookId: item.id,
+            orderID: order.id,
+            bookID: item.id,
             quantity: item.quantity,
             price: book.price,
             totalOrderDetail: 0,
