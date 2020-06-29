@@ -61,9 +61,6 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
@@ -159,12 +156,6 @@
     <Compile Include="Forms\Form_AddNewBook.Designer.cs">
       <DependentUpon>Form_AddNewBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Invoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Invoice.Designer.cs">
-      <DependentUpon>Form_Invoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +184,24 @@
     </Compile>
     <Compile Include="User Controls\UC_Customer_Detail.Designer.cs">
       <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Debt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Debt.Designer.cs">
+      <DependentUpon>UC_Debt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtList.Designer.cs">
+      <DependentUpon>UC_DebtList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtRecepit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtRecepit.Designer.cs">
+      <DependentUpon>UC_DebtRecepit.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UC_Employee.cs">
       <SubType>UserControl</SubType>
@@ -251,9 +260,6 @@
     <EmbeddedResource Include="Forms\Form_AddNewBook.resx">
       <DependentUpon>Form_AddNewBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Invoice.resx">
-      <DependentUpon>Form_Invoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +281,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Customer_Detail.resx">
       <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Debt.resx">
+      <DependentUpon>UC_Debt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DebtList.resx">
+      <DependentUpon>UC_DebtList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DebtRecepit.resx">
+      <DependentUpon>UC_DebtRecepit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UC_Employee.resx">
       <DependentUpon>UC_Employee.cs</DependentUpon>
