@@ -14,12 +14,21 @@ module.exports.getAllUsers = (req, res) => {
 };
 
 module.exports.searchUserByName = (req, res) => {
-  const userId = req.params.name;
+  const userName = req.params.name;
   User.findOne({
     where: {
-      id: {
-        [Op.substring]: userId,
-      },
+      [Op.or]: [
+        {
+          firstName: {
+            [Op.substring]: userName,
+          },
+        },
+        {
+          lastName: {
+            [Op.substring]: userName,
+          },
+        },
+      ],
     },
   })
     .then((user) => {
@@ -86,7 +95,7 @@ module.exports.deleteUserById = (req, res) => {
       if (!user) {
         res.status(400).json("Cannot find user");
       }
-      user.destroy();
+      return user.destroy();
     })
     .then((deletedUser) => {
       res.status(201).json(deletedUser);
