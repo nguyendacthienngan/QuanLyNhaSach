@@ -34,12 +34,17 @@ namespace GUI
             panelControls.Controls.Clear();
             panelControls.Controls.Add(c);
         }
-        void CollapsePanel(Panel control, ref bool isCollapsed)
+        void CollapsePanel(Panel control, ref bool isCollapsed, bool isSell)
         {
+            int height;
+            if (isSell == true)
+                height = 170;
+            else
+                height = 100;
             if (isCollapsed)
             {
                 control.Visible = false;
-                control.Height = 100;
+                control.Height = height;
                 DropdownAnimation.ShowSync(control);
                 isCollapsed = false;
             }
@@ -56,14 +61,9 @@ namespace GUI
             AddControlsToPanel(new UC_Home());
         }
 
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSell_Click(object sender, EventArgs e)
         {
-            CollapsePanel(sellDropdown, ref isSellCollapsed);
+            CollapsePanel(sellDropdown, ref isSellCollapsed, true);
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
@@ -71,10 +71,10 @@ namespace GUI
             AddControlsToPanel(new UC_Employee());
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        private void btnTabSell_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Sell());
-            CollapsePanel(sellDropdown, ref isSellCollapsed);
+            CollapsePanel(sellDropdown, ref isSellCollapsed, true);
         }
         private void btnBooks_Click(object sender, EventArgs e)
         {
@@ -89,13 +89,13 @@ namespace GUI
         private void btnReport_Click(object sender, EventArgs e)
         {
 
-            CollapsePanel(reportDropdown, ref isReportCollapsed);
+            CollapsePanel(reportDropdown, ref isReportCollapsed, false);
         }
 
         private void btnTabInvoice_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Invoice());
-            CollapsePanel(sellDropdown, ref isSellCollapsed);
+            CollapsePanel(sellDropdown, ref isSellCollapsed, true);
         }
 
         private void btnReport_MouseEnter(object sender, EventArgs e)
@@ -105,13 +105,13 @@ namespace GUI
         private void btnDebt_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_DebtReport());
-            CollapsePanel(reportDropdown, ref isReportCollapsed);
+            CollapsePanel(reportDropdown, ref isReportCollapsed, false);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_InventoryReport());
-            CollapsePanel(reportDropdown, ref isReportCollapsed);
+            CollapsePanel(reportDropdown, ref isReportCollapsed, false);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -125,6 +125,11 @@ namespace GUI
             {
                 form.ShowDialog();
             }
+        }
+        private void btnTabDebt_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new UC_Debt());
+            CollapsePanel(sellDropdown, ref isSellCollapsed, true);
         }
     }
 }

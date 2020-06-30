@@ -20,7 +20,9 @@ const {
     const options = {
       tableName: "OrderDetail",
       comment: "",
-      indexes: []
+      indexes: [],
+      paranoid: true,
+      timestamps: true
     };
     const OrderDetail = sequelize.define("OrderDetail", attributes, options);
     return OrderDetail;

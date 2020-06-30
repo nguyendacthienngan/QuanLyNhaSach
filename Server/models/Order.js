@@ -23,6 +23,8 @@ module.exports = (sequelize) => {
     tableName: "Order",
     comment: "",
     indexes: [],
+    paranoid: true,
+    timestamps: true
   };
   const Order = sequelize.define("Order", attributes, options);
   Order.associate = function (models) {

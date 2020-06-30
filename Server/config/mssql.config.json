@@ -1,5 +1,6 @@
 {
     "development": {
+     
       "username": "sa",
       "password": "Tnsql@1505!",
       "database": "BookStoreDB",
@@ -9,7 +10,9 @@
       "dialectOptions": {
         "options": {
           "useUTC": false,
-          "dateFirst": 1
+          "dateFirst": 1,
+          "encrypt": true,
+          "packetSize": 32768
         }},
       "operatorsAliases": false
     },
