@@ -15,7 +15,7 @@ router.post('/filter', OrderController.filterByDate);
 
 router.post('/add', OrderController.addOrder);
 router.post('/update', OrderController.updateOrder);
-router.post('/delete', OrderController.deleteOrder);
+router.delete('/delete/:id', OrderController.deleteOrder);
 
 router.get('/max', OrderController.getMaxIDOrder); //?
 
