@@ -47,5 +47,13 @@ namespace GUI.User_Controls
                 form.ShowDialog();
             }
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            using(var form = new Form_BookReceivedNote())
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }

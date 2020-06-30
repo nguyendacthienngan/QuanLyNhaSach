@@ -462,10 +462,10 @@
             this.btnBooks.IdleBorderThickness = 1;
             this.btnBooks.IdleFillColor = System.Drawing.Color.Transparent;
             this.btnBooks.IdleIconLeftImage = null;
-            this.btnBooks.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnBooks.IdleIconRightImage")));
+            this.btnBooks.IdleIconRightImage = null;
             this.btnBooks.IndicateFocus = true;
-            this.btnBooks.Location = new System.Drawing.Point(445, 19);
-            this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBooks.Location = new System.Drawing.Point(485, 19);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(4);
             this.btnBooks.Name = "btnBooks";
             stateProperties9.BorderColor = System.Drawing.Color.Transparent;
             stateProperties9.BorderRadius = 3;
@@ -485,7 +485,7 @@
             stateProperties10.IconLeftImage = null;
             stateProperties10.IconRightImage = null;
             this.btnBooks.OnPressedState = stateProperties10;
-            this.btnBooks.Size = new System.Drawing.Size(137, 48);
+            this.btnBooks.Size = new System.Drawing.Size(87, 48);
             this.btnBooks.TabIndex = 29;
             this.btnBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBooks.TextMarginLeft = 0;
@@ -577,9 +577,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(71, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 64);
+            this.label1.Size = new System.Drawing.Size(226, 64);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Dreamy";
+            this.label1.Text = "Santa Monica";
             // 
             // bunifuDragControl1
             // 
@@ -1019,7 +1019,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dreamy Book Store";
+            this.Text = "Bookshop Santa Monica";
             this.navigationBar.ResumeLayout(false);
             this.navigationBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
