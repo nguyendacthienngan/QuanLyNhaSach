@@ -15,7 +15,7 @@ module.exports.getAllUsers = (req, res) => {
 
 module.exports.searchUserByName = (req, res) => {
   const userName = req.params.name;
-  User.findOne({
+  User.findAll({
     where: {
       [Op.or]: [
         {

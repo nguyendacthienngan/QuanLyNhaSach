@@ -4,10 +4,12 @@ const controller = require("../controllers/customer.controller");
 
 router.post("/add", controller.addCustomer);
 
-router.post("/update", controller.updateCustomer);
+router.put("/update", controller.updateCustomer);
 
 router.get("/", controller.getAllCustomers);
 
-router.get("/:customer", controller.searchCustomerById);
+router.get("/search/:name", controller.searchCustomerByName);
+
+router.delete("/delete/:customerId", controller.deleteCustomerById);
 
 module.exports = router;
