@@ -1,14 +1,13 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Order', 
-    {
+    return queryInterface.createTable("Order", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       orderDate: {
         type: Sequelize.DATE,
@@ -16,7 +15,7 @@ module.exports = {
       },
       discount: {
         type: Sequelize.DOUBLE,
-        allowNull: true,
+        allowNull: false,
       },
       totalOrder: {
         type: Sequelize.DOUBLE,
@@ -26,38 +25,36 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      userID : {
+      userID: {
         type: Sequelize.INTEGER,
-        references:{
-          model: 'User',
-          key: 'id',
+        references: {
+          model: "User",
+          key: "id",
           allowNull: false,
-          as: 'userID'
+          as: "userID",
         },
-        onDelete: 'SET NULL'
       },
-        customerID : {
-          type: Sequelize.INTEGER,
-          references:{
-            model: 'Customer',
-            key: 'id',
-            allowNull: false,
-            as: 'customerID'
-          },
-          onDelete: 'SET NULL'
+      customerID: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Customer",
+          key: "id",
+          allowNull: false,
+          as: "customerID",
         },
+      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Order');
-  }
+    return queryInterface.dropTable("Order");
+  },
 };

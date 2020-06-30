@@ -22,7 +22,7 @@ namespace GUI.Forms
         void OnFinish()
         {
             this.Hide();
-            MainForm mf = new MainForm();
+            Form_Main mf = new Form_Main();
             mf.ShowDialog();
         }
 

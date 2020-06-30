@@ -66,6 +66,31 @@ namespace GUI.User_Controls
             }
         }
 
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                string username = txtUsername.Text;
+                string password = txtPassword.Text;
+                if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+                {
+                    if (String.IsNullOrEmpty(username))
+                        MessageBox.Show("You need to insert username");
+                    else
+                        MessageBox.Show("You need to insert password");
+                }
+                else
+                {
+                    // Đăng nhập đúng
+                    if (employeeBLL.CheckLoginAsync(username, password) == true)
+                        timer1.Enabled = true;
+                    // Đăng nhập sai
+                    else
+                        MessageBox.Show("Wrong password/username. Please try again");
+                }
+            }
+        }
+
         private void timer2_Tick(object sender, EventArgs e)
         {
             waiter2++;

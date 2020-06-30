@@ -1,6 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller = require('../controllers/auth.controller');
+const db = require("../models");
+const Account = db.Account;
 
-router.post('/login', controller.postLogin);
+const { body } = require("express-validator");
+
+const authController = require("../controllers/auth.controller");
+
+router.post("/login", authController.postLogin);
+router.put("/signup", authController.signup);
+
 module.exports = router;

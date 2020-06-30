@@ -33,13 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Core">
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
@@ -48,7 +51,8 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
@@ -57,7 +61,8 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
@@ -66,19 +71,19 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=1.11.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
@@ -87,7 +92,8 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=1.11.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
@@ -99,7 +105,8 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
@@ -111,12 +118,15 @@
     <Reference Include="BunifuDataViz">
       <HintPath>..\Bunifu\BunifuDataViz.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu_UI_v1.5.3">
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -126,6 +136,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -135,43 +146,98 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DropShadow.cs" />
+    <Compile Include="Forms\Form_AddNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_AddNewBook.Designer.cs">
+      <DependentUpon>Form_AddNewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_BookReceivedNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_BookReceivedNote.Designer.cs">
+      <DependentUpon>Form_BookReceivedNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="GradientBackground.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Controls\Employee.cs">
+    <Compile Include="User Controls\UC_Customer_Default.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Customer_Default.Designer.cs">
+      <DependentUpon>UC_Customer_Default.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Home.cs">
+    <Compile Include="User Controls\UC_Customer_Detail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="User Controls\UC_Customer_Detail.Designer.cs">
+      <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Debt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Debt.Designer.cs">
+      <DependentUpon>UC_Debt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtList.Designer.cs">
+      <DependentUpon>UC_DebtList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtRecepit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtRecepit.Designer.cs">
+      <DependentUpon>UC_DebtRecepit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Employee.Designer.cs">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_BookDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_BookDisplay.Designer.cs">
+      <DependentUpon>UC_BookDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Books.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Books.Designer.cs">
+      <DependentUpon>UC_Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DebtReport.Designer.cs">
+      <DependentUpon>UC_DebtReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\SlideUp_Login.cs">
       <SubType>UserControl</SubType>
@@ -179,11 +245,35 @@
     <Compile Include="User Controls\SlideUp_Login.Designer.cs">
       <DependentUpon>SlideUp_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UC_InventoryReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_InventoryReport.Designer.cs">
+      <DependentUpon>UC_InventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Invoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Invoice.Designer.cs">
+      <DependentUpon>UC_Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_Sell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_Sell.Designer.cs">
+      <DependentUpon>UC_Sell.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Form_AddNewBook.resx">
+      <DependentUpon>Form_AddNewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_BookReceivedNote.resx">
+      <DependentUpon>Form_BookReceivedNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,14 +285,47 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User Controls\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Customer_Default.resx">
+      <DependentUpon>UC_Customer_Default.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UC_Customer_Detail.resx">
+      <DependentUpon>UC_Customer_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Debt.resx">
+      <DependentUpon>UC_Debt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DebtList.resx">
+      <DependentUpon>UC_DebtList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DebtRecepit.resx">
+      <DependentUpon>UC_DebtRecepit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Employee.resx">
+      <DependentUpon>UC_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_BookDisplay.resx">
+      <DependentUpon>UC_BookDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Books.resx">
+      <DependentUpon>UC_Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DebtReport.resx">
+      <DependentUpon>UC_DebtReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\SlideUp_Login.resx">
       <DependentUpon>SlideUp_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_InventoryReport.resx">
+      <DependentUpon>UC_InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Invoice.resx">
+      <DependentUpon>UC_Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_Sell.resx">
+      <DependentUpon>UC_Sell.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
