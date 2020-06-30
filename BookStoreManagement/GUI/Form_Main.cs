@@ -1,4 +1,5 @@
-﻿using GUI.User_Controls;
+﻿using GUI.Forms;
+using GUI.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,10 +49,6 @@ namespace GUI
                 control.Height = 1;
                 isCollapsed = true;
             }
-        }
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -120,6 +117,14 @@ namespace GUI
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             AddControlsToPanel(new UC_Customer_Detail());
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            using (var form = new Form_Settings())
+            {
+                form.ShowDialog();
+            }
         }
     }
 }
