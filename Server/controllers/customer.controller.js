@@ -3,7 +3,14 @@ const sequelize = require("sequelize");
 const Customer = db.Customer;
 const Op = sequelize.Op;
 
-module.exports.getAllCustomers = function (req, res) {
+module.exports.getAllCustomers = (req, res) => {
+  Customer.findAll().then((books) => {
+    res.status(200).json(books);
+  });
+};
+
+module.exports.searchCustomerByInfo = (req, res) => {
+  var customerInfo = req.params.info;
   Customer.findAll({
     attributes: [
       "id",
@@ -14,40 +21,44 @@ module.exports.getAllCustomers = function (req, res) {
       "address",
       "isFemale",
     ],
-  }).then(function (books) {
-    res.status(200).json(books);
-  });
-};
-
-module.exports.searchCustomerById = function (req, res) {
-  var customerId = req.params.customer;
-  Customer.findOne({
-    attributes: [
-      "id",
-      "firstname",
-      "lastname",
-      "phone",
-      "email",
-      "address",
-      "isFemale",
-    ],
     where: {
-      id: customerId,
+      [Op.or]: [
+        {
+          firstName: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          lastName: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          phone: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          email: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          address: {
+            [Op.substring]: customerInfo,
+          },
+        },
+      ],
     },
   })
-    .then(function (customer) {
-      if (customer) {
-        res.status(200).json(customer);
-        return;
+    .then((customer) => {
+      if (!customer) {
+        res.status(400).json("Cannot find customer");
       }
-      res.status(200).json("Cannot find customer");
-      return;
+      res.status(200).json(customer);
     })
-    .catch(function (error) {
-      res.status(400).send({
-        message: error,
-      });
-      return;
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
     });
 };
 
@@ -64,7 +75,7 @@ module.exports.addCustomer = (req, res) => {
     .catch((err) => res.status(400).json(err.message));
 };
 
-module.exports.updateCustomer = function (req, res) {
+module.exports.updateCustomer = (req, res) => {
   Customer.findOne({
     attributes: [
       "id",
@@ -81,7 +92,7 @@ module.exports.updateCustomer = function (req, res) {
       },
     },
   })
-    .then(function (customer) {
+    .then((customer) => {
       customer
         .update({
           firstName: req.body.firstName,
@@ -91,8 +102,35 @@ module.exports.updateCustomer = function (req, res) {
           address: req.body.address,
           isFemale: req.body.isFemale,
         })
-        .then((customer) => res.status(200).send(customer))
-        .catch((err) => res.status(400).send(err.message));
+        .then((customer) => res.status(200).json(customer))
+        .catch((err) => res.status(400).json(err.message));
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+    });
+};
+
+module.exports.deleteCustomerById = (req, res) => {
+  const deletedCustomerId = req.params.customerId;
+  Customer.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
+    where: { id: deletedCustomerId },
+  })
+    .then((customer) => {
+      return customer.destroy();
+    })
+    .then((deletedCustomer) => {
+      res.status(201).json(deletedCustomer);
+    })
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+    });
 };
