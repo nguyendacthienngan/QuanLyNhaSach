@@ -11,7 +11,6 @@ module.exports.getAllBooks = function (req, res) {
 
 module.exports.searchBook = function (req, res) {
   const params = req.body.p; // {p: 'The'}
-
   Book.findOne({
     where: {
       [Op.or]: [
@@ -131,15 +130,14 @@ module.exports.updateBook = function (req, res) {
     .catch((err) => res.status(400).send(err.message));
 };
 
-module.exports.deleteBook = function (req, res) {
-  // let bookID = req.body.id;
-  // Book.findOne({
-  //   where : {
-  //     id: {
-  //       [Op.substring]: bookID
-  //     }
-  //   }
-  // })
-  // .then(book => book.destroy() )
-  // .catch(err =>  res.status(400).send(err.message));
+module.exports.deleteBookById = function (req, res) {
+  const deletedBookId = req.params.bookId;
+  Book.findOne({ where: { id: deletedBookId } })
+    .then((book) => {
+      return book.destroy();
+    })
+    .then((deletedBook) => {
+      res.status(201).json(deletedBook);
+    })
+    .catch((err) => console.log(err));
 };

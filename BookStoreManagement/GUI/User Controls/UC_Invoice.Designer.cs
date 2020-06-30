@@ -45,7 +45,6 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -63,7 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -72,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgvExpense
@@ -192,27 +189,12 @@
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Neon 80s", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(329, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Invoice List";
-            this.bunifuToolTip1.SetToolTip(this.label1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
-            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ImageActive")));
-            this.bunifuImageButton1.Location = new System.Drawing.Point(498, 23);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(127, 89);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(27, 28);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -304,7 +286,7 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.ImageActive")));
-            this.bunifuImageButton3.Location = new System.Drawing.Point(531, 23);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(160, 89);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(27, 28);
             this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -352,10 +334,12 @@
             // 
             // gradientBackground1
             // 
-            this.gradientBackground1.Angle = 177F;
+            this.gradientBackground1.Angle = 49F;
             this.gradientBackground1.Color0 = System.Drawing.Color.DarkOrange;
             this.gradientBackground1.Color1 = System.Drawing.Color.DeepPink;
+            this.gradientBackground1.Controls.Add(this.bunifuImageButton3);
             this.gradientBackground1.Controls.Add(this.pictureBox1);
+            this.gradientBackground1.Controls.Add(this.bunifuImageButton1);
             this.gradientBackground1.Controls.Add(this.label9);
             this.gradientBackground1.Controls.Add(this.pictureBox3);
             this.gradientBackground1.Controls.Add(this.pictureBox2);
@@ -367,7 +351,6 @@
             this.gradientBackground1.Controls.Add(this.label6);
             this.gradientBackground1.Controls.Add(this.label5);
             this.gradientBackground1.Controls.Add(this.label3);
-            this.gradientBackground1.Controls.Add(this.bunifuImageButton2);
             this.gradientBackground1.Controls.Add(this.label2);
             this.gradientBackground1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gradientBackground1.Location = new System.Drawing.Point(0, 0);
@@ -562,34 +545,17 @@
             this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
             // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ImageActive")));
-            this.bunifuImageButton2.Location = new System.Drawing.Point(224, 54);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(42, 41);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 17;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.bunifuImageButton2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuImageButton2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuImageButton2, "");
-            this.bunifuImageButton2.Zoom = 10;
-            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Neon 80s", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Neon 80s", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 47);
+            this.label2.Location = new System.Drawing.Point(63, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 58);
+            this.label2.Size = new System.Drawing.Size(179, 34);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Create New\r\nInvoice\r\n";
+            this.label2.Text = "Invoice List";
             this.bunifuToolTip1.SetToolTip(this.label2, "");
             this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
@@ -599,11 +565,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.bunifuImageButton3);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.gradientBackground1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvExpense);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -620,17 +583,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuDataGridView dtgvExpense;
         private GradientBackground gradientBackground1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtSearch;

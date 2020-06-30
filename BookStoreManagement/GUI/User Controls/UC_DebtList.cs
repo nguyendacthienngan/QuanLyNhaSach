@@ -7,17 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUI.Forms;
 
 namespace GUI.User_Controls
 {
-    public partial class UC_Invoice : UserControl
+    public partial class UC_DebtList : UserControl
     {
-        public UC_Invoice()
+        public UC_DebtList()
         {
             InitializeComponent();
         }
-
-
     }
 }
