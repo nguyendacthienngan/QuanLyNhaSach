@@ -9,19 +9,43 @@ module.exports.getAllCustomers = (req, res) => {
   });
 };
 
-module.exports.searchCustomerByName = (req, res) => {
-  var customerName = req.params.name;
+module.exports.searchCustomerByInfo = (req, res) => {
+  var customerInfo = req.params.info;
   Customer.findAll({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
     where: {
       [Op.or]: [
         {
           firstName: {
-            [Op.substring]: customerName,
+            [Op.substring]: customerInfo,
           },
         },
         {
           lastName: {
-            [Op.substring]: customerName,
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          phone: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          email: {
+            [Op.substring]: customerInfo,
+          },
+        },
+        {
+          address: {
+            [Op.substring]: customerInfo,
           },
         },
       ],
@@ -53,6 +77,15 @@ module.exports.addCustomer = (req, res) => {
 
 module.exports.updateCustomer = (req, res) => {
   Customer.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
     where: {
       id: {
         [Op.substring]: req.body.id,
@@ -79,7 +112,18 @@ module.exports.updateCustomer = (req, res) => {
 
 module.exports.deleteCustomerById = (req, res) => {
   const deletedCustomerId = req.params.customerId;
-  Customer.findOne({ where: { id: deletedCustomerId } })
+  Customer.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
+    where: { id: deletedCustomerId },
+  })
     .then((customer) => {
       return customer.destroy();
     })

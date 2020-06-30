@@ -4,7 +4,19 @@ const User = db.User;
 const Op = sequelize.Op;
 
 module.exports.getAllUsers = (req, res) => {
-  User.findAll()
+  User.findAll({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "dateOfBirth",
+      "email",
+      "address",
+      "isFemale",
+      "idCard",
+    ],
+  })
     .then((books) => {
       res.status(200).json(books);
     })
@@ -13,19 +25,50 @@ module.exports.getAllUsers = (req, res) => {
     });
 };
 
-module.exports.searchUserByName = (req, res) => {
-  const userName = req.params.name;
+module.exports.searchUserByInfo = (req, res) => {
+  const userInfo = req.params.info;
   User.findAll({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "dateOfBirth",
+      "email",
+      "address",
+      "isFemale",
+      "idCard",
+    ],
     where: {
       [Op.or]: [
         {
           firstName: {
-            [Op.substring]: userName,
+            [Op.substring]: userInfo,
           },
         },
         {
           lastName: {
-            [Op.substring]: userName,
+            [Op.substring]: userInfo,
+          },
+        },
+        {
+          phone: {
+            [Op.substring]: userInfo,
+          },
+        },
+        {
+          email: {
+            [Op.substring]: userInfo,
+          },
+        },
+        {
+          address: {
+            [Op.substring]: userInfo,
+          },
+        },
+        {
+          idCard: {
+            [Op.substring]: userInfo,
           },
         },
       ],
@@ -59,6 +102,17 @@ module.exports.addUser = (req, res) => {
 
 module.exports.updateUser = (req, res) => {
   User.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "dateOfBirth",
+      "email",
+      "address",
+      "isFemale",
+      "idCard",
+    ],
     where: {
       id: {
         [Op.substring]: req.body.id,
@@ -90,7 +144,20 @@ module.exports.updateUser = (req, res) => {
 
 module.exports.deleteUserById = (req, res) => {
   const deletedUserId = req.params.userId;
-  User.findOne({ where: { id: deletedUserId } })
+  User.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "dateOfBirth",
+      "email",
+      "address",
+      "isFemale",
+      "idCard",
+    ],
+    where: { id: deletedUserId },
+  })
     .then((user) => {
       if (!user) {
         res.status(400).json("Cannot find user");

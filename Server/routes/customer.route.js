@@ -8,7 +8,7 @@ router.put("/update", controller.updateCustomer);
 
 router.get("/", controller.getAllCustomers);
 
-router.get("/search/:name", controller.searchCustomerByName);
+router.get("/search/:info", controller.searchCustomerByInfo);
 
 router.delete("/delete/:customerId", controller.deleteCustomerById);
 
