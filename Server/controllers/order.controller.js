@@ -3,12 +3,19 @@ const sequelize = require("sequelize");
 const { body } = require("express-validator");
 const Order = db.Order;
 const Book = db.Book;
+const Customer = db.Customer;
+const User = db.User;
 const OrderDetail = db.OrderDetail;
 const Op = sequelize.Op;
 
 // Total
 module.exports.getOrders = function (req, res) {
-  Order.findAll()
+  Order.findAll({
+    attributes: [
+      'id', 'orderDate', 'discount', 
+      'totalOrder', 'status', 'userID', 'customerID'
+    ]
+  })
     .then((orders) => res.status(200).send(orders))
     .catch((error) => res.status(400).send(error.message));
 };
@@ -68,43 +75,71 @@ module.exports.searchOrder = function (req, res) {};
 
 module.exports.filterByDate = function (req, res) {};
 
-module.exports.addOrder = function (req, res) {
-  // var inputOrder = req.body;
-  // var inputOrderDetails = req.body.orderDetails;
-  // //console.log(order.orderDetail);
-  // Order.create({
-  //   quantity: inputOrder.orderDetail.quantity,
-  // })
-  //   .then((order) => res.status(200).send(order))
-  //   .catch((err) => res.status(400).send(err.message));
-  const savedOrder = Order.create({
-    userID: 1,
-    customerID: 2,
-    status: 0,
-    totalOrder: 0,
-    discount: 0.2,
-    orderDate: new Date(),
+module.exports.addOrder = function ( req, res) {
+  console.log(req.body.books);
+  let TotalOrder = 0;
+  req.body.books.forEach (book => {
+    TotalOrder += book.quantity*book.price;
   })
-    .then((order) => {
-      req.body.books.forEach((item) => {
-        Book.findOne({
-          where: { id: parseInt(item.id) },
-        }).then((book) => {
-          if (!book) {
-            return res.status(400);
-          }
-          const orderDetail = OrderDetail.create({
-            orderID: order.id,
-            bookID: item.id,
-            quantity: item.quantity,
-            price: book.price,
-            totalOrderDetail: 0,
-          });
-        });
-      });
-      return res.status(200).json(order);
-    })
-    .catch((err) => console.log(err));
+  customer = Customer.findOne({ 
+     where: {id: parseInt (req.body.customerID)}
+  })
+  .then((customer) => {
+    if (!customer) { 
+        return res.status(400).send("Không tồn tại khách hàng");
+     }
+     isUserAvailable = User.findOne({
+       where: {id: parseInt( req.body.userID)}
+     })
+  .catch(err => res.status(400).json(err.message))
+     .then((user) => {
+       if (!user){
+         return res.status(400).send("Không tồn tại nhân viên");
+       }
+       const savedOrder = Order.create({
+        userID: req.body.userID,
+        customerID: req.body.customerID,
+        status: req.body.status,
+        totalOrder:  TotalOrder,
+        discount: req.body.discount,
+        orderDate: new Date(),
+      })
+      .catch(err => res.status(400).json(err.message))
+        .then((order) => {
+          var promise = [];
+          req.body.books.forEach( (item) => {
+            promise.push (
+             
+              Book.findOne({
+                where: { id: parseInt(item.id) },
+              })
+              .then((book) => {
+                
+                if (!book) {
+                  return res.status(400);
+                }
+              //   // THÊM THUỘC TÍNH QUANTITY  THÌ SẼ DÙNG DÒNG NÀY ĐỂ KIỂM TRA CÓ CÒN ĐỦ TRG KHO KHÔNG
+              //   // if (item.quantity > book.quantity){
+              //   //   return res.status(400);
+              //   // }
+                  OrderDetail.create({
+                    orderID: order.id,
+                    bookID: item.id,
+                    quantity: item.quantity,
+                    price: item.price,
+                    totalOrderDetail: item.quantity*item.price
+                  });
+                })
+          )});
+          
+          return Promise.all(promise);
+          
+        })
+        .then(result => { res.status(200).json("Lưu thành công"); })
+        .catch(err => res.status(400).json(err.message))
+     })
+  })
+  
 };
 
 module.exports.updateOrder = function (req, res) {};

@@ -7,8 +7,8 @@ module.exports.getAllUsers = (req, res) => {
   User.findAll({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "dateOfBirth",
       "email",
@@ -30,8 +30,8 @@ module.exports.searchUserByInfo = (req, res) => {
   User.findAll({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "dateOfBirth",
       "email",
