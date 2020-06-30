@@ -4,10 +4,14 @@ const controller = require("../controllers/user.controller");
 
 router.post("/add", controller.addUser);
 
-router.post("/update", controller.updateUser);
+router.put("/update", controller.updateUser);
 
 router.get("/", controller.getAllUsers);
 
-router.get("/:id", controller.searchUserById);
+router.get("/search/:name", controller.searchUserByName);
+
+router.delete("/delete/:userId", controller.deleteUserById);
+
+// router.delete("")
 
 module.exports = router;
