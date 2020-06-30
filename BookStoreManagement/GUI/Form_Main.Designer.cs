@@ -54,6 +54,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -61,13 +64,10 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.navigationBar = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
             this.btnReport = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuImageButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnSignOut = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnSetting = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnCustomers = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnEmployee = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSell = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -81,13 +81,13 @@
             this.btnDebt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnInventory = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.sellDropdown = new System.Windows.Forms.Panel();
+            this.btnTabDebt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTabInvoice = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTabSell = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panelControls = new System.Windows.Forms.Panel();
             this.Shadow = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DropdownAnimation = new Bunifu.UI.WinForms.BunifuTransition(this.components);
-            this.btnTabDebt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.navigationBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.background.SuspendLayout();
@@ -101,8 +101,8 @@
             this.navigationBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.navigationBar.BorderColor = System.Drawing.Color.Transparent;
             this.navigationBar.Controls.Add(this.btnReport);
-            this.navigationBar.Controls.Add(this.bunifuImageButton2);
-            this.navigationBar.Controls.Add(this.bunifuImageButton1);
+            this.navigationBar.Controls.Add(this.btnSignOut);
+            this.navigationBar.Controls.Add(this.btnSetting);
             this.navigationBar.Controls.Add(this.btnCustomers);
             this.navigationBar.Controls.Add(this.btnEmployee);
             this.navigationBar.Controls.Add(this.btnSell);
@@ -161,7 +161,7 @@
             this.btnReport.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnReport.IdleIconRightImage")));
             this.btnReport.IndicateFocus = true;
             this.btnReport.Location = new System.Drawing.Point(1023, 19);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             stateProperties1.BorderColor = System.Drawing.Color.Transparent;
             stateProperties1.BorderRadius = 3;
@@ -189,40 +189,72 @@
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             this.btnReport.MouseEnter += new System.EventHandler(this.btnReport_MouseEnter);
             // 
-            // bunifuImageButton2
+            // btnSignOut
             // 
-            this.bunifuImageButton2.ActiveImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ActiveImage")));
-            this.bunifuImageButton2.AllowAnimations = true;
-            this.bunifuImageButton2.AllowBuffering = false;
-            this.bunifuImageButton2.AllowZooming = true;
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.DropdownAnimation.SetDecoration(this.bunifuImageButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuImageButton2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ErrorImage")));
-            this.bunifuImageButton2.FadeWhenInactive = false;
-            this.bunifuImageButton2.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ImageActive")));
-            this.bunifuImageButton2.ImageLocation = null;
-            this.bunifuImageButton2.ImageMargin = 15;
-            this.bunifuImageButton2.ImageSize = new System.Drawing.Size(35, 38);
-            this.bunifuImageButton2.ImageZoomSize = new System.Drawing.Size(50, 53);
-            this.bunifuImageButton2.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.InitialImage")));
-            this.bunifuImageButton2.Location = new System.Drawing.Point(1283, 20);
-            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Rotation = 0;
-            this.bunifuImageButton2.ShowActiveImage = true;
-            this.bunifuImageButton2.ShowCursorChanges = true;
-            this.bunifuImageButton2.ShowImageBorders = true;
-            this.bunifuImageButton2.ShowSizeMarkers = false;
-            this.bunifuImageButton2.Size = new System.Drawing.Size(50, 53);
-            this.bunifuImageButton2.TabIndex = 35;
-            this.bunifuImageButton2.ToolTipText = "";
-            this.bunifuImageButton2.WaitOnLoad = false;
-            this.bunifuImageButton2.Zoom = 15;
-            this.bunifuImageButton2.ZoomSpeed = 10;
-           
+            this.btnSignOut.ActiveImage = ((System.Drawing.Image)(resources.GetObject("btnSignOut.ActiveImage")));
+            this.btnSignOut.AllowAnimations = true;
+            this.btnSignOut.AllowBuffering = false;
+            this.btnSignOut.AllowZooming = true;
+            this.btnSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSignOut.BackColor = System.Drawing.Color.Transparent;
+            this.DropdownAnimation.SetDecoration(this.btnSignOut, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.btnSignOut.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnSignOut.ErrorImage")));
+            this.btnSignOut.FadeWhenInactive = false;
+            this.btnSignOut.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
+            this.btnSignOut.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnSignOut.ImageActive")));
+            this.btnSignOut.ImageLocation = null;
+            this.btnSignOut.ImageMargin = 15;
+            this.btnSignOut.ImageSize = new System.Drawing.Size(35, 38);
+            this.btnSignOut.ImageZoomSize = new System.Drawing.Size(50, 53);
+            this.btnSignOut.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSignOut.InitialImage")));
+            this.btnSignOut.Location = new System.Drawing.Point(1283, 20);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Rotation = 0;
+            this.btnSignOut.ShowActiveImage = true;
+            this.btnSignOut.ShowCursorChanges = true;
+            this.btnSignOut.ShowImageBorders = true;
+            this.btnSignOut.ShowSizeMarkers = false;
+            this.btnSignOut.Size = new System.Drawing.Size(50, 53);
+            this.btnSignOut.TabIndex = 35;
+            this.btnSignOut.ToolTipText = "";
+            this.btnSignOut.WaitOnLoad = false;
+            this.btnSignOut.Zoom = 15;
+            this.btnSignOut.ZoomSpeed = 10;
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.ActiveImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.ActiveImage")));
+            this.btnSetting.AllowAnimations = true;
+            this.btnSetting.AllowBuffering = false;
+            this.btnSetting.AllowZooming = true;
+            this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetting.BackColor = System.Drawing.Color.Transparent;
+            this.DropdownAnimation.SetDecoration(this.btnSetting, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.btnSetting.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.ErrorImage")));
+            this.btnSetting.FadeWhenInactive = false;
+            this.btnSetting.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnSetting.ImageActive")));
+            this.btnSetting.ImageLocation = null;
+            this.btnSetting.ImageMargin = 15;
+            this.btnSetting.ImageSize = new System.Drawing.Size(35, 38);
+            this.btnSetting.ImageZoomSize = new System.Drawing.Size(50, 53);
+            this.btnSetting.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.InitialImage")));
+            this.btnSetting.Location = new System.Drawing.Point(1213, 20);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Rotation = 0;
+            this.btnSetting.ShowActiveImage = true;
+            this.btnSetting.ShowCursorChanges = true;
+            this.btnSetting.ShowImageBorders = true;
+            this.btnSetting.ShowSizeMarkers = false;
+            this.btnSetting.Size = new System.Drawing.Size(50, 53);
+            this.btnSetting.TabIndex = 34;
+            this.btnSetting.ToolTipText = "";
+            this.btnSetting.WaitOnLoad = false;
+            this.btnSetting.Zoom = 15;
+            this.btnSetting.ZoomSpeed = 10;
             // 
             // btnCustomers
             // 
@@ -264,7 +296,7 @@
             this.btnCustomers.IdleIconRightImage = null;
             this.btnCustomers.IndicateFocus = true;
             this.btnCustomers.Location = new System.Drawing.Point(874, 19);
-            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomers.Name = "btnCustomers";
             stateProperties3.BorderColor = System.Drawing.Color.Transparent;
             stateProperties3.BorderRadius = 3;
@@ -331,7 +363,7 @@
             this.btnEmployee.IdleIconRightImage = null;
             this.btnEmployee.IndicateFocus = true;
             this.btnEmployee.Location = new System.Drawing.Point(725, 19);
-            this.btnEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmployee.Name = "btnEmployee";
             stateProperties5.BorderColor = System.Drawing.Color.Transparent;
             stateProperties5.BorderRadius = 3;
@@ -398,7 +430,7 @@
             this.btnSell.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnSell.IdleIconRightImage")));
             this.btnSell.IndicateFocus = true;
             this.btnSell.Location = new System.Drawing.Point(590, 19);
-            this.btnSell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSell.Margin = new System.Windows.Forms.Padding(4);
             this.btnSell.Name = "btnSell";
             stateProperties7.BorderColor = System.Drawing.Color.Transparent;
             stateProperties7.BorderRadius = 3;
@@ -532,7 +564,7 @@
             this.btnHome.IdleIconRightImage = null;
             this.btnHome.IndicateFocus = true;
             this.btnHome.Location = new System.Drawing.Point(361, 18);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             stateProperties11.BorderColor = System.Drawing.Color.Transparent;
             stateProperties11.BorderRadius = 3;
@@ -762,6 +794,71 @@
             this.sellDropdown.TabIndex = 5;
             this.sellDropdown.Visible = false;
             // 
+            // btnTabDebt
+            // 
+            this.btnTabDebt.AllowToggling = false;
+            this.btnTabDebt.AnimationSpeed = 200;
+            this.btnTabDebt.AutoGenerateColors = false;
+            this.btnTabDebt.BackColor = System.Drawing.Color.Transparent;
+            this.btnTabDebt.BackColor1 = System.Drawing.Color.Transparent;
+            this.btnTabDebt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTabDebt.BackgroundImage")));
+            this.btnTabDebt.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnTabDebt.ButtonText = "Debt";
+            this.btnTabDebt.ButtonTextMarginLeft = 0;
+            this.btnTabDebt.ColorContrastOnClick = 45;
+            this.btnTabDebt.ColorContrastOnHover = 45;
+            this.btnTabDebt.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.btnTabDebt.CustomizableEdges = borderEdges9;
+            this.DropdownAnimation.SetDecoration(this.btnTabDebt, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.btnTabDebt.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnTabDebt.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.btnTabDebt.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnTabDebt.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnTabDebt.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnTabDebt.Font = new System.Drawing.Font("Futura Lt BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabDebt.ForeColor = System.Drawing.Color.White;
+            this.btnTabDebt.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTabDebt.IconMarginLeft = 11;
+            this.btnTabDebt.IconPadding = 10;
+            this.btnTabDebt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTabDebt.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnTabDebt.IdleBorderRadius = 3;
+            this.btnTabDebt.IdleBorderThickness = 1;
+            this.btnTabDebt.IdleFillColor = System.Drawing.Color.Transparent;
+            this.btnTabDebt.IdleIconLeftImage = null;
+            this.btnTabDebt.IdleIconRightImage = null;
+            this.btnTabDebt.IndicateFocus = false;
+            this.btnTabDebt.Location = new System.Drawing.Point(0, 106);
+            this.btnTabDebt.Name = "btnTabDebt";
+            stateProperties17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties17.BorderRadius = 3;
+            stateProperties17.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties17.BorderThickness = 1;
+            stateProperties17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties17.ForeColor = System.Drawing.Color.White;
+            stateProperties17.IconLeftImage = null;
+            stateProperties17.IconRightImage = null;
+            this.btnTabDebt.onHoverState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties18.BorderRadius = 3;
+            stateProperties18.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties18.BorderThickness = 1;
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties18.ForeColor = System.Drawing.Color.White;
+            stateProperties18.IconLeftImage = null;
+            stateProperties18.IconRightImage = null;
+            this.btnTabDebt.OnPressedState = stateProperties18;
+            this.btnTabDebt.Size = new System.Drawing.Size(117, 44);
+            this.btnTabDebt.TabIndex = 7;
+            this.btnTabDebt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTabDebt.TextMarginLeft = 0;
+            this.btnTabDebt.UseDefaultRadiusAndThickness = true;
+            this.btnTabDebt.Click += new System.EventHandler(this.btnTabDebt_Click);
+            // 
             // btnTabInvoice
             // 
             this.btnTabInvoice.AllowToggling = false;
@@ -942,71 +1039,6 @@
             animation1.TransparencyCoeff = 0F;
             this.DropdownAnimation.DefaultAnimation = animation1;
             // 
-            // btnTabDebt
-            // 
-            this.btnTabDebt.AllowToggling = false;
-            this.btnTabDebt.AnimationSpeed = 200;
-            this.btnTabDebt.AutoGenerateColors = false;
-            this.btnTabDebt.BackColor = System.Drawing.Color.Transparent;
-            this.btnTabDebt.BackColor1 = System.Drawing.Color.Transparent;
-            this.btnTabDebt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTabDebt.BackgroundImage")));
-            this.btnTabDebt.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTabDebt.ButtonText = "Debt";
-            this.btnTabDebt.ButtonTextMarginLeft = 0;
-            this.btnTabDebt.ColorContrastOnClick = 45;
-            this.btnTabDebt.ColorContrastOnHover = 45;
-            this.btnTabDebt.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.btnTabDebt.CustomizableEdges = borderEdges9;
-            this.DropdownAnimation.SetDecoration(this.btnTabDebt, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.btnTabDebt.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTabDebt.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.btnTabDebt.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTabDebt.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTabDebt.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnTabDebt.Font = new System.Drawing.Font("Futura Lt BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabDebt.ForeColor = System.Drawing.Color.White;
-            this.btnTabDebt.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTabDebt.IconMarginLeft = 11;
-            this.btnTabDebt.IconPadding = 10;
-            this.btnTabDebt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTabDebt.IdleBorderColor = System.Drawing.Color.Transparent;
-            this.btnTabDebt.IdleBorderRadius = 3;
-            this.btnTabDebt.IdleBorderThickness = 1;
-            this.btnTabDebt.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnTabDebt.IdleIconLeftImage = null;
-            this.btnTabDebt.IdleIconRightImage = null;
-            this.btnTabDebt.IndicateFocus = false;
-            this.btnTabDebt.Location = new System.Drawing.Point(0, 106);
-            this.btnTabDebt.Name = "btnTabDebt";
-            stateProperties17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties17.BorderRadius = 3;
-            stateProperties17.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties17.BorderThickness = 1;
-            stateProperties17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties17.ForeColor = System.Drawing.Color.White;
-            stateProperties17.IconLeftImage = null;
-            stateProperties17.IconRightImage = null;
-            this.btnTabDebt.onHoverState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties18.BorderRadius = 3;
-            stateProperties18.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties18.BorderThickness = 1;
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties18.ForeColor = System.Drawing.Color.White;
-            stateProperties18.IconLeftImage = null;
-            stateProperties18.IconRightImage = null;
-            this.btnTabDebt.OnPressedState = stateProperties18;
-            this.btnTabDebt.Size = new System.Drawing.Size(117, 44);
-            this.btnTabDebt.TabIndex = 7;
-            this.btnTabDebt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTabDebt.TextMarginLeft = 0;
-            this.btnTabDebt.UseDefaultRadiusAndThickness = true;
-            this.btnTabDebt.Click += new System.EventHandler(this.btnTabDebt_Click);
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,8 +1077,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCustomers;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEmployee;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSell;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton2;
+        private Bunifu.UI.WinForms.BunifuImageButton btnSetting;
+        private Bunifu.UI.WinForms.BunifuImageButton btnSignOut;
         private Bunifu.UI.WinForms.BunifuTransition DropdownAnimation;
         private System.Windows.Forms.Panel sellDropdown;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTabInvoice;
