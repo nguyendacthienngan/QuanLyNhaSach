@@ -3,7 +3,7 @@ const sequelize = require("sequelize");
 const User = db.User;
 const Op = sequelize.Op;
 
-module.exports.getAllUsers = (req, res) => {
+module.exports.getAllUsers = (req, res, next) => {
   User.findAll({
     attributes: [
       "id",
@@ -22,10 +22,11 @@ module.exports.getAllUsers = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.searchUser = (req, res) => {
+module.exports.searchUser = (req, res, next) => {
   const userInfo = req.body.info;
   User.findAll({
     attributes: [
@@ -79,10 +80,11 @@ module.exports.searchUser = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.addUser = (req, res) => {
+module.exports.addUser = (req, res, next) => {
   User.findOne({
     attributes: [
       "id",
@@ -139,16 +141,18 @@ module.exports.addUser = (req, res) => {
           if (!err.status) {
             err.statusCode = 500;
           }
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) {
         err.statusCode = 500;
       }
+      next(err);
     });
 };
 
-module.exports.updateUser = (req, res) => {
+module.exports.updateUser = (req, res, next) => {
   User.findOne({
     attributes: [
       "id",
@@ -178,15 +182,19 @@ module.exports.updateUser = (req, res) => {
         })
         .then((user) => res.status(200).json(user))
         .catch((err) => {
-          err.statusCode = 500;
+          if (!err.status) {
+            err.statusCode = 500;
+          }
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.deleteUser = (req, res) => {
+module.exports.deleteUser = (req, res, next) => {
   const deletedUserId = req.body.id;
   User.findOne({
     attributes: [
@@ -211,5 +219,6 @@ module.exports.deleteUser = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };

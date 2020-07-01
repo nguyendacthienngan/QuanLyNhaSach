@@ -3,7 +3,7 @@ const sequelize = require("sequelize");
 const Book = db.Book;
 const Op = sequelize.Op;
 
-module.exports.getAllBooks = function (req, res) {
+module.exports.getAllBooks = function (req, res, next) {
   Book.findAll({
     attributes: [
       "id",
@@ -16,11 +16,16 @@ module.exports.getAllBooks = function (req, res) {
       "type",
     ],
   })
-    .then((book) => res.status(200).send(book))
-    .catch((error) => res.status(400).json(error.message));
+    .then((book) => res.status(200).json(book))
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
 };
 
-module.exports.searchBooks = function (req, res) {
+module.exports.searchBooks = function (req, res, next) {
   const bookInfo = req.body.info; // {p: 'The'}
   Book.findAll({
     attributes: [
@@ -59,14 +64,22 @@ module.exports.searchBooks = function (req, res) {
     },
   })
     .then((books) => res.status(200).json(books))
-    .catch((error) => res.status(400).json(error.message));
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+      next(err);
+    });
 };
 
-module.exports.getBookCount = function (req, res) {
+module.exports.getBookCount = function (req, res, next) {
   // count => trả về number => k cho phép trả về nên bad request nên phải chuyển từ number sang string
   Book.count()
     .then((count) => res.status(200).json(count))
-    .catch((error) => res.sendStatus(400).json(error.message));
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
 };
 
 module.exports.getBestSeller = function (req, res) {
@@ -112,17 +125,19 @@ module.exports.addBook = function (req, res) {
         description: inputDescription,
         type: inputType,
       })
-        .then((book) => res.status(200).send(book))
+        .then((book) => res.status(200).json(book))
         .catch((err) => {
           if (!err.status) err.statusCode = 500;
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.updateBook = function (req, res) {
+module.exports.updateBook = function (req, res, next) {
   const bookID = req.body.id; //params hay body
   const inputTitle = req.body.title;
   const inputAuthor = req.body.author;
@@ -167,14 +182,16 @@ module.exports.updateBook = function (req, res) {
         })
         .catch((err) => {
           if (!err.status) err.statusCode = 500;
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.deleteBookById = function (req, res) {
+module.exports.deleteBookById = function (req, res, next) {
   const deletedBookId = req.body.id;
   Book.findOne({
     attributes: [
@@ -200,10 +217,11 @@ module.exports.deleteBookById = function (req, res) {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.getAvailableBooks = (req, res) => {
+module.exports.getAvailableBooks = (req, res, next) => {
   Book.findAll({
     attributes: [
       "id",
@@ -228,10 +246,11 @@ module.exports.getAvailableBooks = (req, res) => {
       if (!err.status) {
         err.statusCode = 500;
       }
+      next(err);
     });
 };
 
-module.exports.filterByPrice = (req, res) => {
+module.exports.filterByPrice = (req, res, next) => {
   const maxPrice = req.body.max || 0;
   const minPrice = req.body.min || 0;
   Book.findAll({
@@ -265,5 +284,6 @@ module.exports.filterByPrice = (req, res) => {
       if (!err.status) {
         err.statusCode = 500;
       }
+      next(err);
     });
 };

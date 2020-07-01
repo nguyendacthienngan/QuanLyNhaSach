@@ -3,7 +3,7 @@ const sequelize = require("sequelize");
 const Customer = db.Customer;
 const Op = sequelize.Op;
 
-module.exports.getAllCustomers = (req, res) => {
+module.exports.getAllCustomers = (req, res, next) => {
   Customer.findAll({
     attributes: [
       "id",
@@ -22,10 +22,11 @@ module.exports.getAllCustomers = (req, res) => {
       if (!err.status) {
         err.statusCode = 500;
       }
+      next(err);
     });
 };
 
-module.exports.searchCustomer = (req, res) => {
+module.exports.searchCustomer = (req, res, next) => {
   var customerInfo = req.body.info;
   Customer.findAll({
     attributes: [
@@ -72,10 +73,11 @@ module.exports.searchCustomer = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.addCustomer = (req, res) => {
+module.exports.addCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
@@ -128,16 +130,18 @@ module.exports.addCustomer = (req, res) => {
           if (!err.status) {
             err.statusCode = 500;
           }
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) {
         err.statusCode = 500;
       }
+      next(err);
     });
 };
 
-module.exports.updateCustomer = (req, res) => {
+module.exports.updateCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
@@ -167,15 +171,17 @@ module.exports.updateCustomer = (req, res) => {
         })
         .then((customer) => res.status(200).json(customer))
         .catch((err) => {
-          err.statusCode = 500;
+          if (!err.status) err.statusCode = 500;
+          next(err);
         });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.deleteCustomer = (req, res) => {
+module.exports.deleteCustomer = (req, res, next) => {
   const deletedCustomerId = req.body.id;
   Customer.findOne({
     attributes: [
@@ -200,5 +206,6 @@ module.exports.deleteCustomer = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
