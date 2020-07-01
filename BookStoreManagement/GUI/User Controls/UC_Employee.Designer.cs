@@ -144,6 +144,7 @@
             this.txtPhoneEE = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtCmndEE = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtLastnameEE = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.ddRoleEE = new Bunifu.UI.WinForms.BunifuDropdown();
             this.ddGenderEE = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -151,12 +152,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvEmployeeEE = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bunifuPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -206,10 +206,10 @@
             this.bunifuPages1.Location = new System.Drawing.Point(0, 79);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage2;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "tabPage2";
-            this.bunifuPages1.PageTitle = "EmployeeProfile";
+            this.bunifuPages1.Page = this.tabPage3;
+            this.bunifuPages1.PageIndex = 2;
+            this.bunifuPages1.PageName = "tabPage3";
+            this.bunifuPages1.PageTitle = "EmployeeEdit";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(1600, 821);
             this.bunifuPages1.TabIndex = 8;
@@ -1177,6 +1177,7 @@
             this.btnEdit_EE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEdit_EE.TextMarginLeft = 0;
             this.btnEdit_EE.UseDefaultRadiusAndThickness = true;
+            this.btnEdit_EE.Visible = false;
             // 
             // btnBack
             // 
@@ -1240,6 +1241,7 @@
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBack.TextMarginLeft = 0;
             this.btnBack.UseDefaultRadiusAndThickness = true;
+            this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnCancel
@@ -1304,7 +1306,6 @@
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.TextMarginLeft = 0;
             this.btnCancel.UseDefaultRadiusAndThickness = true;
-            this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
@@ -1369,7 +1370,6 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.TextMarginLeft = 0;
             this.btnSave.UseDefaultRadiusAndThickness = true;
-            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
@@ -1948,6 +1948,17 @@
             this.txtLastnameEE.UseSystemPasswordChar = false;
             this.txtLastnameEE.WordWrap = true;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 371);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 23);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Username";
+            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2073,6 +2084,17 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "CMND";
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(564, 370);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 23);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Role";
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2134,28 +2156,6 @@
             this.dgvEmployeeEE.Size = new System.Drawing.Size(504, 789);
             this.dgvEmployeeEE.TabIndex = 1;
             this.dgvEmployeeEE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeEE_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 371);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 23);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Username";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(564, 370);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 23);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Role";
             // 
             // UC_Employee
             // 

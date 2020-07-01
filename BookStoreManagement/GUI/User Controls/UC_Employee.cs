@@ -23,7 +23,6 @@ namespace GUI.User_Controls
             InitializeComponent();
             LoadEmployee();
             LoadEmployeeEE();
-            label1.Visible = label4.Visible = false;
             
         }
         #region Functions
