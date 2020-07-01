@@ -113,7 +113,7 @@ module.exports.addCustomer = (req, res) => {
   })
     .then((customer) => {
       if (customer) {
-        res.status(400).json("This customer already exists");
+        return res.status(400).json("This customer already exists");
       }
       Customer.create({
         firstName: req.body.firstName,
@@ -154,7 +154,7 @@ module.exports.updateCustomer = (req, res) => {
   })
     .then((customer) => {
       if (!customer) {
-        res.status(400).json("This customer does not exist!");
+        return res.status(400).json("This customer does not exist!");
       }
       customer
         .update({
@@ -191,7 +191,7 @@ module.exports.deleteCustomer = (req, res) => {
   })
     .then((customer) => {
       if (!customer) {
-        res.status(400).json("This customer does not exist!");
+        return res.status(400).json("This customer does not exist!");
       }
       return customer.destroy();
     })

@@ -101,7 +101,7 @@ module.exports.addBook = function (req, res) {
   })
     .then((book) => {
       if (book) {
-        res.status(400).json("This book already exists!");
+        return res.status(400).json("This book already exists!");
       }
       Book.create({
         title: inputTitle,
@@ -161,7 +161,7 @@ module.exports.updateBook = function (req, res) {
         })
         .then((book) => {
           if (!book) {
-            res.status(400).json("This book does not exist!");
+            return res.status(400).json("This book does not exist!");
           }
           res.status(200).json(book);
         })
@@ -191,7 +191,7 @@ module.exports.deleteBookById = function (req, res) {
   })
     .then((book) => {
       if (!book) {
-        res.status(400).json("This book does not exist!");
+        return res.status(400).json("This book does not exist!");
       }
       return book.destroy();
     })

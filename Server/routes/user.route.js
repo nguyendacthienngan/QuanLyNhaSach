@@ -8,9 +8,9 @@ router.put("/update", controller.updateUser);
 
 router.get("/", controller.getAllUsers);
 
-router.get("/search/:info", controller.searchUserByInfo);
+router.post("/search", controller.searchUser);
 
-router.delete("/delete/:userId", controller.deleteUserById);
+router.delete("/delete", controller.deleteUser);
 
 // router.delete("")
 

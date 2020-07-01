@@ -25,8 +25,8 @@ module.exports.getAllUsers = (req, res) => {
     });
 };
 
-module.exports.searchUserByInfo = (req, res) => {
-  const userInfo = req.params.info;
+module.exports.searchUser = (req, res) => {
+  const userInfo = req.body.info;
   User.findAll({
     attributes: [
       "id",
@@ -75,9 +75,6 @@ module.exports.searchUserByInfo = (req, res) => {
     },
   })
     .then((user) => {
-      if (!user) {
-        res.status(400).json("Cannot find user");
-      }
       res.status(200).json(user);
     })
     .catch((err) => {
@@ -86,18 +83,69 @@ module.exports.searchUserByInfo = (req, res) => {
 };
 
 module.exports.addUser = (req, res) => {
-  User.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    phone: req.body.phone,
-    dateOfBirth: req.body.dateOfBirth,
-    email: req.body.email,
-    address: req.body.address,
-    isFemale: req.body.isFemale,
-    idCard: req.body.idCard,
+  User.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
+    where: {
+      [Op.and]: [
+        {
+          firstname: {
+            [Op.substring]: req.body.firstName,
+          },
+        },
+        {
+          lastname: {
+            [Op.substring]: req.body.lastName,
+          },
+        },
+        {
+          phone: {
+            [Op.substring]: req.body.phone,
+          },
+        },
+        {
+          address: {
+            [Op.substring]: req.body.address,
+          },
+        },
+      ],
+    },
   })
-    .then((user) => res.status(200).json(user))
-    .catch((err) => res.status(500).json(err.message));
+    .then((user) => {
+      if (user) {
+        return res.status(400).json("This user already exists");
+      }
+      User.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        phone: req.body.phone,
+        email: req.body.email,
+        address: req.body.address,
+        isFemale: req.body.isFemale,
+        dateOfBirth: req.body.dateOfBirth,
+        idCard: req.body.idCard,
+      })
+        .then((user) => {
+          res.status(200).json(user);
+        })
+        .catch((err) => {
+          if (!err.status) {
+            err.statusCode = 500;
+          }
+        });
+    })
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+    });
 };
 
 module.exports.updateUser = (req, res) => {
@@ -107,60 +155,54 @@ module.exports.updateUser = (req, res) => {
       "firstname",
       "lastname",
       "phone",
-      "dateOfBirth",
       "email",
       "address",
       "isFemale",
-      "idCard",
     ],
     where: {
-      id: {
-        [Op.substring]: req.body.id,
-      },
+      id: req.body.id,
     },
   })
     .then((user) => {
       if (!user) {
-        res.status(400).json("Cannot find user");
+        return res.status(400).json("This user does not exist!");
       }
       user
         .update({
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           phone: req.body.phone,
-          dateOfBirth: req.body.dateOfBirth,
           email: req.body.email,
           address: req.body.address,
           isFemale: req.body.isFemale,
-          idCard: req.body.idCard,
         })
         .then((user) => res.status(200).json(user))
-        .catch((err) => res.status(500).json(err.message));
+        .catch((err) => {
+          err.statusCode = 500;
+        });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
     });
 };
 
-module.exports.deleteUserById = (req, res) => {
-  const deletedUserId = req.params.userId;
+module.exports.deleteUser = (req, res) => {
+  const deletedUserId = req.body.id;
   User.findOne({
     attributes: [
       "id",
       "firstname",
       "lastname",
       "phone",
-      "dateOfBirth",
       "email",
       "address",
       "isFemale",
-      "idCard",
     ],
     where: { id: deletedUserId },
   })
     .then((user) => {
       if (!user) {
-        res.status(400).json("Cannot find user");
+        return res.status(400).json("This user does not exist!");
       }
       return user.destroy();
     })
