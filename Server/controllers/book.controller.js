@@ -17,12 +17,12 @@ module.exports.getAllBooks = function (req, res) {
     ],
   })
     .then((book) => res.status(200).send(book))
-    .catch((error) => res.status(400).send(error.message));
+    .catch((error) => res.status(400).json(error.message));
 };
 
-module.exports.searchBookByInfo = function (req, res) {
-  const bookInfo = req.params.info; // {p: 'The'}
-  Book.findOne({
+module.exports.searchBooks = function (req, res) {
+  const bookInfo = req.body.info; // {p: 'The'}
+  Book.findAll({
     attributes: [
       "id",
       "title",
@@ -58,7 +58,7 @@ module.exports.searchBookByInfo = function (req, res) {
       ],
     },
   })
-    .then((book) => res.status(200).json(book))
+    .then((books) => res.status(200).json(books))
     .catch((error) => res.status(400).json(error.message));
 };
 
@@ -79,39 +79,58 @@ module.exports.getBestSeller = function (req, res) {
 };
 
 module.exports.addBook = function (req, res) {
-  let inputTitle = req.body.title;
-  let inputAuthor = req.body.author;
-  let inputStock = req.body.stock;
-  let inputCost = req.body.cost;
-  let inputPrice = req.body.price;
-  let inputDescription = req.body.description;
-  let inputType = req.body.type;
-  let book = Book.create({
-    title: inputTitle,
-    author: inputAuthor,
-    stock: inputStock,
-    cost: inputCost,
-    price: inputPrice,
-    description: inputDescription,
-    type: inputType,
-  })
-    .then((book) => res.status(200).send(book))
-    .catch((err) => res.status(400).send(err.message));
+  const inputTitle = req.body.title;
+  const inputAuthor = req.body.author;
+  const inputStock = req.body.stock;
+  const inputCost = req.body.cost;
+  const inputPrice = req.body.price;
+  const inputDescription = req.body.description;
+  const inputType = req.body.type;
 
-  console.log(book instanceof Book); // kiểm tra có chạy đc hong
-  console.log(book.author);
-  console.log("New Book was saved to the database!");
+  Book.findOne({
+    where: {
+      [Op.or]: [
+        {
+          title: inputTitle,
+        },
+        {
+          author: inputAuthor,
+        },
+      ],
+    },
+  })
+    .then((book) => {
+      if (book) {
+        res.status(400).json("This book already exists!");
+      }
+      Book.create({
+        title: inputTitle,
+        author: inputAuthor,
+        stock: inputStock,
+        cost: inputCost,
+        price: inputPrice,
+        description: inputDescription,
+        type: inputType,
+      })
+        .then((book) => res.status(200).send(book))
+        .catch((err) => {
+          if (!err.status) err.statusCode = 500;
+        });
+    })
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+    });
 };
 
 module.exports.updateBook = function (req, res) {
-  let bookID = req.body.id; //params hay body
-  let inputTitle = req.body.title;
-  let inputAuthor = req.body.author;
-  let inputStock = req.body.stock;
-  let inputCost = req.body.cost;
-  let inputPrice = req.body.price;
-  let inputDescription = req.body.description;
-  let inputType = req.body.type;
+  const bookID = req.body.id; //params hay body
+  const inputTitle = req.body.title;
+  const inputAuthor = req.body.author;
+  const inputStock = req.body.stock;
+  const inputCost = req.body.cost;
+  const inputPrice = req.body.price;
+  const inputDescription = req.body.description;
+  const inputType = req.body.type;
   Book.findOne({
     attributes: [
       "id",
@@ -140,14 +159,23 @@ module.exports.updateBook = function (req, res) {
           description: inputDescription,
           type: inputType,
         })
-        .then((book) => res.status(200).send(book))
-        .catch((err) => res.status(400).send(err.message));
+        .then((book) => {
+          if (!book) {
+            res.status(400).json("This book does not exist!");
+          }
+          res.status(200).json(book);
+        })
+        .catch((err) => {
+          if (!err.status) err.statusCode = 500;
+        });
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+    });
 };
 
 module.exports.deleteBookById = function (req, res) {
-  const deletedBookId = req.params.bookId;
+  const deletedBookId = req.body.id;
   Book.findOne({
     attributes: [
       "id",
@@ -162,10 +190,80 @@ module.exports.deleteBookById = function (req, res) {
     where: { id: deletedBookId },
   })
     .then((book) => {
+      if (!book) {
+        res.status(400).json("This book does not exist!");
+      }
       return book.destroy();
     })
     .then((deletedBook) => {
       res.status(201).json(deletedBook);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+    });
+};
+
+module.exports.getAvailableBooks = (req, res) => {
+  Book.findAll({
+    attributes: [
+      "id",
+      "title",
+      "author",
+      "stock",
+      "cost",
+      "price",
+      "description",
+      "type",
+    ],
+    where: {
+      [Op.or]: [
+        {
+          stock: { [Op.gt]: 0 },
+        },
+      ],
+    },
+  })
+    .then((books) => res.status(200).json(books))
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+    });
+};
+
+module.exports.filterByPrice = (req, res) => {
+  const maxPrice = req.body.max || 0;
+  const minPrice = req.body.min || 0;
+  Book.findAll({
+    attributes: [
+      "id",
+      "title",
+      "author",
+      "stock",
+      "cost",
+      "price",
+      "description",
+      "type",
+    ],
+    where: {
+      [Op.and]: [
+        {
+          price: {
+            [Op.lt]: maxPrice,
+          },
+        },
+        {
+          price: {
+            [Op.gt]: minPrice,
+          },
+        },
+      ],
+    },
+  })
+    .then((books) => res.status(200).json(books))
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+    });
 };
