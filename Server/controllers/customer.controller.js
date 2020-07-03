@@ -3,14 +3,31 @@ const sequelize = require("sequelize");
 const Customer = db.Customer;
 const Op = sequelize.Op;
 
-module.exports.getAllCustomers = (req, res) => {
-  Customer.findAll().then((books) => {
-    res.status(200).json(books);
-  });
+module.exports.getAllCustomers = (req, res, next) => {
+  Customer.findAll({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
+  })
+    .then((books) => {
+      res.status(200).json(books);
+    })
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
 };
 
-module.exports.searchCustomerByInfo = (req, res) => {
-  var customerInfo = req.params.info;
+module.exports.searchCustomer = (req, res, next) => {
+  var customerInfo = req.body.info;
   Customer.findAll({
     attributes: [
       "id",
@@ -51,31 +68,16 @@ module.exports.searchCustomerByInfo = (req, res) => {
       ],
     },
   })
-    .then((customer) => {
-      if (!customer) {
-        res.status(400).json("Cannot find customer");
-      }
-      res.status(200).json(customer);
+    .then((customers) => {
+      res.status(200).json(customers);
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.addCustomer = (req, res) => {
-  const customer = Customer.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    phone: req.body.phone,
-    email: req.body.email,
-    address: req.body.address,
-    isFemale: req.body.isFemale,
-  })
-    .then((customer) => res.status(200).json(customer))
-    .catch((err) => res.status(400).json(err.message));
-};
-
-module.exports.updateCustomer = (req, res) => {
+module.exports.addCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
@@ -87,12 +89,77 @@ module.exports.updateCustomer = (req, res) => {
       "isFemale",
     ],
     where: {
-      id: {
-        [Op.substring]: req.body.id,
-      },
+      [Op.and]: [
+        {
+          firstname: {
+            [Op.substring]: req.body.firstName,
+          },
+        },
+        {
+          lastname: {
+            [Op.substring]: req.body.lastName,
+          },
+        },
+        {
+          phone: {
+            [Op.substring]: req.body.phone,
+          },
+        },
+        {
+          address: {
+            [Op.substring]: req.body.address,
+          },
+        },
+      ],
     },
   })
     .then((customer) => {
+      if (customer) {
+        return res.status(400).json("This customer already exists");
+      }
+      Customer.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        phone: req.body.phone,
+        email: req.body.email,
+        address: req.body.address,
+        isFemale: req.body.isFemale,
+      })
+        .then((customer) => res.status(200).json(customer))
+        .catch((err) => {
+          if (!err.status) {
+            err.statusCode = 500;
+          }
+          next(err);
+        });
+    })
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
+};
+
+module.exports.updateCustomer = (req, res, next) => {
+  Customer.findOne({
+    attributes: [
+      "id",
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+    ],
+    where: {
+      id: req.body.id,
+    },
+  })
+    .then((customer) => {
+      if (!customer) {
+        return res.status(400).json("This customer does not exist!");
+      }
       customer
         .update({
           firstName: req.body.firstName,
@@ -103,15 +170,19 @@ module.exports.updateCustomer = (req, res) => {
           isFemale: req.body.isFemale,
         })
         .then((customer) => res.status(200).json(customer))
-        .catch((err) => res.status(400).json(err.message));
+        .catch((err) => {
+          if (!err.status) err.statusCode = 500;
+          next(err);
+        });
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };
 
-module.exports.deleteCustomerById = (req, res) => {
-  const deletedCustomerId = req.params.customerId;
+module.exports.deleteCustomer = (req, res, next) => {
+  const deletedCustomerId = req.body.id;
   Customer.findOne({
     attributes: [
       "id",
@@ -125,6 +196,9 @@ module.exports.deleteCustomerById = (req, res) => {
     where: { id: deletedCustomerId },
   })
     .then((customer) => {
+      if (!customer) {
+        return res.status(400).json("This customer does not exist!");
+      }
       return customer.destroy();
     })
     .then((deletedCustomer) => {
@@ -132,5 +206,6 @@ module.exports.deleteCustomerById = (req, res) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
     });
 };

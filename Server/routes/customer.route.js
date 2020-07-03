@@ -8,8 +8,8 @@ router.put("/update", controller.updateCustomer);
 
 router.get("/", controller.getAllCustomers);
 
-router.get("/search/:info", controller.searchCustomerByInfo);
+router.post("/search/", controller.searchCustomer);
 
-router.delete("/delete/:customerId", controller.deleteCustomerById);
+router.delete("/delete", controller.deleteCustomer);
 
 module.exports = router;
