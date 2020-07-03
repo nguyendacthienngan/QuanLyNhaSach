@@ -23,7 +23,6 @@ namespace GUI.User_Controls
             InitializeComponent();
             LoadEmployee();
             LoadEmployeeEE();
-            label1.Visible = label4.Visible = false;
             
         }
         #region Functions
@@ -142,14 +141,15 @@ namespace GUI.User_Controls
         #region Navigation
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bunifuPages1.SetPage("EmployeeEdit");
+            //bunifuPages1.SetPage("EmployeeEdit");
+            bunifuPages1.SetPage("EmployeeProfile");
             ClearData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             btnEdit_EE.Visible = true;
-            btnBack.Visible = false;
+         
             bunifuPages1.SetPage("EmployeeEdit");
             
         }
