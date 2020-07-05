@@ -21,11 +21,15 @@ namespace Model
 
         private float _price;
 
-        private string _type;
+        private string _genre;
 
         private string _description;
 
-        public Book(int id, string bookTitle, string author, int stock, float cost, float price, string type, string description)
+        private DateTime _releasedDate;
+
+        private string _imageUrl;
+
+        public Book(int id, string bookTitle, string author, int stock, float cost, float price, string genre, string description, DateTime releasedDate, string imageUrl)
         {
             this.id = id;
             this.bookTitle = bookTitle;
@@ -33,8 +37,10 @@ namespace Model
             this.stock = stock;
             this.cost = cost;
             this.price = price;
-            this.type = type;
+            this.genre = genre;
             this.description = description;
+            this.releasedDate = releasedDate;
+            this.imageUrl = imageUrl;
         }
 
         public int id { get => _id; set => _id = value; }
@@ -43,8 +49,10 @@ namespace Model
         public int stock { get => _stock; set => _stock = value; }
         public float cost { get => _cost; set => _cost = value; }
         public float price { get => _price; set => _price = value; }
-        public string type { get => _type; set => _type = value; }
+        public string genre { get => _genre; set => _genre = value; }
         public string description { get => _description; set => _description = value; }
+        public DateTime releasedDate { get => _releasedDate; set => _releasedDate = value; }
+        public string imageUrl { get => _imageUrl; set => _imageUrl = value; }
 
     }
 }

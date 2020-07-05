@@ -21,7 +21,10 @@ namespace Model
         private string _address;
 
         private bool _isFemale;
-        public Customer(int id, string firstName, string lastName, string phone, string email, string address, bool isFemale)
+
+        private bool _isMember;
+
+        public Customer(int id, string firstName, string lastName, string phone, string email, string address, bool isFemale, bool isMember)
         {
             this.id = id;
             this.firstName = firstName;
@@ -30,6 +33,7 @@ namespace Model
             this.email = email;
             this.address = address;
             this.isFemale = isFemale;
+            this.isMember = isMember;
         }
 
 
@@ -40,5 +44,6 @@ namespace Model
         public string email { get => _email; set => _email = value; }
         public string address { get => _address; set => _address = value; }
         public bool isFemale { get => _isFemale; set => _isFemale = value; }
+        public bool isMember { get => _isMember; set => _isMember = value; }
     }
 }
