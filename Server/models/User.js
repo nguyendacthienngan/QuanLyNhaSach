@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
     },
     isFemale: {
       type: DataTypes.BOOLEAN,
-    },
+    }
   };
   const options = {
     tableName: "User",

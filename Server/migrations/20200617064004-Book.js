@@ -34,9 +34,17 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: true,
         },
-        type: {
+        genre: {
           type: Sequelize.STRING,
           allowNull: false,
+        },
+        imageUrl: {
+          allowNull: false,
+          type: Sequelize.STRING
+        },
+        releasedDate: {
+          allowNull: false,
+          type: Sequelize.DATE
         },
         createdAt: {
           allowNull: false,

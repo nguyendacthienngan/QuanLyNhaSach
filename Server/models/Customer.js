@@ -26,6 +26,10 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    isMember: { 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
   };
   const options = {
     tableName: "Customer",
