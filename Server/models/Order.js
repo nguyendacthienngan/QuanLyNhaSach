@@ -14,9 +14,12 @@ module.exports = (sequelize) => {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
-    status: {
-      type: DataTypes.INTEGER,
+    isPaid: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
+    },
+    paidAmount: {
+      type: DataTypes.DOUBLE
     },
   };
   const options = {

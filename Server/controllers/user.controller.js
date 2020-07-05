@@ -1,6 +1,7 @@
 const db = require("../models");
 const sequelize = require("sequelize");
 const User = db.User;
+const Account = db.Account;
 const Op = sequelize.Op;
 
 module.exports.getAllUsers = (req, res, next) => {
@@ -88,8 +89,8 @@ module.exports.addUser = (req, res, next) => {
   User.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
@@ -98,12 +99,12 @@ module.exports.addUser = (req, res, next) => {
     where: {
       [Op.and]: [
         {
-          firstname: {
+          firstName: {
             [Op.substring]: req.body.firstName,
           },
         },
         {
-          lastname: {
+          lastName: {
             [Op.substring]: req.body.lastName,
           },
         },
@@ -135,7 +136,18 @@ module.exports.addUser = (req, res, next) => {
         idCard: req.body.idCard,
       })
         .then((user) => {
-          res.status(200).json(user);
+          Account.create({
+            username: req.body.username,
+            password: req.body.password,
+            isAdmin:  req.body.isAdmin,
+            userID: user.id
+          })
+          .then((account) => {
+            return res.status(200).json(account);
+          })
+          .catch((err) => {
+            return res.status(400).jon(err.message);
+          });
         })
         .catch((err) => {
           if (!err.status) {
@@ -156,8 +168,8 @@ module.exports.updateUser = (req, res, next) => {
   User.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
@@ -199,8 +211,8 @@ module.exports.deleteUser = (req, res, next) => {
   User.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",

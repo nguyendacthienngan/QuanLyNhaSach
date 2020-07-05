@@ -21,8 +21,11 @@ module.exports = {
         type: Sequelize.DOUBLE,
         allowNull: false,
       },
-      status: {
-        type: Sequelize.INTEGER,
+      paidAmount: {
+        type: Sequelize.DOUBLE
+      },
+      isPaid: { // BOOLEAN hay BOOL
+        type: Sequelize.BOOLEAN,
         allowNull: false,
       },
       userID: {

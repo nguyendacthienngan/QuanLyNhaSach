@@ -13,6 +13,7 @@ module.exports = {
       phone: '1234567',
       address: '1 Nguyễn Trãi Q1',
       email: 'toantan@gmail.com',
+      isMember: true,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -22,6 +23,7 @@ module.exports = {
       phone: '1234567',
       address: '2 Lê Lợi Q1',
       email: 'bachnguyen@gmail.com',
+      isMember: false,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

@@ -5,9 +5,9 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-//const config = require('../config/config.json')[env]; // PostgreSQL
+const config = require('../config/config.json')[env]; // PostgreSQL
 //const config = require('../config/mysql.config.json')[env]; // MySQL
-const config = require('../config/mssql.config.json')[env]; // MSSQL
+//const config = require('../config/mssql.config.json')[env]; // MSSQL
 
 const db = {};
 let sequelize;

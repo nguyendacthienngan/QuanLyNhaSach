@@ -68,7 +68,7 @@ module.exports.signup = (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const role = req.body.role;
-  const userId = "1";
+  const userId = "1"; //SAI !
 
   bcrypt
     .hash(password, 12)

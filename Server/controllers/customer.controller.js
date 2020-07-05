@@ -7,12 +7,13 @@ module.exports.getAllCustomers = (req, res, next) => {
   Customer.findAll({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
       "isFemale",
+      "isMember"
     ],
   })
     .then((books) => {
@@ -31,12 +32,13 @@ module.exports.searchCustomer = (req, res, next) => {
   Customer.findAll({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
       "isFemale",
+      "isMember"
     ],
     where: {
       [Op.or]: [
@@ -81,22 +83,23 @@ module.exports.addCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
       "isFemale",
+      "isMember"
     ],
     where: {
       [Op.and]: [
         {
-          firstname: {
+          firstName: {
             [Op.substring]: req.body.firstName,
           },
         },
         {
-          lastname: {
+          lastName: {
             [Op.substring]: req.body.lastName,
           },
         },
@@ -124,6 +127,7 @@ module.exports.addCustomer = (req, res, next) => {
         email: req.body.email,
         address: req.body.address,
         isFemale: req.body.isFemale,
+        isMember: req.body.isMember
       })
         .then((customer) => res.status(200).json(customer))
         .catch((err) => {
@@ -145,12 +149,13 @@ module.exports.updateCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
       "isFemale",
+      "isMember"
     ],
     where: {
       id: req.body.id,
@@ -168,6 +173,7 @@ module.exports.updateCustomer = (req, res, next) => {
           email: req.body.email,
           address: req.body.address,
           isFemale: req.body.isFemale,
+          isMember: req.body.isMember
         })
         .then((customer) => res.status(200).json(customer))
         .catch((err) => {
@@ -186,12 +192,13 @@ module.exports.deleteCustomer = (req, res, next) => {
   Customer.findOne({
     attributes: [
       "id",
-      "firstname",
-      "lastname",
+      "firstName",
+      "lastName",
       "phone",
       "email",
       "address",
       "isFemale",
+      "isMember"
     ],
     where: { id: deletedCustomerId },
   })

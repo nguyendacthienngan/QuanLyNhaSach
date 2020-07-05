@@ -9,19 +9,23 @@ module.exports = {
         cost: 130000,
         price: 160000,
         description: 'beautiful',
-        type: 'Fairy Tale',
-      createdAt: new Date(),
-      updatedAt: new Date()
+        genre: 'Fairy Tale',
+        releasedDate: '1/1/2000',
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71QKDKxL-jL.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
     }, {
       title: 'HTML for Dummies',
       author: 'Nguyễn Công Hoan',
         stock: 500,
         cost: 130000,
-      price: '1000000',
-      description: 'great',
-      type: 'Scholarly Book',
-      createdAt: new Date(),
-      updatedAt: new Date()
+        price: '1000000',
+        description: 'great',
+        genre: 'Scholarly Book',
+        releasedDate: '1/1/2000',
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IuNDzDhwL._SX397_BO1,204,203,200_.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
     }],{});
   },
 

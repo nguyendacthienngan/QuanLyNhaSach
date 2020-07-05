@@ -13,7 +13,9 @@ module.exports.getAllBooks = function (req, res, next) {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
   })
     .then((book) => res.status(200).json(book))
@@ -36,7 +38,9 @@ module.exports.searchBooks = function (req, res, next) {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
     where: {
       [Op.or]: [
@@ -51,7 +55,7 @@ module.exports.searchBooks = function (req, res, next) {
           },
         },
         {
-          type: {
+          genre: {
             [Op.substring]: bookInfo,
           },
         },
@@ -98,8 +102,9 @@ module.exports.addBook = function (req, res) {
   const inputCost = req.body.cost;
   const inputPrice = req.body.price;
   const inputDescription = req.body.description;
-  const inputType = req.body.type;
-
+  const inputGenre = req.body.genre;
+  const inputReleasedDate = req.body.releasedDate;
+  const inputImageUrl = req.body.imageUrl;
   Book.findOne({
     where: {
       [Op.or]: [
@@ -123,7 +128,9 @@ module.exports.addBook = function (req, res) {
         cost: inputCost,
         price: inputPrice,
         description: inputDescription,
-        type: inputType,
+        genre: inputGenre,
+        releasedDate: inputReleasedDate,
+        imageUrl: inputImageUrl
       })
         .then((book) => res.status(200).json(book))
         .catch((err) => {
@@ -145,7 +152,9 @@ module.exports.updateBook = function (req, res, next) {
   const inputCost = req.body.cost;
   const inputPrice = req.body.price;
   const inputDescription = req.body.description;
-  const inputType = req.body.type;
+  const inputGenre = req.body.genre;
+  const inputReleasedDate = req.body.releasedDate;
+  const inputImageUrl = req.body.imageUrl;
   Book.findOne({
     attributes: [
       "id",
@@ -155,7 +164,9 @@ module.exports.updateBook = function (req, res, next) {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
     where: {
       id: {
@@ -172,7 +183,9 @@ module.exports.updateBook = function (req, res, next) {
           cost: inputCost,
           price: inputPrice,
           description: inputDescription,
-          type: inputType,
+          genre: inputGenre,
+          releasedDate: inputReleasedDate,
+          imageUrl: inputImageUrl
         })
         .then((book) => {
           if (!book) {
@@ -202,7 +215,9 @@ module.exports.deleteBookById = function (req, res, next) {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
     where: { id: deletedBookId },
   })
@@ -231,7 +246,9 @@ module.exports.getAvailableBooks = (req, res, next) => {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
     where: {
       [Op.or]: [
@@ -262,7 +279,9 @@ module.exports.filterByPrice = (req, res, next) => {
       "cost",
       "price",
       "description",
-      "type",
+      "genre",
+      "releasedDate",
+      "imageUrl"
     ],
     where: {
       [Op.and]: [

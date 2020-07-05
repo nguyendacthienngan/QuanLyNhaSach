@@ -37,7 +37,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      type: {
+      genre: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      releasedDate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      imageUrl: {
         type: DataTypes.STRING,
         allowNull: false,
       },

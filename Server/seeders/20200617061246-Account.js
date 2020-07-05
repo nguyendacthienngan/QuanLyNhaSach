@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('Account', [{
         username: 'heoboi',
         password: '123',
-        role: 1, // Admin
+        isAdmin: true, // Admin
         userID: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -13,7 +13,7 @@ module.exports = {
       {
         username: 'hieu_truong',
         password: '456',
-        role: 2, // Employee
+        isAdmin: false, // Employee
         userID: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
       {
         username: 'khanh_chuong',
         password: '456',
-        role: 2, // Employee
+        isAdmin: false, // Employee
         userID: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -31,7 +31,7 @@ module.exports = {
       {
         username: 'don_chung',
         password: '789',
-        role: 2, // Employee
+        isAdmin: false, // Employee
         userID: 4,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -40,7 +40,7 @@ module.exports = {
       {
         username: 'tien_bao',
         password: 'vang',
-        role: 2, // Employee
+        isAdmin: false, // Employee
         userID: 5,
         createdAt: new Date(),
         updatedAt: new Date()
