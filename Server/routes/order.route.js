@@ -1,30 +1,29 @@
-const OrderController = require('../controllers/order.controller');
-const express = require('express');
+const orderController = require("../controllers/order.controller");
+const express = require("express");
 const router = express.Router();
 
+router.get("/", orderController.getOrders);
 
-router.get('/', OrderController.getOrders);
+router.get("/total", orderController.getTotalOrders);
+router.post("/total/period", orderController.getTotalOrdersInPeriod);
+router.post("/total/month", orderController.getTotalOrdersThisMonth);
+router.post("/total/year", orderController.getTotalOrdersThisYear);
 
-router.get('/total', OrderController.getTotalOrders);
-router.post('/total/period', OrderController.getTotalOrdersInPeriod);
-router.post('/total/month', OrderController.getTotalOrdersThisMonth);
-router.post('/total/year', OrderController.getTotalOrdersThisYear);
+router.post("/search", orderController.searchOrder);
+router.post("/filter", orderController.filterByDate);
 
-router.post('/search', OrderController.searchOrder);
-router.post('/filter', OrderController.filterByDate);
+router.post("/add", orderController.addOrder);
+router.post("/update", orderController.updateOrder);
+router.delete("/delete/:id", orderController.deleteOrder);
 
-router.post('/add', OrderController.addOrder);
-router.post('/update', OrderController.updateOrder);
-router.delete('/delete/:id', OrderController.deleteOrder);
+router.get("/max", orderController.getMaxIDOrder); //?
 
-router.get('/max', OrderController.getMaxIDOrder); //?
+router.get("/finalize", orderController.finalizedOrder);
+router.get("/abort", orderController.abortedOrder);
 
-router.get('/finalize', OrderController.finalizedOrder);
-router.get('/abort', OrderController.abortedOrder);
+router.get("/income/month", orderController.getThisMonthIncome);
+router.get("/income/year", orderController.getYearIncome);
 
-router.get('/income/month', OrderController.getThisMonthIncome);
-router.get('/income/year', OrderController.getYearIncome);
-
-
+router.get("/:id", orderController.getAnOrder);
 
 module.exports = router;
