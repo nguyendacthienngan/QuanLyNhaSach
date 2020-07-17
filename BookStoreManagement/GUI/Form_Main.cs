@@ -116,7 +116,8 @@ namespace GUI
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            AddControlsToPanel(new UC_Customer_Detail());
+            //AddControlsToPanel(new UC_Customer_Detail());
+            AddControlsToPanel(new UC_Customer_Default());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

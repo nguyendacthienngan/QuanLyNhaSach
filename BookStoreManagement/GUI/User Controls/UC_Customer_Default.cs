@@ -41,6 +41,26 @@ namespace GUI.User_Controls
             try
             {
                 List<Customer> listCustomers = customerBLL.GetAllCustomer();
+                dgvCustomer.AutoGenerateColumns = false;
+
+                dgvCustomer.ColumnCount = 6;
+                dgvCustomer.Columns[0].HeaderText = "First Name";
+                dgvCustomer.Columns[0].DataPropertyName = "firstName";
+
+                dgvCustomer.Columns[1].HeaderText = "Last Name";
+                dgvCustomer.Columns[1].DataPropertyName = "lastName";
+
+                dgvCustomer.Columns[2].HeaderText = "Phone";
+                dgvCustomer.Columns[2].DataPropertyName = "phone";
+
+                dgvCustomer.Columns[3].HeaderText = "Email";
+                dgvCustomer.Columns[3].DataPropertyName = "email";
+
+                dgvCustomer.Columns[4].HeaderText = "Address";
+                dgvCustomer.Columns[4].DataPropertyName = "address";
+
+                dgvCustomer.Columns[5].HeaderText = "Female";
+                dgvCustomer.Columns[5].DataPropertyName = "isFemale";
                 dgvCustomer.DataSource = listCustomers;
             }
             catch

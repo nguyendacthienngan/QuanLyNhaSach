@@ -8,7 +8,7 @@ namespace DAL
     public class CustomerDAL
     {
         private string root = "http://localhost:8080/";
-        private string DATA;
+        //private string DATA;
 
         public CustomerDAL()
         {
