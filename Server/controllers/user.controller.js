@@ -146,7 +146,7 @@ module.exports.addUser = (req, res, next) => {
             return res.status(200).json(account);
           })
           .catch((err) => {
-            return res.status(400).jon(err.message);
+            return res.status(400).json(err.message);
           });
         })
         .catch((err) => {

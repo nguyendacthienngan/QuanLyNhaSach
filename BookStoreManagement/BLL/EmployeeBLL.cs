@@ -43,15 +43,23 @@ namespace BLL
                 return null;
             }
         }
-        public bool AddUser(User user1)
+        public bool AddUser(User user1, Account account1)
         {
-            bool result = employeeDAL.AddEmployee(user1);
+            bool result = employeeDAL.AddEmployee(user1, account1);
             return result;
         }
         public User FindEmployee(int id)
         {
             return employeeDAL.FindEmployee(id);
-            
+        }
+        public List<User> SearchUser(string x)
+        {
+            List<User> users = employeeDAL.SearchUser(x);
+            return users;
+        }
+        public bool EditUser(User user1)
+        {
+            return employeeDAL.EditUser(user1);
         }
     }
 }
