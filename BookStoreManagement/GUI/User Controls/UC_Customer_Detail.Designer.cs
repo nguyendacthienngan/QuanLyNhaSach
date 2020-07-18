@@ -53,15 +53,15 @@
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvCustomerDetail = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lbCustomer = new System.Windows.Forms.Label();
+            this.txtFilter = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.pnInput.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerDetail)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -69,16 +69,16 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.76316F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.23684F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.703578F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.29642F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1014, 608);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -87,17 +87,17 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 98.46743F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.532567F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel2.Controls.Add(this.pnInput, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dgvCustomerDetail, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 107);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 13);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1008, 477);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1008, 571);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -133,7 +133,7 @@
             this.pnInput.Margin = new System.Windows.Forms.Padding(2);
             this.pnInput.Name = "pnInput";
             this.pnInput.Quality = 10;
-            this.pnInput.Size = new System.Drawing.Size(499, 464);
+            this.pnInput.Size = new System.Drawing.Size(495, 558);
             this.pnInput.TabIndex = 21;
             this.pnInput.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
@@ -146,7 +146,6 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(200, 31);
             this.txtId.TabIndex = 52;
-            this.txtId.Visible = false;
             // 
             // ddGender
             // 
@@ -187,7 +186,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFirstName.ForeColor = System.Drawing.Color.White;
+            this.txtFirstName.ForeColor = System.Drawing.Color.Black;
             this.txtFirstName.Location = new System.Drawing.Point(40, 89);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Multiline = true;
@@ -214,7 +213,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtLastName.ForeColor = System.Drawing.Color.White;
+            this.txtLastName.ForeColor = System.Drawing.Color.Black;
             this.txtLastName.Location = new System.Drawing.Point(261, 89);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Multiline = true;
@@ -276,14 +275,15 @@
             this.btnDelete.Size = new System.Drawing.Size(80, 42);
             this.btnDelete.TabIndex = 44;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.ActiveBorderThickness = 1;
             this.btnCancel.ActiveCornerRadius = 20;
-            this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
+            this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
             this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
+            this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.ButtonText = "Cancel";
@@ -307,9 +307,9 @@
             // 
             this.btnSave.ActiveBorderThickness = 1;
             this.btnSave.ActiveCornerRadius = 20;
-            this.btnSave.ActiveFillColor = System.Drawing.Color.Transparent;
-            this.btnSave.ActiveForecolor = System.Drawing.Color.Black;
-            this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(0)))), ((int)(((byte)(170)))));
+            this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
+            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.ButtonText = "Save";
@@ -333,9 +333,9 @@
             // 
             this.btnAdd.ActiveBorderThickness = 1;
             this.btnAdd.ActiveCornerRadius = 20;
-            this.btnAdd.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
+            this.btnAdd.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
             this.btnAdd.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAdd.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(254)))), ((int)(((byte)(83)))));
+            this.btnAdd.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(195)))));
             this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.ButtonText = "Add";
@@ -460,13 +460,31 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.dgvCustomerDetail);
+            this.panel1.Controls.Add(this.txtFilter);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(509, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(432, 556);
+            this.panel1.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Search";
+            // 
             // dgvCustomerDetail
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvCustomerDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCustomerDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCustomerDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerDetail.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCustomerDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -488,11 +506,12 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomerDetail.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCustomerDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvCustomerDetail.DoubleBuffered = true;
             this.dgvCustomerDetail.EnableHeadersVisualStyles = false;
             this.dgvCustomerDetail.HeaderBgColor = System.Drawing.Color.Black;
             this.dgvCustomerDetail.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvCustomerDetail.Location = new System.Drawing.Point(513, 3);
+            this.dgvCustomerDetail.Location = new System.Drawing.Point(0, 139);
             this.dgvCustomerDetail.Name = "dgvCustomerDetail";
             this.dgvCustomerDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -503,53 +522,36 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomerDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCustomerDetail.Size = new System.Drawing.Size(432, 462);
+            this.dgvCustomerDetail.Size = new System.Drawing.Size(432, 417);
             this.dgvCustomerDetail.TabIndex = 7;
             this.dgvCustomerDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerDetail_CellClick);
             this.dgvCustomerDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerDetail_CellContentClick);
             // 
-            // tableLayoutPanel3
+            // txtFilter
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.bunifuSeparator1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lbCustomer, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.40816F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.59184F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1008, 98);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(244, 75);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(520, 15);
-            this.bunifuSeparator1.TabIndex = 54;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // lbCustomer
-            // 
-            this.lbCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbCustomer.AutoSize = true;
-            this.lbCustomer.Font = new System.Drawing.Font("Dream Meadow", 42F);
-            this.lbCustomer.Location = new System.Drawing.Point(3, 0);
-            this.lbCustomer.Name = "lbCustomer";
-            this.lbCustomer.Size = new System.Drawing.Size(1002, 68);
-            this.lbCustomer.TabIndex = 53;
-            this.lbCustomer.Text = "Customer";
-            this.lbCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.txtFilter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtFilter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtFilter.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtFilter.Font = new System.Drawing.Font("Futura Lt BT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFilter.HintForeColor = System.Drawing.Color.Empty;
+            this.txtFilter.HintText = "";
+            this.txtFilter.isPassword = false;
+            this.txtFilter.LineFocusedColor = System.Drawing.Color.LightSteelBlue;
+            this.txtFilter.LineIdleColor = System.Drawing.Color.Black;
+            this.txtFilter.LineMouseHoverColor = System.Drawing.Color.LightSteelBlue;
+            this.txtFilter.LineThickness = 4;
+            this.txtFilter.Location = new System.Drawing.Point(0, 0);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtFilter.MaxLength = 32767;
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
+            this.txtFilter.Size = new System.Drawing.Size(432, 48);
+            this.txtFilter.TabIndex = 22;
+            this.txtFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFilter.OnValueChanged += new System.EventHandler(this.txtFilter_OnValueChanged);
             // 
             // UC_Customer_Detail
             // 
@@ -565,9 +567,9 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.pnInput.ResumeLayout(false);
             this.pnInput.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerDetail)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -577,6 +579,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Bunifu.Framework.UI.BunifuGradientPanel pnInput;
+        private Bunifu.Framework.BunifuCustomTextbox txtId;
+        private Bunifu.UI.WinForms.BunifuDropdown ddGender;
         private Bunifu.Framework.BunifuCustomTextbox txtFirstName;
         private Bunifu.Framework.BunifuCustomTextbox txtPhone;
         private Bunifu.Framework.BunifuCustomTextbox txtLastName;
@@ -592,11 +596,9 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label lbCustomer;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvCustomerDetail;
-        private Bunifu.UI.WinForms.BunifuDropdown ddGender;
-        private Bunifu.Framework.BunifuCustomTextbox txtId;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtFilter;
+        private System.Windows.Forms.Label label1;
     }
 }
