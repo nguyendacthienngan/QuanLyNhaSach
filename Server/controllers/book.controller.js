@@ -15,7 +15,7 @@ module.exports.getAllBooks = function (req, res, next) {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
   })
     .then((book) => res.status(200).json(book))
@@ -40,7 +40,7 @@ module.exports.searchBooks = function (req, res, next) {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
     where: {
       [Op.or]: [
@@ -130,7 +130,7 @@ module.exports.addBook = function (req, res) {
         description: inputDescription,
         genre: inputGenre,
         releasedDate: inputReleasedDate,
-        imageUrl: inputImageUrl
+        imageUrl: inputImageUrl,
       })
         .then((book) => res.status(200).json(book))
         .catch((err) => {
@@ -166,7 +166,7 @@ module.exports.updateBook = function (req, res, next) {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
     where: {
       id: {
@@ -185,7 +185,7 @@ module.exports.updateBook = function (req, res, next) {
           description: inputDescription,
           genre: inputGenre,
           releasedDate: inputReleasedDate,
-          imageUrl: inputImageUrl
+          imageUrl: inputImageUrl,
         })
         .then((book) => {
           if (!book) {
@@ -217,7 +217,7 @@ module.exports.deleteBookById = function (req, res, next) {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
     where: { id: deletedBookId },
   })
@@ -248,7 +248,7 @@ module.exports.getAvailableBooks = (req, res, next) => {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
     where: {
       [Op.or]: [
@@ -281,7 +281,7 @@ module.exports.filterByPrice = (req, res, next) => {
       "description",
       "genre",
       "releasedDate",
-      "imageUrl"
+      "imageUrl",
     ],
     where: {
       [Op.and]: [
@@ -299,6 +299,33 @@ module.exports.filterByPrice = (req, res, next) => {
     },
   })
     .then((books) => res.status(200).json(books))
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
+      next(err);
+    });
+};
+
+module.exports.getABook = (req, res, next) => {
+  Book.findOne({
+    attributes: [
+      "id",
+      "title",
+      "author",
+      "stock",
+      "cost",
+      "price",
+      "description",
+      "genre",
+      "releasedDate",
+      "imageUrl",
+    ],
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((book) => res.status(200).json(book))
     .catch((err) => {
       if (!err.status) {
         err.statusCode = 500;

@@ -13,7 +13,7 @@ module.exports.getAllCustomers = (req, res, next) => {
       "email",
       "address",
       "isFemale",
-      "isMember"
+      "isMember",
     ],
   })
     .then((books) => {
@@ -38,7 +38,7 @@ module.exports.searchCustomer = (req, res, next) => {
       "email",
       "address",
       "isFemale",
-      "isMember"
+      "isMember",
     ],
     where: {
       [Op.or]: [
@@ -89,7 +89,7 @@ module.exports.addCustomer = (req, res, next) => {
       "email",
       "address",
       "isFemale",
-      "isMember"
+      "isMember",
     ],
     where: {
       [Op.and]: [
@@ -127,7 +127,7 @@ module.exports.addCustomer = (req, res, next) => {
         email: req.body.email,
         address: req.body.address,
         isFemale: req.body.isFemale,
-        isMember: req.body.isMember
+        isMember: req.body.isMember,
       })
         .then((customer) => res.status(200).json(customer))
         .catch((err) => {
@@ -155,7 +155,7 @@ module.exports.updateCustomer = (req, res, next) => {
       "email",
       "address",
       "isFemale",
-      "isMember"
+      "isMember",
     ],
     where: {
       id: req.body.id,
@@ -173,7 +173,7 @@ module.exports.updateCustomer = (req, res, next) => {
           email: req.body.email,
           address: req.body.address,
           isFemale: req.body.isFemale,
-          isMember: req.body.isMember
+          isMember: req.body.isMember,
         })
         .then((customer) => res.status(200).json(customer))
         .catch((err) => {
@@ -198,7 +198,7 @@ module.exports.deleteCustomer = (req, res, next) => {
       "email",
       "address",
       "isFemale",
-      "isMember"
+      "isMember",
     ],
     where: { id: deletedCustomerId },
   })
@@ -213,6 +213,31 @@ module.exports.deleteCustomer = (req, res, next) => {
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;
+      next(err);
+    });
+};
+
+module.exports.getACustomer = (req, res, next) => {
+  Customer.findOne({
+    attributes: [
+      "id",
+      "firstName",
+      "lastName",
+      "phone",
+      "email",
+      "address",
+      "isFemale",
+      "isMember",
+    ],
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((customer) => res.status(200).json(customer))
+    .catch((err) => {
+      if (!err.status) {
+        err.statusCode = 500;
+      }
       next(err);
     });
 };
