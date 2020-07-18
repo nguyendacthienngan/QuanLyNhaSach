@@ -142,12 +142,12 @@ module.exports.addUser = (req, res, next) => {
             isAdmin: req.body.isAdmin,
             userID: user.id,
           })
-            .then((account) => {
-              return res.status(200).json(account);
-            })
-            .catch((err) => {
-              return res.status(400).json(err.message);
-            });
+          .then((account) => {
+            return res.status(200).json(account);
+          })
+          .catch((err) => {
+            return res.status(400).json(err.message);
+          });
         })
         .catch((err) => {
           if (!err.status) {

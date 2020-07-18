@@ -56,24 +56,44 @@ namespace DAL
                 return null;
             }      
         }
-
-        public bool AddEmployee(User user1)
+        public List<User> SearchUser(string x)
+        {
+            string url = root + "user/search";
+            CallAPI cal = new CallAPI();
+            string jsonResult = "";
+            DATA = "{\"info\":\"" + x + "\"}";
+            cal.callAPI(url, DATA, "POST", ref jsonResult);
+            List<User> allUsers = JsonConvert.DeserializeObject<List<User>>(jsonResult); 
+            return allUsers;
+        }
+        public bool AddEmployee(User user1, Account account1)
         {
             string url = root + "user/add";
             CallAPI cal = new CallAPI();
             string json = JsonConvert.SerializeObject(user1);
+   //         json += JsonConvert.SerializeObject(account1);
             string jsonResult = "";
-            return cal.callAPI(url, json, "POST", ref jsonResult);
+            bool result = cal.callAPI(url, json, "POST", ref jsonResult);
+            return result;
 
         }
         public User FindEmployee(int id)
         {
-            string url = root + "user/" + id;
+            string url = root + "user/search";
             CallAPI cal = new CallAPI();      
             string jsonResult = "";
-            cal.callAPI(url, null, "GET", ref jsonResult);
+            cal.callAPI(url, null, "POST", ref jsonResult);
             User user1 = JsonConvert.DeserializeObject<User>(jsonResult);
             return user1;
+        }
+
+        public bool EditUser(User user1)
+        {
+            string url = root + "user/update";
+            CallAPI cal = new CallAPI();
+            string jsonResult = "";
+            string json = JsonConvert.SerializeObject(user1);
+            return cal.callAPI(url, json, "PUT", ref jsonResult);
         }
     }
 }
