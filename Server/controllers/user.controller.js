@@ -139,8 +139,8 @@ module.exports.addUser = (req, res, next) => {
           Account.create({
             username: req.body.username,
             password: req.body.password,
-            isAdmin:  req.body.isAdmin,
-            userID: user.id
+            isAdmin: req.body.isAdmin,
+            userID: user.id,
           })
           .then((account) => {
             return res.status(200).json(account);
@@ -228,6 +228,32 @@ module.exports.deleteUser = (req, res, next) => {
     })
     .then((deletedUser) => {
       res.status(201).json(deletedUser);
+    })
+    .catch((err) => {
+      if (!err.status) err.statusCode = 500;
+      next(err);
+    });
+};
+
+module.exports.getAnUser = (req, res, next) => {
+  User.findOne({
+    attributes: [
+      "id",
+      "firstName",
+      "lastName",
+      "phone",
+      "dateOfBirth",
+      "email",
+      "address",
+      "isFemale",
+      "idCard",
+    ],
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((user) => {
+      res.status(200).json(user);
     })
     .catch((err) => {
       if (!err.status) err.statusCode = 500;

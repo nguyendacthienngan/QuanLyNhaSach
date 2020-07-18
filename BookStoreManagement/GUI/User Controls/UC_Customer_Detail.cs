@@ -130,12 +130,6 @@ namespace GUI.User_Controls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            /*txtAddress.Text = "";
-            txtEmail.Text = "";
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtPhone.Text = "";
-            ddGender.Text = "-select-";*/
             if (CheckFirstName() == 0 || CheckLastName() == 0
             || CheckGender() == 0 || String.IsNullOrEmpty(txtPhone.Text)
             || String.IsNullOrEmpty(txtEmail.Text)
@@ -152,7 +146,7 @@ namespace GUI.User_Controls
                 string email = txtEmail.Text;
                 string address = txtAddress.Text;
                 bool gender = (ddGender.SelectedItem.ToString() == "Female") ? true : false;
-                Customer customer = new Customer(1, fName, lName, phone, email, address, gender);
+                Customer customer = new Customer(1, fName, lName, phone, email, address, gender, true);
                 bool addCustomer = customerBLL.AddCustomer(customer);
                 if (addCustomer)
                 {
@@ -171,7 +165,7 @@ namespace GUI.User_Controls
             bool gender = true;
             string email = txtEmail.Text;
             string address = txtAddress.Text;
-            Customer customer = new Customer(id, fName, lName, phone, email, address, gender);
+            Customer customer = new Customer(id, fName, lName, phone, email, address, gender, true);
             bool editCustomer = customerBLL.EditCustomer(customer);
             if (editCustomer)
             {

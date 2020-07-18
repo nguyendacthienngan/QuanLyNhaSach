@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -10,7 +10,7 @@ module.exports = {
         price: 160000,
         description: 'beautiful',
         genre: 'Fairy Tale',
-        releasedDate: '1/1/2000',
+        releasedDate: new Date(2000,1,1),
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71QKDKxL-jL.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
         price: '1000000',
         description: 'great',
         genre: 'Scholarly Book',
-        releasedDate: '1/1/2000',
+        releasedDate: new Date(2000,1,1),
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IuNDzDhwL._SX397_BO1,204,203,200_.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Book', null, {});
-  }
+    return queryInterface.bulkDelete("Book", null, {});
+  },
 };
