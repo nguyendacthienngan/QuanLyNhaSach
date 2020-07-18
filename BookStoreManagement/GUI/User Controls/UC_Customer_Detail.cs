@@ -115,6 +115,20 @@ namespace GUI.User_Controls
             try
             {
                 List<Customer> listCustomers = customerBLL.GetAllCustomer();
+                dgvCustomerDetail.AutoGenerateColumns = false;
+
+                dgvCustomerDetail.ColumnCount = 4;
+                dgvCustomerDetail.Columns[0].HeaderText = "First Name";
+                dgvCustomerDetail.Columns[0].DataPropertyName = "firstName";
+
+                dgvCustomerDetail.Columns[1].HeaderText = "Last Name";
+                dgvCustomerDetail.Columns[1].DataPropertyName = "lastName";
+
+                dgvCustomerDetail.Columns[2].HeaderText = "Phone";
+                dgvCustomerDetail.Columns[2].DataPropertyName = "phone";
+
+                dgvCustomerDetail.Columns[3].HeaderText = "Female";
+                dgvCustomerDetail.Columns[3].DataPropertyName = "isFemale";
                 dgvCustomerDetail.DataSource = listCustomers;
             }
             catch
@@ -188,7 +202,12 @@ namespace GUI.User_Controls
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhone.Clear();
+            ddGender.Text = "-select-";
         }
 
         private void bunifuLabel6_Click(object sender, EventArgs e)
@@ -330,6 +349,11 @@ namespace GUI.User_Controls
                 txtAddress.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
 
             }
+        }
+
+        private void dgvCustomerDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
