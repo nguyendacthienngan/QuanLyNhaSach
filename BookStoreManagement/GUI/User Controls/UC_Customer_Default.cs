@@ -119,5 +119,10 @@ namespace GUI.User_Controls
 
             data = dgvCustomer;
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

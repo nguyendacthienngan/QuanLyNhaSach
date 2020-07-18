@@ -17,12 +17,33 @@ namespace GUI.User_Controls
     {
         private Label[] errorLabels = new Label[] { };
         public CustomerBLL customerBLL;
+        private List<Customer> listCustomers = new List<Customer>();
+        private string strFilter = "";
+
         //DataGridView datagrid;
         public UC_Customer_Detail()
         {
             //datagrid = data;
             customerBLL = new CustomerBLL();
+
             InitializeComponent();
+
+            
+
+            dgvCustomerDetail.AutoGenerateColumns = false;
+
+            dgvCustomerDetail.ColumnCount = 4;
+            dgvCustomerDetail.Columns[0].HeaderText = "First Name";
+            dgvCustomerDetail.Columns[0].DataPropertyName = "firstName";
+
+            dgvCustomerDetail.Columns[1].HeaderText = "Last Name";
+            dgvCustomerDetail.Columns[1].DataPropertyName = "lastName";
+
+            dgvCustomerDetail.Columns[2].HeaderText = "Phone";
+            dgvCustomerDetail.Columns[2].DataPropertyName = "phone";
+
+            dgvCustomerDetail.Columns[3].HeaderText = "Female";
+            dgvCustomerDetail.Columns[3].DataPropertyName = "isFemale";
             LoadCustomer();
         }
 
@@ -30,10 +51,8 @@ namespace GUI.User_Controls
         {
             if(txtFirstName.Text == "")
             {
-                //lbErorrFName.Text = "Phải nhập";
                 return 0;
             }
-            //lbErorrFName.Text = "";
             return 1;
         }
 
@@ -41,10 +60,8 @@ namespace GUI.User_Controls
         {
             if (txtLastName.Text == "")
             {
-                //lbErrorLName.Text = "Phải nhập";
                 return 0;
             }
-            //lbErrorLName.Text = "";
             return 1;
         }
 
@@ -52,10 +69,8 @@ namespace GUI.User_Controls
         {
             if (ddGender.Text == "-select-")
             {
-                //lbErorrGender.Text = "Phải chọn";
                 return 0;
             }
-            //lbErorrGender.Text = "";
             return 1;
         }
 
@@ -65,10 +80,8 @@ namespace GUI.User_Controls
         {
             if (txtPhone.Text == "")
             {
-                //lbErorrPhone.Text = "Phải nhập";
                 return 0;
             }
-           // lbErorrPhone.Text = "";
             return 1;
         }
 
@@ -110,26 +123,27 @@ namespace GUI.User_Controls
 
         }
 
+        private List<Customer> CustomerFilter (List<Customer> lc)
+        {
+            List<Customer> result = new List<Customer>();
+            foreach(Customer c in lc)
+            {
+                if(c.firstName.ToLower().IndexOf(strFilter.ToLower()) != -1)
+                {
+                    result.Add(c);
+                }
+            }
+            return result;
+        }
+
         private void LoadCustomer()
         {
             try
             {
-                List<Customer> listCustomers = customerBLL.GetAllCustomer();
-                dgvCustomerDetail.AutoGenerateColumns = false;
-
-                dgvCustomerDetail.ColumnCount = 4;
-                dgvCustomerDetail.Columns[0].HeaderText = "First Name";
-                dgvCustomerDetail.Columns[0].DataPropertyName = "firstName";
-
-                dgvCustomerDetail.Columns[1].HeaderText = "Last Name";
-                dgvCustomerDetail.Columns[1].DataPropertyName = "lastName";
-
-                dgvCustomerDetail.Columns[2].HeaderText = "Phone";
-                dgvCustomerDetail.Columns[2].DataPropertyName = "phone";
-
-                dgvCustomerDetail.Columns[3].HeaderText = "Female";
-                dgvCustomerDetail.Columns[3].DataPropertyName = "isFemale";
-                dgvCustomerDetail.DataSource = listCustomers;
+                listCustomers = new List<Customer>();
+                listCustomers = customerBLL.GetAllCustomer();
+                
+                dgvCustomerDetail.DataSource = CustomerFilter(listCustomers);
             }
             catch
             {
@@ -184,8 +198,9 @@ namespace GUI.User_Controls
             if (editCustomer)
             {
                 MessageBox.Show("Edit customer success");
+                LoadCustomer();
             }
-            LoadCustomer();
+            
         }
 
         
@@ -338,22 +353,59 @@ namespace GUI.User_Controls
 
         private void dgvCustomerDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvCustomerDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            int myIndex = e.RowIndex != -1 ? e.RowIndex : 0;
+            txtId.Text = listCustomers[myIndex].id.ToString();
+            txtFirstName.Text = listCustomers[myIndex].firstName;
+            txtLastName.Text = listCustomers[myIndex].lastName;
+            txtPhone.Text = listCustomers[myIndex].phone;
+            txtAddress.Text = listCustomers[myIndex].address;
+            txtEmail.Text = listCustomers[myIndex].email;
+            /*if(dgvCustomerDetail.Rows[e.RowIndex].Cells[e.ColumnIndex != -1 ? e.ColumnIndex : 0 ].Value != null)
             {
                 dgvCustomerDetail.CurrentRow.Selected = true;
-                txtId.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
-                txtFirstName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["firstName"].FormattedValue.ToString();
-                txtLastName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["lastName"].FormattedValue.ToString();
-                txtPhone.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["phone"].FormattedValue.ToString();
+                //txtId.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
+                
+                txtFirstName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                txtLastName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                txtPhone.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 txtEmail.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["email"].FormattedValue.ToString();
                 txtAddress.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
 
-            }
+        }*/
         }
 
         private void dgvCustomerDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            string fName = txtFirstName.Text;
+            string lName = txtLastName.Text;
+            string phone = txtPhone.Text;
+            bool gender = true;
+            string email = txtEmail.Text;
+            string address = txtAddress.Text;
+            Customer customer = new Customer(id, fName, lName, phone, email, address, gender, true);
+            bool deleteCustomer = customerBLL.DeleteCustomer(customer);
+            if (deleteCustomer)
+            {
+                MessageBox.Show("Delete customer success");
+            }
+            LoadCustomer();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtFilter_OnValueChanged(object sender, EventArgs e)
+        {
+            strFilter = txtFilter.Text;
+            dgvCustomerDetail.DataSource = CustomerFilter(listCustomers);
         }
     }
 }
