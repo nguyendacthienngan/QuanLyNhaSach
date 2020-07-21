@@ -110,7 +110,13 @@ namespace GUI.User_Controls
             string fName = txtFirstName.Text;
             string lName = txtLastName.Text;
             string phone = txtPhone.Text;
-            bool gender = true;
+            bool gender;
+            if (ddGender.SelectedIndex == 0)
+            {
+                gender = false;
+            }
+            else
+                gender = true;
             string email = txtEmail.Text;
             string address = txtAddress.Text;
             Customer customer = new Customer(id, fName, lName, phone, email, address, gender, true);
