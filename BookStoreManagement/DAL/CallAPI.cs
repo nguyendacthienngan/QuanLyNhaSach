@@ -24,7 +24,7 @@ namespace DAL
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
             request.Method = METHOD; // "POST", "GET"
             request.ContentType = "application/json";
-            if (METHOD == "POST" || METHOD == "PUT")
+            if (METHOD == "POST" || METHOD == "PUT"|| METHOD=="DELETE")
             {
                 request.ContentLength = DATA.Length;
                 using (Stream webStream = request.GetRequestStream())

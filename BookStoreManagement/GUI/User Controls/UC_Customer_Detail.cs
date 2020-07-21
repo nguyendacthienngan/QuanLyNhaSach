@@ -47,88 +47,15 @@ namespace GUI.User_Controls
             LoadCustomer();
         }
 
-        private int CheckFirstName()
-        {
-            if(txtFirstName.Text == "")
-            {
-                return 0;
-            }
-            return 1;
-        }
-
-        private int CheckLastName()
-        {
-            if (txtLastName.Text == "")
-            {
-                return 0;
-            }
-            return 1;
-        }
-
-        private int CheckGender()
-        {
-            if (ddGender.Text == "-select-")
-            {
-                return 0;
-            }
-            return 1;
-        }
-
-        
-
-        private int CheckPhone()
-        {
-            if (txtPhone.Text == "")
-            {
-                return 0;
-            }
-            return 1;
-        }
-
-        
-        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                //lbErorrPhone.Text = "This input requires numbers only";
-                e.Handled = true;
-
-            }
-            //else
-               // lbErorrPhone.Text = "";
-        }
-
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void bunifuLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private List<Customer> CustomerFilter (List<Customer> lc)
         {
             List<Customer> result = new List<Customer>();
             foreach(Customer c in lc)
             {
-                if(c.firstName.ToLower().IndexOf(strFilter.ToLower()) != -1)
+                if(c.firstName.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.lastName.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.address.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.phone.ToLower().IndexOf(strFilter.ToLower()) != -1)
                 {
                     result.Add(c);
                 }
@@ -151,18 +78,11 @@ namespace GUI.User_Controls
             }
         }
 
-        private void bunifuCustomTextbox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckFirstName() == 0 || CheckLastName() == 0
-            || CheckGender() == 0 || String.IsNullOrEmpty(txtPhone.Text)
-            || String.IsNullOrEmpty(txtEmail.Text)
-            || CheckPhone() == 0)
-
+            if (String.IsNullOrEmpty(txtFirstName.Text) || String.IsNullOrEmpty(txtLastName.Text)
+            || String.IsNullOrEmpty(ddGender.Text) || String.IsNullOrEmpty(txtPhone.Text)
+            || String.IsNullOrEmpty(txtEmail.Text)|| String.IsNullOrEmpty(txtAddress.Text))
             {
                 MessageBox.Show("Please insert information fully !", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -202,19 +122,6 @@ namespace GUI.User_Controls
             }
             
         }
-
-        
-
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtAddress.Clear();
@@ -223,36 +130,6 @@ namespace GUI.User_Controls
             txtLastName.Clear();
             txtPhone.Clear();
             ddGender.Text = "-select-";
-        }
-
-        private void bunifuLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ddGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AddErrorMessage(Bunifu.Framework.BunifuCustomTextbox txbox, string myTag, string myMessage = "Please input this field !")
@@ -345,10 +222,7 @@ namespace GUI.User_Controls
             else
             {
                 RemoveErrorMessage("address");
-                
             }
-
-
         }
 
         private void dgvCustomerDetail_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -360,32 +234,22 @@ namespace GUI.User_Controls
             txtPhone.Text = listCustomers[myIndex].phone;
             txtAddress.Text = listCustomers[myIndex].address;
             txtEmail.Text = listCustomers[myIndex].email;
-            /*if(dgvCustomerDetail.Rows[e.RowIndex].Cells[e.ColumnIndex != -1 ? e.ColumnIndex : 0 ].Value != null)
-            {
-                dgvCustomerDetail.CurrentRow.Selected = true;
-                //txtId.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
-                
-                txtFirstName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                txtLastName.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
-                txtPhone.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                txtEmail.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["email"].FormattedValue.ToString();
-                txtAddress.Text = dgvCustomerDetail.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
-
-        }*/
+            
+            ddGender.SelectedIndex = listCustomers[myIndex].isFemale ? 1 : 0;
         }
-
-        private void dgvCustomerDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtId.Text);
             string fName = txtFirstName.Text;
             string lName = txtLastName.Text;
             string phone = txtPhone.Text;
-            bool gender = true;
+            bool gender;
+            if (ddGender.SelectedIndex == 0)
+            {
+                gender = false;
+            }
+            else
+                gender = true;
             string email = txtEmail.Text;
             string address = txtAddress.Text;
             Customer customer = new Customer(id, fName, lName, phone, email, address, gender, true);
@@ -395,11 +259,6 @@ namespace GUI.User_Controls
                 MessageBox.Show("Delete customer success");
             }
             LoadCustomer();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void txtFilter_OnValueChanged(object sender, EventArgs e)

@@ -33,13 +33,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Customer));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.uC_Customer_Detail1 = new GUI.User_Controls.UC_Customer_Detail();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.uC_Customer_Default1 = new GUI.User_Controls.UC_Customer_Default();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.btnAdd = new Bunifu.UI.WinForms.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbCustomer = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.uC_Customer_Default1 = new GUI.User_Controls.UC_Customer_Default();
+            this.uC_Customer_Detail1 = new GUI.User_Controls.UC_Customer_Detail();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.bunifuPages1.SuspendLayout();
@@ -62,17 +63,6 @@
             this.tabPage2.Text = "CustomerDetails";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // uC_Customer_Detail1
-            // 
-            this.uC_Customer_Detail1.AutoScroll = true;
-            this.uC_Customer_Detail1.BackColor = System.Drawing.Color.White;
-            this.uC_Customer_Detail1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_Customer_Detail1.Location = new System.Drawing.Point(3, 3);
-            this.uC_Customer_Detail1.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_Customer_Detail1.Name = "uC_Customer_Detail1";
-            this.uC_Customer_Detail1.Size = new System.Drawing.Size(1041, 645);
-            this.uC_Customer_Detail1.TabIndex = 0;
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
@@ -83,15 +73,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1047, 651);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CustomerDefault";
-            // 
-            // uC_Customer_Default1
-            // 
-            this.uC_Customer_Default1.BackColor = System.Drawing.Color.White;
-            this.uC_Customer_Default1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_Customer_Default1.Location = new System.Drawing.Point(3, 3);
-            this.uC_Customer_Default1.Name = "uC_Customer_Default1";
-            this.uC_Customer_Default1.Size = new System.Drawing.Size(1041, 645);
-            this.uC_Customer_Default1.TabIndex = 0;
             // 
             // bunifuPages1
             // 
@@ -163,6 +144,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.lbCustomer);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -184,6 +167,42 @@
             this.lbCustomer.TabIndex = 13;
             this.lbCustomer.Text = "Customer";
             this.lbCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(308, 57);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(446, 15);
+            this.bunifuSeparator1.TabIndex = 14;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // uC_Customer_Default1
+            // 
+            this.uC_Customer_Default1.BackColor = System.Drawing.Color.White;
+            this.uC_Customer_Default1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_Customer_Default1.Location = new System.Drawing.Point(3, 3);
+            this.uC_Customer_Default1.Name = "uC_Customer_Default1";
+            this.uC_Customer_Default1.Size = new System.Drawing.Size(1041, 645);
+            this.uC_Customer_Default1.TabIndex = 0;
+            // 
+            // uC_Customer_Detail1
+            // 
+            this.uC_Customer_Detail1.AutoScroll = true;
+            this.uC_Customer_Detail1.BackColor = System.Drawing.Color.White;
+            this.uC_Customer_Detail1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_Customer_Detail1.Location = new System.Drawing.Point(3, 3);
+            this.uC_Customer_Detail1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_Customer_Detail1.Name = "uC_Customer_Detail1";
+            this.uC_Customer_Detail1.Size = new System.Drawing.Size(1041, 645);
+            this.uC_Customer_Detail1.TabIndex = 0;
             // 
             // UC_Customer
             // 
@@ -212,5 +231,6 @@
         private Bunifu.UI.WinForms.BunifuImageButton btnAdd;
         private UC_Customer_Detail uC_Customer_Detail1;
         private System.Windows.Forms.Label lbCustomer;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }

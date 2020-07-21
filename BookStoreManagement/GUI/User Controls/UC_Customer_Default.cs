@@ -16,14 +16,34 @@ namespace GUI.User_Controls
     {
         public CustomerBLL customerBLL;
         DataGridView data;
-        List<Customer> lstCustomers;
+        private string strFilter = "";
+        private List<Customer> listCustomers = new List<Customer>();
         public UC_Customer_Default()
         {
             customerBLL = new CustomerBLL();
-            lstCustomers = customerBLL.GetAllCustomer();
             InitializeComponent();
-            //loadData();
-            //dgvCustomer = data;
+
+            dgvCustomer.AutoGenerateColumns = false;
+
+            dgvCustomer.ColumnCount = 6;
+            dgvCustomer.Columns[0].HeaderText = "First Name";
+            dgvCustomer.Columns[0].DataPropertyName = "firstName";
+
+            dgvCustomer.Columns[1].HeaderText = "Last Name";
+            dgvCustomer.Columns[1].DataPropertyName = "lastName";
+
+            dgvCustomer.Columns[2].HeaderText = "Phone";
+            dgvCustomer.Columns[2].DataPropertyName = "phone";
+
+            dgvCustomer.Columns[3].HeaderText = "Email";
+            dgvCustomer.Columns[3].DataPropertyName = "email";
+
+            dgvCustomer.Columns[4].HeaderText = "Address";
+            dgvCustomer.Columns[4].DataPropertyName = "address";
+
+            dgvCustomer.Columns[5].HeaderText = "Female";
+            dgvCustomer.Columns[5].DataPropertyName = "isFemale";
+            dgvCustomer.DataSource = listCustomers;
             LoadCustomer();
         }
 
@@ -31,37 +51,15 @@ namespace GUI.User_Controls
         {
             return data;
         }
-        private void Customer_Default_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void LoadCustomer()
         {
             try
             {
-                List<Customer> listCustomers = customerBLL.GetAllCustomer();
-                dgvCustomer.AutoGenerateColumns = false;
+                listCustomers = new List<Customer>();
+                listCustomers = customerBLL.GetAllCustomer();
 
-                dgvCustomer.ColumnCount = 6;
-                dgvCustomer.Columns[0].HeaderText = "First Name";
-                dgvCustomer.Columns[0].DataPropertyName = "firstName";
-
-                dgvCustomer.Columns[1].HeaderText = "Last Name";
-                dgvCustomer.Columns[1].DataPropertyName = "lastName";
-
-                dgvCustomer.Columns[2].HeaderText = "Phone";
-                dgvCustomer.Columns[2].DataPropertyName = "phone";
-
-                dgvCustomer.Columns[3].HeaderText = "Email";
-                dgvCustomer.Columns[3].DataPropertyName = "email";
-
-                dgvCustomer.Columns[4].HeaderText = "Address";
-                dgvCustomer.Columns[4].DataPropertyName = "address";
-
-                dgvCustomer.Columns[5].HeaderText = "Female";
-                dgvCustomer.Columns[5].DataPropertyName = "isFemale";
-                dgvCustomer.DataSource = listCustomers;
+                dgvCustomer.DataSource = CustomerFilter(listCustomers);
             }
             catch
             {
@@ -69,60 +67,26 @@ namespace GUI.User_Controls
             }
         }
 
-        /*public DataGridView GetDataGridView()
+        private List<Customer> CustomerFilter(List<Customer> lc)
         {
-            return data;
-        }*/
-        public void loadData()
-        {
-            dgvCustomer.AutoGenerateColumns = false;
-
-            dgvCustomer.DataSource = lstCustomers;
-
-            DataGridViewColumn column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "id";
-            column.Name = "STT";
-            column.Visible = false;
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "firstName";
-            column.Name = "First Name";
-            column.Visible = true;
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "lastName";
-            column.Name = "Last Name";
-            column.Visible = true;
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "phone";
-            column.Name = "Phone";
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "email";
-            column.Name = "Email";
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "address";
-            column.Name = "Address";
-            dgvCustomer.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "isFemale";
-            column.Name = "Gender";
-            dgvCustomer.Columns.Add(column);
-
-            data = dgvCustomer;
+            List<Customer> result = new List<Customer>();
+            foreach (Customer c in lc)
+            {
+                if (c.firstName.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.lastName.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.address.ToLower().IndexOf(strFilter.ToLower()) != -1
+                    || c.phone.ToLower().IndexOf(strFilter.ToLower()) != -1)
+                {
+                    result.Add(c);
+                }
+            }
+            return result;
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void txtFilter_OnValueChanged(object sender, EventArgs e)
         {
-
+            strFilter = txtFilter.Text;
+            dgvCustomer.DataSource = CustomerFilter(listCustomers);
         }
     }
 }

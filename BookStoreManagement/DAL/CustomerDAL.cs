@@ -84,7 +84,7 @@ namespace DAL
                     CallAPI cal = new CallAPI();
                     string json = JsonConvert.SerializeObject(e);
                     string jsonResult = "";
-                    return cal.callAPI(url, json, "POST", ref jsonResult);
+                    return cal.callAPI(url, json, "DELETE", ref jsonResult);
                     return true;
                 }
                 return false;
