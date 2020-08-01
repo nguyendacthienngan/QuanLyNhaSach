@@ -78,7 +78,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1014, 608);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -99,7 +98,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1008, 571);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // pnInput
             // 
@@ -135,7 +133,6 @@
             this.pnInput.Quality = 10;
             this.pnInput.Size = new System.Drawing.Size(495, 558);
             this.pnInput.TabIndex = 21;
-            this.pnInput.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // txtId
             // 
@@ -146,6 +143,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(200, 31);
             this.txtId.TabIndex = 52;
+            this.txtId.Visible = false;
             // 
             // ddGender
             // 
@@ -162,13 +160,13 @@
             this.ddGender.FillIndicator = false;
             this.ddGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ddGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddGender.ForeColor = System.Drawing.Color.White;
+            this.ddGender.ForeColor = System.Drawing.Color.Black;
             this.ddGender.FormattingEnabled = true;
             this.ddGender.Icon = null;
             this.ddGender.IndicatorColor = System.Drawing.Color.Black;
             this.ddGender.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
             this.ddGender.ItemBackColor = System.Drawing.Color.White;
-            this.ddGender.ItemBorderColor = System.Drawing.Color.White;
+            this.ddGender.ItemBorderColor = System.Drawing.Color.Black;
             this.ddGender.ItemForeColor = System.Drawing.Color.White;
             this.ddGender.ItemHeight = 26;
             this.ddGender.ItemHighLightColor = System.Drawing.Color.Black;
@@ -180,7 +178,6 @@
             this.ddGender.Size = new System.Drawing.Size(200, 32);
             this.ddGender.TabIndex = 51;
             this.ddGender.Text = "-select-";
-            this.ddGender.SelectedIndexChanged += new System.EventHandler(this.ddGender_SelectedIndexChanged);
             // 
             // txtFirstName
             // 
@@ -199,14 +196,13 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.White;
             this.txtPhone.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtPhone.ForeColor = System.Drawing.Color.White;
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.Location = new System.Drawing.Point(260, 180);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(200, 31);
             this.txtPhone.TabIndex = 49;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtLastName
@@ -226,29 +222,26 @@
             // 
             this.txtAddress.BackColor = System.Drawing.Color.White;
             this.txtAddress.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtAddress.ForeColor = System.Drawing.Color.White;
+            this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.Location = new System.Drawing.Point(39, 355);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(422, 31);
             this.txtAddress.TabIndex = 46;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(39, 272);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(422, 31);
             this.txtEmail.TabIndex = 45;
-            this.txtEmail.TextChanged += new System.EventHandler(this.bunifuCustomTextbox1_TextChanged);
-            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // btnDelete
@@ -371,7 +364,6 @@
             this.bunifuLabel6.Text = "Address";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel6.Click += new System.EventHandler(this.bunifuLabel6_Click);
             // 
             // bunifuLabel5
             // 
@@ -423,7 +415,6 @@
             this.bunifuLabel3.Text = "Gender";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel3.Click += new System.EventHandler(this.bunifuLabel3_Click);
             // 
             // bunifuLabel2
             // 
@@ -441,7 +432,6 @@
             this.bunifuLabel2.Text = "Last Name";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel2.Click += new System.EventHandler(this.bunifuLabel2_Click);
             // 
             // bunifuLabel1
             // 
@@ -474,10 +464,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 25);
+            this.label1.Size = new System.Drawing.Size(80, 26);
             this.label1.TabIndex = 23;
             this.label1.Text = "Search";
             // 
@@ -525,7 +515,6 @@
             this.dgvCustomerDetail.Size = new System.Drawing.Size(432, 417);
             this.dgvCustomerDetail.TabIndex = 7;
             this.dgvCustomerDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerDetail_CellClick);
-            this.dgvCustomerDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerDetail_CellContentClick);
             // 
             // txtFilter
             // 
