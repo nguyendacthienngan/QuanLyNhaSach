@@ -143,5 +143,5 @@ Chung Thái Dung
      - Email: chungdung0804@gmail.com
 
 ## **Báo cáo cuối kỳ**
-PDF: https://drive.google.com/file/d/1XV0yJaUn0nJha3rMCU5JCIRP2NxSI-eb/view?usp=sharing
-Slide: https://drive.google.com/file/d/1kvXdFWuO2-Vnd0a74ltHZwgJDyQ0V7Y2/view?usp=sharing
+- PDF: https://drive.google.com/file/d/1XV0yJaUn0nJha3rMCU5JCIRP2NxSI-eb/view?usp=sharing
+- Slide: https://drive.google.com/file/d/1kvXdFWuO2-Vnd0a74ltHZwgJDyQ0V7Y2/view?usp=sharing
